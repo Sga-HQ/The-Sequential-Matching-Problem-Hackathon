@@ -108,6 +108,13 @@ Baselines: greedy 0.50, no-asks 0.33, random 0.25. One invalid pair anywhere = d
 - Search when a person ENTERS Active (new arrival with full info, answered asks, or back from cooldown):
   1. forward: who in Active fits ALL of P's preferences
   2. reverse: of those, whose preferences P fits
+- **Existing entries (decided 7 Oct): "search once per person, ever" + a shared edge list**
+  - Search when a person's 11 dealbreakers become fully known (new arrival with full info, or after asks).
+  - Search against Active **+ Matched** (everyone with full info, busy or not), not just Active.
+  - Each found pair = one **edge**, stored once for both people → existing people get the newcomer automatically.
+  - Busy → edge hidden (not deleted); cooldown over → edge visible again, no re-search needed.
+  - Edge deleted only when: pair introduced (history) or a person is Retired.
+  - Preferences never change in the simulator → edges stay valid.
 - Simulator gives `available` + `introductions` each call → stores can be rebuilt every call
   (program restarts per call; memory limit 1 MiB).
 
