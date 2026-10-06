@@ -151,7 +151,7 @@ Baselines: greedy 0.50, no-asks 0.33, random 0.25. One invalid pair anywhere = d
   Turns guessing into data. Simulator only returns yes/no/no-reply, so can't be used in this hackathon.
 - Don't over-interpret individual rejections — too little data per person; prefer population-level learning.
 
-## 7c. Lecture: "Exploration, Exploitation and Online Learning" (Jiale Liu, Edinburgh, 6 Oct 2026)
+## 7c. Lecture: "Exploration, Exploitation and Online Learning" (hackathon session, 6 Oct 2026)
 Core lesson: every introduction does two jobs — it is the product AND our only source of data
 ("selective feedback": no outcome for pairs we never introduce). Greedy can lock onto wrong beliefs forever.
 How we use it:
@@ -167,7 +167,7 @@ How we use it:
 - Round 1 must answer: **"how does our policy explore, and how would it discover a wrong belief?"** (lecture objective 5).
 - Exploration is at population/feature level (consistent with dropping per-person rejection analysis).
 
-## 7c. Lecture: "Exploration, Exploitation and Online Learning" (Jiale Liu, Edinburgh, 6 Oct 2026)
+## 7c. Lecture: "Exploration, Exploitation and Online Learning" (hackathon session, 6 Oct 2026)
 Core message: every introduction does two jobs — serves people AND produces evidence.
 - Explore = try uncertain options to learn; Exploit = use what looks best now. Regret = loss from not picking the best.
 - Greedy (exploit only) can lock onto a wrong belief forever because we only see outcomes of pairs we introduce
@@ -195,6 +195,25 @@ Core message: every introduction does two jobs — serves people AND produces ev
 7. Optional per-person reply reliability Beta(replied+1, missed+1) — reliability, not "why they rejected".
 Related refs from lecture: Das & Kamenica (2005) two-sided bandits & dating; Liu, Mania & Jordan (2020)
 competing bandits in matching markets; Chen et al. (2013) combinatorial bandits; Joulani et al. (2013) delayed feedback.
+
+## 7d. Questions raised in the session chat (anonymised) + our answers
+- **⭐ Organiser's question (signals what they care about):** we only get feedback on people we introduce —
+  how do we discover our matching assumptions are wrong *without users bearing too much experimentation cost*?
+  → Explore only among near-ties (cheap: Thompson flips choices only when scores are close); use cheap asks
+  before costly introductions; monitor predicted vs actual yes-rate and reset beliefs if they diverge.
+- Can a system detect it is confidently wrong when its uncertainty is also wrong?
+  → Not from inside. Needs an outside check: calibration of predictions vs real replies over a recent window.
+- Concepts only for research proposal? → No, used in both rounds (Round 1 describes, Round 2 implements).
+- Well-established industry solutions? → Contextual bandits (news recommendation, Li et al. 2010), reciprocal
+  recommenders, kidney-exchange matching, Gale–Shapley-style ranking. None fits this simulator off-the-shelf.
+- Are new arrivals completely unknown? → No. Some arrive with full dealbreakers, some sparse, some with refusals.
+- Ask vs explore, given cost? → Asks are cheap (points), introductions are expensive → resolve with asks first.
+- Should a confident model still try uncertain options? → Sometimes, when the cost is small (near-ties).
+- No training data for a pattern? → Generate it with the simulator (our "packets").
+- Will early good matches shrink the user base? → In simulator successful pairs pause; that IS the goal (score
+  counts successful pairs per arrived member, not retention).
+- Do we ever see outcomes of pairs we didn't introduce? → Never (selective feedback).
+- Isn't it always the same dataset? → No: each introduction creates a new pair outcome; simulator gives unlimited new worlds.
 
 ## 8. Research leads
 Dynamic matching markets / kidney exchange ("Thickness and Information in Dynamic Matching Markets"), reciprocal recommender systems, maximum weight matching, value of information / active learning, contextual bandits, Gale–Shapley (why not used).
