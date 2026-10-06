@@ -1,0 +1,104 @@
+# Discussion Notes — Sequential Matching Hackathon
+
+Running log of key facts, decisions and open questions. Updated as ideas evolve.
+Organiser kit: https://github.com/RomeoJulietLove/The-Sequential-Matching-Problem
+
+---
+
+## 1. Deadlines
+- **Round 1 (research note, PDF/Markdown, via Google Form): 9 Oct 2026, 23:59 IST**
+- Round 1 results: 11 Oct 2026, 22:00 IST
+- Round 2 (build): 12–18 Oct 2026, 23:59 IST, via GitHub "Final submission" issue
+- AI tools allowed for planning/coding **if declared**. No AI/network calls inside the graded program.
+
+## 2. The problem in one line
+Act as a matchmaker for ~200 synthetic people over 60 days: each day decide **whom to ask questions** and **whom to introduce**, so that the most pairs end up with **both wanting a second date (MSMI)**.
+
+## 3. Key facts (verified from data / simulator code)
+
+### Population
+- Max 200 people per world. ~136 present on day 0; rest arrive days 1–20; none after day 20.
+- ~12% leave somewhere between day 22 and 60.
+- After an introduction a person is **busy 8 days** (longer if a date is pending) → max ~7 intros each over 60 days.
+
+### Daily loop
+LOOK → ASK (12 points/day) → LOOK again → MATCH → next day (late feedback arrives).
+
+### Dealbreakers (11 fields, 7 rules, all checked BOTH ways = "reciprocal")
+gender wanted, age min/max, zone, smoking + partner smoking, has/partner/wants children, relationship structure, schedule overlap.
+- Gender, age, zone cut the most pairs.
+- Kit function `eligibility(a, b)` does the full check → reuse it.
+
+### Who can be matched
+| Group | Meaning | Fresh world (day 0) |
+|---|---|---|
+| A complete | all 11 known → matchable | ~40% |
+| B askable | some never asked, none refused | ~33% |
+| C refused | refused ≥1 dealbreaker → **blocked forever** | ~26% (35% in dataset) |
+- Profiles are either complete or very sparse (0–5 known); nobody has 6–10 known.
+- **Asking a group-B person always succeeds** (refusals are fixed and visible upfront).
+- Blocked people still count in the score denominator.
+
+### Pairs
+- Of 19,900 possible pairs, only ~0.5% allowed, ~13% unknown, ~87% ruled out.
+- On a typical day only ~10–20 allowed pairs among free people; max ~9–19 intros/day.
+- Allowed pairs form small separate "islands" → can solve each island separately.
+
+### Funnel (dataset, 613 introductions)
+both yes ~14% → date ~half of those → **both want 2nd date ≈ 1.5% of intros**.
+Replies: 37% yes, 41% no, **22% no reply** (no reply ≠ no).
+
+### What drives "yes" (soft fields, dataset check + simulator code)
+| Field | Match vs differ yes-rate | Use? |
+|---|---|---|
+| relationship_goal | 59% vs 39% (also affects 2nd date) | ⭐⭐⭐ |
+| conversations | 56% vs 49% | ⭐ |
+| lifestyle | 54% vs 47% | ⭐ |
+| relationship_pace | 53% vs 47% | ⭐ |
+| emotional_availability, space_for_relationship, relocate | no effect | ❌ |
+- Each person also has hidden pickiness + hidden reply rate → estimate from their history.
+- Hidden "shift" scenario changes weights (lifestyle turns negative) → weights must be **learned/updated from feedback**, not hard-coded.
+- conversations.jsonl / questionnaires.jsonl repeat the same fields → no new info.
+
+### Scoring (ranking)
+MSMI per 100 arrived members, averaged over 6 scenario families × 20 hidden worlds.
+Baselines: greedy 0.50, no-asks 0.33, random 0.25. One invalid pair anywhere = disqualified.
+
+## 4. Our system design (current version)
+```
+1. FILTER      dealbreakers both ways (reuse kit eligibility)
+2. ASK         3 pts: unlock people who open most pairs; 1 pt: relationship_goal on borderline pairs
+3. RECALIBRATE new/updated person → compute their allowed partners + scores
+4. SCORE       soft-field matches + person history, both directions
+5. THRESHOLD   required score drops with waiting time / few options / near end
+6. MATCH       best non-overlapping set (best total, not best-pair-first)
+7. SAFETY      re-check every pair before submitting
+8. LEARN       update person profiles + score weights from feedback (stored in memory)
+```
+
+## 5. Decisions so far
+- Ignore group C (refused) for asking — can never be matched.
+- Treat unknown soft fields as **neutral**, never as mismatch.
+- Score each direction separately (A→B, B→A).
+- Waiting threshold uses **each person's own waiting time** (not assumed equal) — pair uses the longer waiter (proposal).
+- Threshold → zero near day 59; people with very few options are introduced without waiting.
+
+## 6. Open questions / hard parts
+- [ ] Asker rule: exactly how to rank whom to ask.
+- [ ] Scorer: how to turn soft fields + history into a number (see plan below).
+- [ ] Threshold curve: how fast it drops with waiting.
+- [ ] Efficient person→candidates mapping + cross-check.
+
+## 7. Scorer build plan (step by step, start simple)
+- v0: count matching soft fields (what greedy baseline does).
+- v1: weighted by the yes-rate table above (goal counts most); unknown = neutral.
+- v2: learn weights from our own simulator "packets" (only info visible at intro time) with separate train/tune/test seeds.
+- v3: update weights + per-person pickiness/reply rate live from feedback during the episode.
+
+## 8. Research leads
+Dynamic matching markets / kidney exchange ("Thickness and Information in Dynamic Matching Markets"), reciprocal recommender systems, maximum weight matching, value of information / active learning, contextual bandits, Gale–Shapley (why not used).
+
+## 9. Idea log
+- Divide & conquer: block by gender → zone → age (cuts 9,180 → 3,215 pairs on day 0). Best use: deciding **whom to ask**.
+- Waiting-time threshold ("aging") — lower the bar the longer someone waits.
+- Recalibrator: on arrival / after an ask, recompute that person's candidates and scores.
