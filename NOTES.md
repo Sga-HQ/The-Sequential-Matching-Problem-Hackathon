@@ -144,8 +144,25 @@ Baselines: greedy 0.50, no-asks 0.33, random 0.25. One invalid pair anywhere = d
   Turns guessing into data. Simulator only returns yes/no/no-reply, so can't be used in this hackathon.
 - Don't over-interpret individual rejections — too little data per person; prefer population-level learning.
 
+## 7c. Lecture: "Exploration, Exploitation and Online Learning" (Jiale Liu, Edinburgh, 6 Oct 2026)
+Core lesson: every introduction does two jobs — it is the product AND our only source of data
+("selective feedback": no outcome for pairs we never introduce). Greedy can lock onto wrong beliefs forever.
+How we use it:
+| Lecture idea | Where in our system |
+|---|---|
+| Thompson sampling (Beta counts, sample, act) | Scorer: per soft-field feature keep yes/no counts → Beta; each day draw a plausible weight set, score pairs, match. Explores automatically, no dial. |
+| Value of information (ask only if answer could change the decision) | Asker: ask goal on borderline pairs; ask dealbreakers of people whose unlock changes today's/near-future matching. Not "most uncertain". |
+| Non-stationarity (discount old evidence, γ^age or sliding window) | Handles hidden "drift" (response conditions change mid-run) and "shift" (weights differ) scenarios. |
+| Cold start (budget intros for learning) | Newcomers: uncertainty in Thompson gives them chances; never override dealbreakers. |
+| Surrogate model μ + κσ (UCB) | Alternative to Thompson for scoring: mean + bonus for uncertainty. |
+| Free evaluations → GA / DE | Offline only: simulator runs are cheap → tune our knobs (threshold curve, priors, γ) with DE/grid on train seeds. |
+| Regret, calibration | Report: compare vs greedy; check scorer calibration on held-out seeds. |
+- Round 1 must answer: **"how does our policy explore, and how would it discover a wrong belief?"** (lecture objective 5).
+- Exploration is at population/feature level (consistent with dropping per-person rejection analysis).
+
 ## 8. Research leads
 Dynamic matching markets / kidney exchange ("Thickness and Information in Dynamic Matching Markets"), reciprocal recommender systems, maximum weight matching, value of information / active learning, contextual bandits, Gale–Shapley (why not used).
+From lecture refs: Russo et al. 2018 (Thompson tutorial), Das & Kamenica 2005 (two-sided bandits & dating market), Liu, Mania & Jordan 2020 (competing bandits in matching markets), Joulani et al. 2013 (online learning under delayed feedback), Lakkaraju et al. 2017 (selective labels), Howard 1966 (value of information), Garivier & Moulines 2011 (discounted UCB).
 
 ## 9. Idea log
 - Divide & conquer: block by gender → zone → age (cuts 9,180 → 3,215 pairs on day 0). Best use: deciding **whom to ask**.
