@@ -96,6 +96,21 @@ Baselines: greedy 0.50, no-asks 0.33, random 0.25. One invalid pair anywhere = d
 - Each person gets ≤ ~7 intros → too few to learn their personal taste in detail.
   → learn **population-wide** field weights + **per-person** pickiness & reply rate.
 
+### Profile stores (user's design, 7 Oct)
+| Store | Who | Leaves when |
+|---|---|---|
+| **Active** | all 11 dealbreakers known, free → can be paired | introduced → Matched |
+| **Pending** | some dealbreakers never asked (askable) | asked → Active |
+| **Matched (cooldown)** | in an introduction (≥8 days, longer if date pending) | free again → Active |
+| **Matched pairs (history)** | every pair ever introduced | never — used to block repeats |
+| **Blocked** *(added)* | refused ≥1 dealbreaker | never — never matchable |
+| **Retired** *(added)* | both said yes to 2nd date (paused) or left the app | never |
+- Search when a person ENTERS Active (new arrival with full info, answered asks, or back from cooldown):
+  1. forward: who in Active fits ALL of P's preferences
+  2. reverse: of those, whose preferences P fits
+- Simulator gives `available` + `introductions` each call → stores can be rebuilt every call
+  (program restarts per call; memory limit 1 MiB).
+
 ## 5. Decisions so far
 - Ignore group C (refused) for asking — can never be matched.
 - Treat unknown soft fields as **neutral**, never as mismatch.
@@ -129,7 +144,8 @@ Dynamic matching markets / kidney exchange ("Thickness and Information in Dynami
 - Divide & conquer: block by gender → zone → age (cuts 9,180 → 3,215 pairs on day 0). Best use: deciding **whom to ask**.
 - Waiting-time threshold ("aging") — lower the bar the longer someone waits.
 - Recalibrator: on arrival / after an ask, recompute that person's candidates and scores.
-- Rejection learning: no reasons given → infer from patterns (which fields differed in rejected intros).
+- ~~Rejection learning per person~~ **DROPPED (user decision):** can't ask why → don't judge individuals from rejections.
+- Later optimisation: keep bucket lists sorted by age + binary search for range lookups (note for Round 2).
 - Staged bulk cross-check (cheapest + most-eliminating filter first):
   1. Index: (gender, zone) → people, each list **sorted by age**.
   2. New person P: look up only buckets P wants (gender × acceptable zones).
