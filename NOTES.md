@@ -167,6 +167,35 @@ How we use it:
 - Round 1 must answer: **"how does our policy explore, and how would it discover a wrong belief?"** (lecture objective 5).
 - Exploration is at population/feature level (consistent with dropping per-person rejection analysis).
 
+## 7c. Lecture: "Exploration, Exploitation and Online Learning" (Jiale Liu, Edinburgh, 6 Oct 2026)
+Core message: every introduction does two jobs — serves people AND produces evidence.
+- Explore = try uncertain options to learn; Exploit = use what looks best now. Regret = loss from not picking the best.
+- Greedy (exploit only) can lock onto a wrong belief forever because we only see outcomes of pairs we introduce
+  ("selective feedback"). Our kit's greedy baseline does exactly this.
+- Thompson sampling: keep a belief (Beta(yes+1, no+1)) per option, draw a random plausible value, act on the draw,
+  update. Uncertain options get tried naturally; no dial to tune. Best in lecture's comparison.
+- Surrogate/UCB: score = prediction + κ·uncertainty. A useful model knows what it doesn't know.
+- Value of information: ask only where the answer could CHANGE a decision, not where most uncertain.
+- Non-stationarity: discount old evidence (weight γ^age) → handles "drift" (day ≥35) and "shift" scenarios.
+- Cold start: newcomers have no history; decide if they get exploratory intros or protection.
+- GA / DE: for cheap evaluations — not our case (an introduction is expensive: ≤~7 per person).
+- Round 1 questions to answer in the note: which algorithm? how much quality traded for learning, who decides?
+  fairness to newcomers? **how does the system notice a wrong belief and what does it do?**
+
+### How we apply it
+1. Scorer beliefs: Beta(yes+1, no+1) per (soft field × match/differ/unknown), from introduction replies
+   (frequent signal; MSMI too rare to learn from). Prior = dataset yes-rate table.
+2. Each day: Thompson-sample the beliefs → pair scores → matcher picks best set ("combinatorial Thompson sampling").
+3. Asker = value of information: dealbreaker ask for Pending people whose unlock adds options to under-served
+   Active people; 1-pt relationship_goal ask only when the answer could flip a pair above/below threshold.
+4. Discount old replies (γ≈0.97/day) so weights re-learn under shift/drift.
+5. Censoring: pending replies are not "no"; no-reply is not "no".
+6. Wrong-belief detection: compare predicted vs actual yes-rate over a recent window; if far apart, widen
+   beliefs (reset toward prior) so exploration restarts.
+7. Optional per-person reply reliability Beta(replied+1, missed+1) — reliability, not "why they rejected".
+Related refs from lecture: Das & Kamenica (2005) two-sided bandits & dating; Liu, Mania & Jordan (2020)
+competing bandits in matching markets; Chen et al. (2013) combinatorial bandits; Joulani et al. (2013) delayed feedback.
+
 ## 8. Research leads
 Dynamic matching markets / kidney exchange ("Thickness and Information in Dynamic Matching Markets"), reciprocal recommender systems, maximum weight matching, value of information / active learning, contextual bandits, Gale–Shapley (why not used).
 From lecture refs: Russo et al. 2018 (Thompson tutorial), Das & Kamenica 2005 (two-sided bandits & dating market), Liu, Mania & Jordan 2020 (competing bandits in matching markets), Joulani et al. 2013 (online learning under delayed feedback), Lakkaraju et al. 2017 (selective labels), Howard 1966 (value of information), Garivier & Moulines 2011 (discounted UCB).
