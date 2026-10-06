@@ -76,12 +76,27 @@ Baselines: greedy 0.50, no-asks 0.33, random 0.25. One invalid pair anywhere = d
 8. LEARN       update person profiles + score weights from feedback (stored in memory)
 ```
 
+### Each day the policy outputs exactly two things
+1. **asks**: which info to request (≤12 points). Empty list allowed.
+2. **pairs**: allowed, non-overlapping introductions. Empty list allowed (= everyone waits a day).
+- **Introductions are free** — they do NOT use the 12 question points. Only asks cost points.
+- Limit on intros = availability (busy 8 days, one intro at a time per person), not budget.
+
+### Feedback has NO reason
+- A reply is only yes / no / no-reply. Nobody says *why*.
+- "Why" must be **inferred**: compare what this person's rejected vs accepted profiles had in common.
+- Simulator "no" comes from: soft-field mismatches + hidden personal pickiness + luck. No hidden extra preferences.
+- Each person gets ≤ ~7 intros → too few to learn their personal taste in detail.
+  → learn **population-wide** field weights + **per-person** pickiness & reply rate.
+
 ## 5. Decisions so far
 - Ignore group C (refused) for asking — can never be matched.
 - Treat unknown soft fields as **neutral**, never as mismatch.
 - Score each direction separately (A→B, B→A).
 - Waiting threshold uses **each person's own waiting time** (not assumed equal) — pair uses the longer waiter (proposal).
 - Threshold → zero near day 59; people with very few options are introduced without waiting.
+- Design for scale: **do not rely on brute force all-pairs**. Use an index + staged bulk filters.
+  Final safety check still runs full `eligibility()` on the few chosen pairs (cheap).
 
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
@@ -102,3 +117,12 @@ Dynamic matching markets / kidney exchange ("Thickness and Information in Dynami
 - Divide & conquer: block by gender → zone → age (cuts 9,180 → 3,215 pairs on day 0). Best use: deciding **whom to ask**.
 - Waiting-time threshold ("aging") — lower the bar the longer someone waits.
 - Recalibrator: on arrival / after an ask, recompute that person's candidates and scores.
+- Rejection learning: no reasons given → infer from patterns (which fields differed in rejected intros).
+- Staged bulk cross-check (cheapest + most-eliminating filter first):
+  1. Index: (gender, zone) → people, each list **sorted by age**.
+  2. New person P: look up only buckets P wants (gender × acceptable zones).
+  3. Age: binary-search P's age range in the sorted list → slice, no full scan.
+  4. Bulk reverse check on survivors: do THEY want P's gender? → then P's zone? → then P's age?
+  5. Remaining rules (smoking, kids, structure, schedule) only on the few left.
+  - Unknown fields never eliminate (stay "?"); refused field = blocked forever.
+  - Elimination power in data: gender (116,788 pair-failures) > age (105,982) > zone (98,832) > rest (<22k each).
