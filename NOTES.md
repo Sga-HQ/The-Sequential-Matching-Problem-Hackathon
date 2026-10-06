@@ -82,6 +82,13 @@ Baselines: greedy 0.50, no-asks 0.33, random 0.25. One invalid pair anywhere = d
 - **Introductions are free** — they do NOT use the 12 question points. Only asks cost points.
 - Limit on intros = availability (busy 8 days, one intro at a time per person), not budget.
 
+### What an introduction actually is (simulator)
+- NOT Tinder: no browsing/swiping. Matchmaker hands each person ONE suggested profile at a time.
+- Day 0: assigned → each person independently replies yes/no within 7 days (they have not talked yet). Some never reply.
+- Both yes → a date is scheduled 1–14 days later; it happens ~78% of the time.
+- After the date → each says whether they want a 2nd meeting; counts only if both yes within 3 days.
+- Busy the whole time (8 days, longer if a date is pending). One active introduction per person.
+
 ### Feedback has NO reason
 - A reply is only yes / no / no-reply. Nobody says *why*.
 - "Why" must be **inferred**: compare what this person's rejected vs accepted profiles had in common.
@@ -109,6 +116,11 @@ Baselines: greedy 0.50, no-asks 0.33, random 0.25. One invalid pair anywhere = d
 - v1: weighted by the yes-rate table above (goal counts most); unknown = neutral.
 - v2: learn weights from our own simulator "packets" (only info visible at intro time) with separate train/tune/test seeds.
 - v3: update weights + per-person pickiness/reply rate live from feedback during the episode.
+
+## 7b. Product ideas (for report "future work", not possible in simulator)
+- Let a person pick a **reason** when saying no (from soft fields: goal, pace, lifestyle, conversations…).
+  Turns guessing into data. Simulator only returns yes/no/no-reply, so can't be used in this hackathon.
+- Don't over-interpret individual rejections — too little data per person; prefer population-level learning.
 
 ## 8. Research leads
 Dynamic matching markets / kidney exchange ("Thickness and Information in Dynamic Matching Markets"), reciprocal recommender systems, maximum weight matching, value of information / active learning, contextual bandits, Gale–Shapley (why not used).
