@@ -133,6 +133,13 @@ Baselines: greedy 0.50, no-asks 0.33, random 0.25. One invalid pair anywhere = d
 - [ ] Threshold curve: how fast it drops with waiting.
 - [ ] Efficient person→candidates mapping + cross-check.
 
+### Questions to ask organisers / lecturer (via Question issue or Discord)
+1. ⭐ May the policy use structure learned by reading the public simulator code (which soft fields matter, drift timing), or must it learn from replies only?
+2. Are the 120 hidden worlds made by the same `generate()` as public variants (only seeds secret)?
+3. Memory resets per episode — is within-episode learning expected to matter, or offline-trained priors?
+4. How to handle delayed/pending feedback in exploration (pending ≠ no)?
+5. How is the Round 1 note judged (length, format, how much evidence)?
+
 ## 7. Scorer build plan (step by step, start simple)
 - v0: count matching soft fields (what greedy baseline does).
 - v1: weighted by the yes-rate table above (goal counts most); unknown = neutral.
