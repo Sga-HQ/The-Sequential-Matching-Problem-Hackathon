@@ -1,0 +1,1200 @@
+{"seed": 6000, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 3.0, "coverage": 0.335, "intros": 73, "ask_cost": 240}
+{"seed": 6000, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 3.5, "coverage": 0.335, "intros": 71, "ask_cost": 240}
+{"seed": 6000, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 4.0, "coverage": 0.33, "intros": 73, "ask_cost": 240}
+{"seed": 6000, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 4.5, "coverage": 0.33, "intros": 72, "ask_cost": 240}
+{"seed": 6000, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.5, "coverage": 0.33, "intros": 71, "ask_cost": 240}
+{"seed": 6001, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 2.5, "coverage": 0.26, "intros": 53, "ask_cost": 225}
+{"seed": 6001, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 3.0, "coverage": 0.255, "intros": 52, "ask_cost": 225}
+{"seed": 6001, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 4.5, "coverage": 0.26, "intros": 54, "ask_cost": 225}
+{"seed": 6001, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 2.5, "coverage": 0.26, "intros": 55, "ask_cost": 225}
+{"seed": 6001, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 3.0, "coverage": 0.26, "intros": 53, "ask_cost": 225}
+{"seed": 6002, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 6.0, "coverage": 0.315, "intros": 64, "ask_cost": 228}
+{"seed": 6002, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 6.0, "coverage": 0.31, "intros": 63, "ask_cost": 228}
+{"seed": 6002, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 5.5, "coverage": 0.32, "intros": 67, "ask_cost": 228}
+{"seed": 6002, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.0, "coverage": 0.325, "intros": 70, "ask_cost": 228}
+{"seed": 6002, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.5, "coverage": 0.325, "intros": 71, "ask_cost": 228}
+{"seed": 6003, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 3.5, "coverage": 0.3, "intros": 59, "ask_cost": 228}
+{"seed": 6003, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 4.0, "coverage": 0.3, "intros": 60, "ask_cost": 228}
+{"seed": 6003, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 4.0, "coverage": 0.3, "intros": 68, "ask_cost": 228}
+{"seed": 6003, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 3.5, "coverage": 0.3, "intros": 68, "ask_cost": 228}
+{"seed": 6003, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.5, "coverage": 0.3, "intros": 66, "ask_cost": 228}
+{"seed": 6004, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 7.0, "coverage": 0.375, "intros": 87, "ask_cost": 243}
+{"seed": 6004, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 7.5, "coverage": 0.38, "intros": 87, "ask_cost": 243}
+{"seed": 6004, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 6.5, "coverage": 0.37, "intros": 88, "ask_cost": 243}
+{"seed": 6004, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 1.5, "mutual": 7.5, "coverage": 0.365, "intros": 87, "ask_cost": 243}
+{"seed": 6004, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 1.5, "mutual": 7.5, "coverage": 0.365, "intros": 86, "ask_cost": 243}
+{"seed": 6005, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 2.0, "coverage": 0.22, "intros": 41, "ask_cost": 237}
+{"seed": 6005, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 2.0, "coverage": 0.215, "intros": 38, "ask_cost": 237}
+{"seed": 6005, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 3.5, "coverage": 0.22, "intros": 38, "ask_cost": 237}
+{"seed": 6005, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 3.5, "coverage": 0.22, "intros": 38, "ask_cost": 237}
+{"seed": 6005, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 3.5, "coverage": 0.225, "intros": 41, "ask_cost": 237}
+{"seed": 6006, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 6.5, "coverage": 0.48, "intros": 120, "ask_cost": 279}
+{"seed": 6006, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 6.5, "coverage": 0.485, "intros": 123, "ask_cost": 279}
+{"seed": 6006, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 1.5, "mutual": 10.0, "coverage": 0.48, "intros": 122, "ask_cost": 279}
+{"seed": 6006, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.5, "coverage": 0.485, "intros": 123, "ask_cost": 279}
+{"seed": 6006, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.0, "coverage": 0.485, "intros": 123, "ask_cost": 279}
+{"seed": 6007, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 5.0, "coverage": 0.285, "intros": 51, "ask_cost": 267}
+{"seed": 6007, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 5.5, "coverage": 0.285, "intros": 57, "ask_cost": 267}
+{"seed": 6007, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 3.5, "coverage": 0.285, "intros": 54, "ask_cost": 267}
+{"seed": 6007, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 4.0, "coverage": 0.28, "intros": 52, "ask_cost": 267}
+{"seed": 6007, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.0, "coverage": 0.28, "intros": 52, "ask_cost": 267}
+{"seed": 6008, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 6.0, "coverage": 0.4, "intros": 99, "ask_cost": 249}
+{"seed": 6008, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 7.0, "coverage": 0.395, "intros": 99, "ask_cost": 249}
+{"seed": 6008, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 7.0, "coverage": 0.405, "intros": 98, "ask_cost": 249}
+{"seed": 6008, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 8.0, "coverage": 0.41, "intros": 95, "ask_cost": 249}
+{"seed": 6008, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 9.0, "coverage": 0.41, "intros": 95, "ask_cost": 249}
+{"seed": 6009, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 3.5, "coverage": 0.29, "intros": 63, "ask_cost": 228}
+{"seed": 6009, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 4.5, "coverage": 0.29, "intros": 61, "ask_cost": 228}
+{"seed": 6009, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 4.5, "coverage": 0.29, "intros": 61, "ask_cost": 228}
+{"seed": 6009, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 4.5, "coverage": 0.28, "intros": 59, "ask_cost": 228}
+{"seed": 6009, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.0, "coverage": 0.28, "intros": 56, "ask_cost": 228}
+{"seed": 6010, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 9.0, "coverage": 0.365, "intros": 80, "ask_cost": 246}
+{"seed": 6010, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 7.5, "coverage": 0.37, "intros": 81, "ask_cost": 246}
+{"seed": 6010, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 5.5, "coverage": 0.37, "intros": 80, "ask_cost": 246}
+{"seed": 6010, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 7.5, "coverage": 0.375, "intros": 78, "ask_cost": 246}
+{"seed": 6010, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 7.5, "coverage": 0.38, "intros": 76, "ask_cost": 246}
+{"seed": 6011, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 3.0, "coverage": 0.29, "intros": 66, "ask_cost": 246}
+{"seed": 6011, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 3.0, "coverage": 0.295, "intros": 65, "ask_cost": 246}
+{"seed": 6011, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 3.5, "coverage": 0.29, "intros": 62, "ask_cost": 246}
+{"seed": 6011, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 3.0, "coverage": 0.295, "intros": 65, "ask_cost": 246}
+{"seed": 6011, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.0, "coverage": 0.295, "intros": 64, "ask_cost": 246}
+{"seed": 6012, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 7.0, "coverage": 0.35, "intros": 93, "ask_cost": 240}
+{"seed": 6012, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 5.5, "coverage": 0.355, "intros": 101, "ask_cost": 240}
+{"seed": 6012, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 8.0, "coverage": 0.35, "intros": 101, "ask_cost": 240}
+{"seed": 6012, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 8.5, "coverage": 0.355, "intros": 102, "ask_cost": 240}
+{"seed": 6012, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 9.0, "coverage": 0.355, "intros": 97, "ask_cost": 240}
+{"seed": 6013, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 3.5, "coverage": 0.27, "intros": 64, "ask_cost": 246}
+{"seed": 6013, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.0, "coverage": 0.265, "intros": 64, "ask_cost": 246}
+{"seed": 6013, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 3.5, "coverage": 0.265, "intros": 64, "ask_cost": 246}
+{"seed": 6013, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 4.0, "coverage": 0.27, "intros": 63, "ask_cost": 246}
+{"seed": 6013, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.5, "coverage": 0.27, "intros": 63, "ask_cost": 246}
+{"seed": 6014, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 6.0, "coverage": 0.33, "intros": 81, "ask_cost": 255}
+{"seed": 6014, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 8.5, "coverage": 0.335, "intros": 79, "ask_cost": 255}
+{"seed": 6014, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 7.5, "coverage": 0.335, "intros": 83, "ask_cost": 255}
+{"seed": 6014, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 7.0, "coverage": 0.335, "intros": 85, "ask_cost": 255}
+{"seed": 6014, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 8.0, "coverage": 0.335, "intros": 85, "ask_cost": 255}
+{"seed": 6015, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 4.5, "coverage": 0.3, "intros": 55, "ask_cost": 201}
+{"seed": 6015, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 5.0, "coverage": 0.3, "intros": 55, "ask_cost": 201}
+{"seed": 6015, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 4.0, "coverage": 0.3, "intros": 56, "ask_cost": 201}
+{"seed": 6015, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 3.5, "coverage": 0.3, "intros": 57, "ask_cost": 201}
+{"seed": 6015, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 3.5, "coverage": 0.3, "intros": 57, "ask_cost": 201}
+{"seed": 6016, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 3.5, "coverage": 0.345, "intros": 72, "ask_cost": 261}
+{"seed": 6016, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 4.0, "coverage": 0.35, "intros": 74, "ask_cost": 261}
+{"seed": 6016, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 5.5, "coverage": 0.35, "intros": 71, "ask_cost": 261}
+{"seed": 6016, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 4.5, "coverage": 0.35, "intros": 74, "ask_cost": 261}
+{"seed": 6016, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 5.0, "coverage": 0.35, "intros": 73, "ask_cost": 261}
+{"seed": 6017, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 7.5, "coverage": 0.3, "intros": 67, "ask_cost": 231}
+{"seed": 6017, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 7.0, "coverage": 0.3, "intros": 66, "ask_cost": 231}
+{"seed": 6017, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 5.5, "coverage": 0.3, "intros": 68, "ask_cost": 231}
+{"seed": 6017, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 4.0, "coverage": 0.3, "intros": 66, "ask_cost": 231}
+{"seed": 6017, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.0, "coverage": 0.31, "intros": 67, "ask_cost": 231}
+{"seed": 6018, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 5.0, "coverage": 0.3, "intros": 70, "ask_cost": 249}
+{"seed": 6018, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 6.5, "coverage": 0.3, "intros": 69, "ask_cost": 249}
+{"seed": 6018, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 5.5, "coverage": 0.31, "intros": 71, "ask_cost": 249}
+{"seed": 6018, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.5, "coverage": 0.31, "intros": 69, "ask_cost": 249}
+{"seed": 6018, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.5, "coverage": 0.31, "intros": 71, "ask_cost": 249}
+{"seed": 6019, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 2.5, "coverage": 0.33, "intros": 64, "ask_cost": 210}
+{"seed": 6019, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 4.0, "coverage": 0.33, "intros": 58, "ask_cost": 210}
+{"seed": 6019, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 5.0, "coverage": 0.315, "intros": 53, "ask_cost": 210}
+{"seed": 6019, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.0, "coverage": 0.325, "intros": 57, "ask_cost": 210}
+{"seed": 6019, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.0, "coverage": 0.32, "intros": 61, "ask_cost": 210}
+{"seed": 6020, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 2.5, "coverage": 0.225, "intros": 50, "ask_cost": 228}
+{"seed": 6020, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 5.0, "coverage": 0.23, "intros": 50, "ask_cost": 228}
+{"seed": 6020, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 4.0, "coverage": 0.23, "intros": 53, "ask_cost": 228}
+{"seed": 6020, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 2.0, "coverage": 0.23, "intros": 54, "ask_cost": 228}
+{"seed": 6020, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 2.5, "coverage": 0.23, "intros": 54, "ask_cost": 228}
+{"seed": 6021, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 4.5, "coverage": 0.31, "intros": 72, "ask_cost": 213}
+{"seed": 6021, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 3.5, "coverage": 0.315, "intros": 74, "ask_cost": 213}
+{"seed": 6021, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 4.0, "coverage": 0.315, "intros": 72, "ask_cost": 213}
+{"seed": 6021, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 4.0, "coverage": 0.315, "intros": 72, "ask_cost": 213}
+{"seed": 6021, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 6.0, "coverage": 0.315, "intros": 73, "ask_cost": 213}
+{"seed": 6022, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 5.5, "coverage": 0.235, "intros": 35, "ask_cost": 225}
+{"seed": 6022, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 5.5, "coverage": 0.235, "intros": 35, "ask_cost": 225}
+{"seed": 6022, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 3.5, "coverage": 0.24, "intros": 42, "ask_cost": 225}
+{"seed": 6022, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 4.0, "coverage": 0.24, "intros": 42, "ask_cost": 225}
+{"seed": 6022, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.5, "coverage": 0.24, "intros": 42, "ask_cost": 225}
+{"seed": 6023, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 3.0, "coverage": 0.32, "intros": 73, "ask_cost": 213}
+{"seed": 6023, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 4.0, "coverage": 0.315, "intros": 72, "ask_cost": 213}
+{"seed": 6023, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 3.5, "coverage": 0.32, "intros": 74, "ask_cost": 213}
+{"seed": 6023, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 3.5, "coverage": 0.32, "intros": 73, "ask_cost": 213}
+{"seed": 6023, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 2.0, "coverage": 0.32, "intros": 74, "ask_cost": 213}
+{"seed": 6024, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 7.0, "coverage": 0.37, "intros": 90, "ask_cost": 228}
+{"seed": 6024, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.5, "coverage": 0.365, "intros": 93, "ask_cost": 228}
+{"seed": 6024, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 9.5, "coverage": 0.365, "intros": 86, "ask_cost": 228}
+{"seed": 6024, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.5, "coverage": 0.37, "intros": 89, "ask_cost": 228}
+{"seed": 6024, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.5, "coverage": 0.37, "intros": 92, "ask_cost": 228}
+{"seed": 6025, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 2.5, "coverage": 0.275, "intros": 59, "ask_cost": 225}
+{"seed": 6025, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 2.0, "coverage": 0.265, "intros": 57, "ask_cost": 225}
+{"seed": 6025, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 4.5, "coverage": 0.265, "intros": 55, "ask_cost": 225}
+{"seed": 6025, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 4.5, "coverage": 0.27, "intros": 52, "ask_cost": 225}
+{"seed": 6025, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 5.0, "coverage": 0.27, "intros": 52, "ask_cost": 225}
+{"seed": 6026, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 3.5, "coverage": 0.31, "intros": 65, "ask_cost": 258}
+{"seed": 6026, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 2.5, "coverage": 0.31, "intros": 74, "ask_cost": 258}
+{"seed": 6026, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 3.0, "coverage": 0.31, "intros": 75, "ask_cost": 258}
+{"seed": 6026, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.0, "coverage": 0.31, "intros": 75, "ask_cost": 258}
+{"seed": 6026, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 4.0, "coverage": 0.31, "intros": 66, "ask_cost": 258}
+{"seed": 6027, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 1.5, "mutual": 6.0, "coverage": 0.29, "intros": 54, "ask_cost": 219}
+{"seed": 6027, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 3.5, "coverage": 0.3, "intros": 62, "ask_cost": 219}
+{"seed": 6027, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 3.5, "coverage": 0.305, "intros": 61, "ask_cost": 219}
+{"seed": 6027, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 4.5, "coverage": 0.305, "intros": 62, "ask_cost": 219}
+{"seed": 6027, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 4.0, "coverage": 0.31, "intros": 61, "ask_cost": 219}
+{"seed": 6028, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 4.0, "coverage": 0.28, "intros": 58, "ask_cost": 228}
+{"seed": 6028, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 5.5, "coverage": 0.28, "intros": 55, "ask_cost": 228}
+{"seed": 6028, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 3.5, "coverage": 0.28, "intros": 58, "ask_cost": 228}
+{"seed": 6028, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 3.5, "coverage": 0.28, "intros": 58, "ask_cost": 228}
+{"seed": 6028, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 3.5, "coverage": 0.28, "intros": 59, "ask_cost": 228}
+{"seed": 6029, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 8.0, "coverage": 0.36, "intros": 88, "ask_cost": 210}
+{"seed": 6029, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 5.5, "coverage": 0.365, "intros": 96, "ask_cost": 210}
+{"seed": 6029, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 4.0, "coverage": 0.355, "intros": 90, "ask_cost": 210}
+{"seed": 6029, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.0, "coverage": 0.365, "intros": 86, "ask_cost": 210}
+{"seed": 6029, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 4.0, "coverage": 0.36, "intros": 89, "ask_cost": 210}
+{"seed": 6030, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 5.5, "coverage": 0.3, "intros": 66, "ask_cost": 228}
+{"seed": 6030, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 5.0, "coverage": 0.305, "intros": 69, "ask_cost": 228}
+{"seed": 6030, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 3.0, "coverage": 0.305, "intros": 72, "ask_cost": 228}
+{"seed": 6030, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 4.5, "coverage": 0.305, "intros": 64, "ask_cost": 228}
+{"seed": 6030, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.5, "coverage": 0.305, "intros": 67, "ask_cost": 228}
+{"seed": 6031, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 4.5, "coverage": 0.265, "intros": 66, "ask_cost": 183}
+{"seed": 6031, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 4.5, "coverage": 0.27, "intros": 67, "ask_cost": 183}
+{"seed": 6031, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 6.0, "coverage": 0.27, "intros": 66, "ask_cost": 183}
+{"seed": 6031, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 1.5, "mutual": 5.5, "coverage": 0.275, "intros": 67, "ask_cost": 183}
+{"seed": 6031, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 6.0, "coverage": 0.275, "intros": 69, "ask_cost": 183}
+{"seed": 6032, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 2.0, "coverage": 0.29, "intros": 50, "ask_cost": 231}
+{"seed": 6032, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 2.5, "coverage": 0.295, "intros": 49, "ask_cost": 231}
+{"seed": 6032, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 4.0, "coverage": 0.3, "intros": 54, "ask_cost": 231}
+{"seed": 6032, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 7.0, "coverage": 0.305, "intros": 55, "ask_cost": 231}
+{"seed": 6032, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 7.5, "coverage": 0.3, "intros": 52, "ask_cost": 231}
+{"seed": 6033, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 1.5, "mutual": 5.0, "coverage": 0.295, "intros": 62, "ask_cost": 213}
+{"seed": 6033, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 4.5, "coverage": 0.29, "intros": 68, "ask_cost": 213}
+{"seed": 6033, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 4.5, "coverage": 0.29, "intros": 69, "ask_cost": 213}
+{"seed": 6033, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 4.5, "coverage": 0.29, "intros": 68, "ask_cost": 213}
+{"seed": 6033, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.5, "coverage": 0.295, "intros": 70, "ask_cost": 213}
+{"seed": 6034, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 7.0, "coverage": 0.28, "intros": 67, "ask_cost": 252}
+{"seed": 6034, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 4.5, "coverage": 0.28, "intros": 72, "ask_cost": 252}
+{"seed": 6034, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 3.0, "coverage": 0.275, "intros": 65, "ask_cost": 252}
+{"seed": 6034, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 5.5, "coverage": 0.28, "intros": 69, "ask_cost": 252}
+{"seed": 6034, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 3.5, "coverage": 0.28, "intros": 72, "ask_cost": 252}
+{"seed": 6035, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 6.0, "coverage": 0.33, "intros": 80, "ask_cost": 216}
+{"seed": 6035, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.5, "coverage": 0.34, "intros": 76, "ask_cost": 216}
+{"seed": 6035, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 6.0, "coverage": 0.34, "intros": 84, "ask_cost": 216}
+{"seed": 6035, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.5, "coverage": 0.34, "intros": 83, "ask_cost": 216}
+{"seed": 6035, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.5, "coverage": 0.34, "intros": 84, "ask_cost": 216}
+{"seed": 6036, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.0, "coverage": 0.32, "intros": 71, "ask_cost": 249}
+{"seed": 6036, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 8.5, "coverage": 0.335, "intros": 71, "ask_cost": 249}
+{"seed": 6036, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 7.5, "coverage": 0.34, "intros": 74, "ask_cost": 249}
+{"seed": 6036, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.5, "coverage": 0.35, "intros": 75, "ask_cost": 249}
+{"seed": 6036, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.0, "coverage": 0.35, "intros": 77, "ask_cost": 249}
+{"seed": 6037, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 4.5, "coverage": 0.28, "intros": 76, "ask_cost": 207}
+{"seed": 6037, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 6.0, "coverage": 0.28, "intros": 73, "ask_cost": 207}
+{"seed": 6037, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 4.5, "coverage": 0.28, "intros": 81, "ask_cost": 207}
+{"seed": 6037, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 4.0, "coverage": 0.28, "intros": 80, "ask_cost": 207}
+{"seed": 6037, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.5, "coverage": 0.275, "intros": 76, "ask_cost": 207}
+{"seed": 6038, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 6.0, "coverage": 0.315, "intros": 65, "ask_cost": 210}
+{"seed": 6038, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 5.5, "coverage": 0.32, "intros": 71, "ask_cost": 210}
+{"seed": 6038, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 1.5, "mutual": 3.5, "coverage": 0.325, "intros": 66, "ask_cost": 210}
+{"seed": 6038, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 1.5, "mutual": 3.0, "coverage": 0.325, "intros": 69, "ask_cost": 210}
+{"seed": 6038, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 1.5, "mutual": 4.0, "coverage": 0.33, "intros": 67, "ask_cost": 210}
+{"seed": 6039, "variant": "cold_start", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 5.5, "coverage": 0.405, "intros": 81, "ask_cost": 273}
+{"seed": 6039, "variant": "cold_start", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 5.5, "coverage": 0.41, "intros": 85, "ask_cost": 273}
+{"seed": 6039, "variant": "cold_start", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 5.5, "coverage": 0.425, "intros": 97, "ask_cost": 273}
+{"seed": 6039, "variant": "cold_start", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.0, "coverage": 0.425, "intros": 98, "ask_cost": 273}
+{"seed": 6039, "variant": "cold_start", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 5.0, "coverage": 0.425, "intros": 98, "ask_cost": 273}
+{"seed": 6000, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 4.0, "coverage": 0.345, "intros": 72, "ask_cost": 189}
+{"seed": 6000, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 5.0, "coverage": 0.35, "intros": 72, "ask_cost": 189}
+{"seed": 6000, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.5, "coverage": 0.365, "intros": 73, "ask_cost": 189}
+{"seed": 6000, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.5, "coverage": 0.37, "intros": 81, "ask_cost": 189}
+{"seed": 6000, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.5, "coverage": 0.37, "intros": 81, "ask_cost": 189}
+{"seed": 6001, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 8.0, "coverage": 0.38, "intros": 86, "ask_cost": 177}
+{"seed": 6001, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 8.5, "coverage": 0.38, "intros": 84, "ask_cost": 177}
+{"seed": 6001, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 7.0, "coverage": 0.37, "intros": 89, "ask_cost": 177}
+{"seed": 6001, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 7.5, "coverage": 0.38, "intros": 90, "ask_cost": 177}
+{"seed": 6001, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 7.5, "coverage": 0.38, "intros": 87, "ask_cost": 177}
+{"seed": 6002, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 6.0, "coverage": 0.34, "intros": 81, "ask_cost": 180}
+{"seed": 6002, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 5.0, "coverage": 0.345, "intros": 81, "ask_cost": 180}
+{"seed": 6002, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 6.0, "coverage": 0.34, "intros": 76, "ask_cost": 180}
+{"seed": 6002, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 5.5, "coverage": 0.345, "intros": 75, "ask_cost": 180}
+{"seed": 6002, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 4.5, "coverage": 0.35, "intros": 80, "ask_cost": 180}
+{"seed": 6003, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 8.0, "coverage": 0.445, "intros": 99, "ask_cost": 198}
+{"seed": 6003, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 8.5, "coverage": 0.45, "intros": 92, "ask_cost": 198}
+{"seed": 6003, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 8.5, "coverage": 0.44, "intros": 95, "ask_cost": 198}
+{"seed": 6003, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 7.0, "coverage": 0.445, "intros": 97, "ask_cost": 198}
+{"seed": 6003, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 7.0, "coverage": 0.45, "intros": 96, "ask_cost": 198}
+{"seed": 6004, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 8.5, "coverage": 0.465, "intros": 126, "ask_cost": 207}
+{"seed": 6004, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 7.5, "coverage": 0.465, "intros": 127, "ask_cost": 207}
+{"seed": 6004, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 10.0, "coverage": 0.47, "intros": 122, "ask_cost": 207}
+{"seed": 6004, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 9.5, "coverage": 0.465, "intros": 124, "ask_cost": 207}
+{"seed": 6004, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 11.0, "coverage": 0.47, "intros": 124, "ask_cost": 207}
+{"seed": 6005, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.0, "coverage": 0.375, "intros": 92, "ask_cost": 195}
+{"seed": 6005, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 7.0, "coverage": 0.36, "intros": 81, "ask_cost": 195}
+{"seed": 6005, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.5, "coverage": 0.37, "intros": 88, "ask_cost": 195}
+{"seed": 6005, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 7.0, "coverage": 0.375, "intros": 90, "ask_cost": 195}
+{"seed": 6005, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 7.0, "coverage": 0.37, "intros": 85, "ask_cost": 195}
+{"seed": 6006, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 7.5, "coverage": 0.4, "intros": 99, "ask_cost": 201}
+{"seed": 6006, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 5.0, "coverage": 0.41, "intros": 103, "ask_cost": 201}
+{"seed": 6006, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 8.5, "coverage": 0.41, "intros": 99, "ask_cost": 201}
+{"seed": 6006, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 9.0, "coverage": 0.405, "intros": 93, "ask_cost": 201}
+{"seed": 6006, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 7.5, "coverage": 0.415, "intros": 96, "ask_cost": 201}
+{"seed": 6007, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 8.5, "coverage": 0.375, "intros": 74, "ask_cost": 180}
+{"seed": 6007, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 9.0, "coverage": 0.38, "intros": 73, "ask_cost": 180}
+{"seed": 6007, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 9.0, "coverage": 0.385, "intros": 77, "ask_cost": 180}
+{"seed": 6007, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 9.5, "coverage": 0.385, "intros": 78, "ask_cost": 180}
+{"seed": 6007, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 8.5, "coverage": 0.385, "intros": 76, "ask_cost": 180}
+{"seed": 6008, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 8.0, "coverage": 0.41, "intros": 99, "ask_cost": 216}
+{"seed": 6008, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 5.5, "coverage": 0.415, "intros": 106, "ask_cost": 216}
+{"seed": 6008, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 8.0, "coverage": 0.415, "intros": 98, "ask_cost": 216}
+{"seed": 6008, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 8.0, "coverage": 0.415, "intros": 98, "ask_cost": 216}
+{"seed": 6008, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 8.0, "coverage": 0.415, "intros": 94, "ask_cost": 216}
+{"seed": 6009, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 5.0, "coverage": 0.38, "intros": 86, "ask_cost": 222}
+{"seed": 6009, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 5.5, "coverage": 0.385, "intros": 87, "ask_cost": 222}
+{"seed": 6009, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 6.0, "coverage": 0.39, "intros": 85, "ask_cost": 222}
+{"seed": 6009, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 8.0, "coverage": 0.39, "intros": 82, "ask_cost": 222}
+{"seed": 6009, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.0, "coverage": 0.39, "intros": 87, "ask_cost": 222}
+{"seed": 6010, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 1.5, "mutual": 6.5, "coverage": 0.39, "intros": 84, "ask_cost": 183}
+{"seed": 6010, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 5.5, "coverage": 0.385, "intros": 88, "ask_cost": 183}
+{"seed": 6010, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 1.5, "mutual": 8.5, "coverage": 0.39, "intros": 81, "ask_cost": 183}
+{"seed": 6010, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 5.5, "coverage": 0.39, "intros": 86, "ask_cost": 183}
+{"seed": 6010, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 6.5, "coverage": 0.39, "intros": 80, "ask_cost": 183}
+{"seed": 6011, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 3.5, "coverage": 0.315, "intros": 78, "ask_cost": 174}
+{"seed": 6011, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 1.5, "mutual": 4.5, "coverage": 0.315, "intros": 75, "ask_cost": 174}
+{"seed": 6011, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 1.5, "mutual": 6.5, "coverage": 0.31, "intros": 75, "ask_cost": 174}
+{"seed": 6011, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 6.0, "coverage": 0.315, "intros": 76, "ask_cost": 174}
+{"seed": 6011, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 1.5, "mutual": 6.5, "coverage": 0.31, "intros": 72, "ask_cost": 174}
+{"seed": 6012, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 1.5, "mutual": 9.0, "coverage": 0.48, "intros": 140, "ask_cost": 180}
+{"seed": 6012, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 1.5, "mutual": 11.5, "coverage": 0.48, "intros": 136, "ask_cost": 180}
+{"seed": 6012, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 14.0, "coverage": 0.49, "intros": 141, "ask_cost": 180}
+{"seed": 6012, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 1.5, "mutual": 11.5, "coverage": 0.49, "intros": 140, "ask_cost": 180}
+{"seed": 6012, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 11.5, "coverage": 0.485, "intros": 137, "ask_cost": 180}
+{"seed": 6013, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 5.5, "coverage": 0.42, "intros": 102, "ask_cost": 213}
+{"seed": 6013, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 5.0, "coverage": 0.42, "intros": 97, "ask_cost": 213}
+{"seed": 6013, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 7.0, "coverage": 0.42, "intros": 90, "ask_cost": 213}
+{"seed": 6013, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 7.0, "coverage": 0.42, "intros": 83, "ask_cost": 213}
+{"seed": 6013, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 7.0, "coverage": 0.43, "intros": 89, "ask_cost": 213}
+{"seed": 6014, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 7.0, "coverage": 0.37, "intros": 91, "ask_cost": 204}
+{"seed": 6014, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 5.5, "coverage": 0.38, "intros": 98, "ask_cost": 204}
+{"seed": 6014, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 4.5, "coverage": 0.38, "intros": 108, "ask_cost": 204}
+{"seed": 6014, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.5, "coverage": 0.385, "intros": 95, "ask_cost": 204}
+{"seed": 6014, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.0, "coverage": 0.385, "intros": 98, "ask_cost": 204}
+{"seed": 6015, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 5.5, "coverage": 0.395, "intros": 87, "ask_cost": 216}
+{"seed": 6015, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.5, "coverage": 0.4, "intros": 86, "ask_cost": 216}
+{"seed": 6015, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 5.5, "coverage": 0.4, "intros": 90, "ask_cost": 216}
+{"seed": 6015, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 8.0, "coverage": 0.41, "intros": 85, "ask_cost": 216}
+{"seed": 6015, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 6.0, "coverage": 0.41, "intros": 91, "ask_cost": 216}
+{"seed": 6016, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.0, "coverage": 0.3, "intros": 72, "ask_cost": 213}
+{"seed": 6016, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 4.0, "coverage": 0.315, "intros": 77, "ask_cost": 213}
+{"seed": 6016, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 5.5, "coverage": 0.3, "intros": 74, "ask_cost": 213}
+{"seed": 6016, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 4.5, "coverage": 0.32, "intros": 79, "ask_cost": 213}
+{"seed": 6016, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 4.0, "coverage": 0.32, "intros": 79, "ask_cost": 213}
+{"seed": 6017, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 8.0, "coverage": 0.4, "intros": 99, "ask_cost": 162}
+{"seed": 6017, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 8.0, "coverage": 0.405, "intros": 96, "ask_cost": 162}
+{"seed": 6017, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 10.0, "coverage": 0.405, "intros": 97, "ask_cost": 162}
+{"seed": 6017, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 9.5, "coverage": 0.41, "intros": 96, "ask_cost": 162}
+{"seed": 6017, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 7.5, "coverage": 0.41, "intros": 100, "ask_cost": 162}
+{"seed": 6018, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 5.5, "coverage": 0.355, "intros": 91, "ask_cost": 186}
+{"seed": 6018, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.0, "coverage": 0.36, "intros": 89, "ask_cost": 186}
+{"seed": 6018, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 7.5, "coverage": 0.36, "intros": 90, "ask_cost": 186}
+{"seed": 6018, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 7.0, "coverage": 0.36, "intros": 95, "ask_cost": 186}
+{"seed": 6018, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.5, "coverage": 0.36, "intros": 92, "ask_cost": 186}
+{"seed": 6019, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.5, "coverage": 0.34, "intros": 68, "ask_cost": 153}
+{"seed": 6019, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.5, "coverage": 0.33, "intros": 63, "ask_cost": 153}
+{"seed": 6019, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 4.5, "coverage": 0.33, "intros": 66, "ask_cost": 153}
+{"seed": 6019, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 4.0, "coverage": 0.33, "intros": 59, "ask_cost": 153}
+{"seed": 6019, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 3.5, "coverage": 0.335, "intros": 62, "ask_cost": 153}
+{"seed": 6020, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 4.0, "coverage": 0.3, "intros": 60, "ask_cost": 204}
+{"seed": 6020, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 2.5, "coverage": 0.305, "intros": 63, "ask_cost": 204}
+{"seed": 6020, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 5.5, "coverage": 0.295, "intros": 57, "ask_cost": 204}
+{"seed": 6020, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.0, "coverage": 0.305, "intros": 60, "ask_cost": 204}
+{"seed": 6020, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.0, "coverage": 0.305, "intros": 60, "ask_cost": 204}
+{"seed": 6021, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.0, "coverage": 0.34, "intros": 69, "ask_cost": 177}
+{"seed": 6021, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 5.0, "coverage": 0.335, "intros": 68, "ask_cost": 177}
+{"seed": 6021, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 5.5, "coverage": 0.335, "intros": 68, "ask_cost": 177}
+{"seed": 6021, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.5, "coverage": 0.34, "intros": 69, "ask_cost": 177}
+{"seed": 6021, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.0, "coverage": 0.34, "intros": 70, "ask_cost": 177}
+{"seed": 6022, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 5.5, "coverage": 0.335, "intros": 82, "ask_cost": 207}
+{"seed": 6022, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 6.0, "coverage": 0.34, "intros": 78, "ask_cost": 207}
+{"seed": 6022, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.5, "coverage": 0.34, "intros": 76, "ask_cost": 207}
+{"seed": 6022, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.5, "coverage": 0.34, "intros": 85, "ask_cost": 207}
+{"seed": 6022, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 7.0, "coverage": 0.34, "intros": 76, "ask_cost": 207}
+{"seed": 6023, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 7.0, "coverage": 0.455, "intros": 110, "ask_cost": 189}
+{"seed": 6023, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 11.0, "coverage": 0.445, "intros": 106, "ask_cost": 189}
+{"seed": 6023, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 9.5, "coverage": 0.45, "intros": 111, "ask_cost": 189}
+{"seed": 6023, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 9.0, "coverage": 0.45, "intros": 110, "ask_cost": 189}
+{"seed": 6023, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 10.0, "coverage": 0.455, "intros": 101, "ask_cost": 189}
+{"seed": 6024, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 1.5, "mutual": 7.0, "coverage": 0.425, "intros": 86, "ask_cost": 210}
+{"seed": 6024, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 7.0, "coverage": 0.425, "intros": 83, "ask_cost": 210}
+{"seed": 6024, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 5.0, "coverage": 0.44, "intros": 93, "ask_cost": 210}
+{"seed": 6024, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 4.5, "coverage": 0.44, "intros": 96, "ask_cost": 210}
+{"seed": 6024, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 5.0, "coverage": 0.44, "intros": 94, "ask_cost": 210}
+{"seed": 6025, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 8.0, "coverage": 0.425, "intros": 107, "ask_cost": 228}
+{"seed": 6025, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 1.5, "mutual": 7.0, "coverage": 0.425, "intros": 104, "ask_cost": 228}
+{"seed": 6025, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 7.0, "coverage": 0.43, "intros": 117, "ask_cost": 228}
+{"seed": 6025, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 8.5, "coverage": 0.425, "intros": 103, "ask_cost": 228}
+{"seed": 6025, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 9.0, "coverage": 0.43, "intros": 102, "ask_cost": 228}
+{"seed": 6026, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 12.0, "coverage": 0.375, "intros": 87, "ask_cost": 159}
+{"seed": 6026, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 10.5, "coverage": 0.365, "intros": 84, "ask_cost": 159}
+{"seed": 6026, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 9.0, "coverage": 0.37, "intros": 83, "ask_cost": 159}
+{"seed": 6026, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 10.5, "coverage": 0.375, "intros": 81, "ask_cost": 159}
+{"seed": 6026, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 11.0, "coverage": 0.375, "intros": 77, "ask_cost": 159}
+{"seed": 6027, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 4.5, "coverage": 0.355, "intros": 89, "ask_cost": 165}
+{"seed": 6027, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 7.0, "coverage": 0.355, "intros": 88, "ask_cost": 165}
+{"seed": 6027, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 4.5, "coverage": 0.355, "intros": 94, "ask_cost": 165}
+{"seed": 6027, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.5, "coverage": 0.36, "intros": 87, "ask_cost": 165}
+{"seed": 6027, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.0, "coverage": 0.36, "intros": 89, "ask_cost": 165}
+{"seed": 6028, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 5.0, "coverage": 0.4, "intros": 88, "ask_cost": 186}
+{"seed": 6028, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 5.0, "coverage": 0.405, "intros": 89, "ask_cost": 186}
+{"seed": 6028, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 5.0, "coverage": 0.385, "intros": 81, "ask_cost": 186}
+{"seed": 6028, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 5.0, "coverage": 0.39, "intros": 79, "ask_cost": 186}
+{"seed": 6028, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 4.5, "coverage": 0.39, "intros": 79, "ask_cost": 186}
+{"seed": 6029, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 1.5, "mutual": 5.0, "coverage": 0.39, "intros": 83, "ask_cost": 207}
+{"seed": 6029, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 5.5, "coverage": 0.39, "intros": 91, "ask_cost": 207}
+{"seed": 6029, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 6.5, "coverage": 0.39, "intros": 98, "ask_cost": 207}
+{"seed": 6029, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 7.5, "coverage": 0.39, "intros": 93, "ask_cost": 207}
+{"seed": 6029, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 7.0, "coverage": 0.39, "intros": 97, "ask_cost": 207}
+{"seed": 6030, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.5, "coverage": 0.385, "intros": 92, "ask_cost": 210}
+{"seed": 6030, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 8.5, "coverage": 0.385, "intros": 90, "ask_cost": 210}
+{"seed": 6030, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 7.0, "coverage": 0.385, "intros": 92, "ask_cost": 210}
+{"seed": 6030, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 6.5, "coverage": 0.395, "intros": 96, "ask_cost": 210}
+{"seed": 6030, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 7.5, "coverage": 0.385, "intros": 92, "ask_cost": 210}
+{"seed": 6031, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 4.0, "coverage": 0.35, "intros": 75, "ask_cost": 183}
+{"seed": 6031, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 5.5, "coverage": 0.355, "intros": 85, "ask_cost": 183}
+{"seed": 6031, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 7.0, "coverage": 0.355, "intros": 80, "ask_cost": 183}
+{"seed": 6031, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 7.0, "coverage": 0.355, "intros": 78, "ask_cost": 183}
+{"seed": 6031, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 7.0, "coverage": 0.355, "intros": 77, "ask_cost": 183}
+{"seed": 6032, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 7.0, "coverage": 0.43, "intros": 100, "ask_cost": 213}
+{"seed": 6032, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 6.5, "coverage": 0.44, "intros": 100, "ask_cost": 213}
+{"seed": 6032, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 6.0, "coverage": 0.435, "intros": 110, "ask_cost": 213}
+{"seed": 6032, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.0, "coverage": 0.445, "intros": 110, "ask_cost": 213}
+{"seed": 6032, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.0, "coverage": 0.45, "intros": 112, "ask_cost": 213}
+{"seed": 6033, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 7.5, "coverage": 0.38, "intros": 78, "ask_cost": 180}
+{"seed": 6033, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.5, "coverage": 0.375, "intros": 74, "ask_cost": 180}
+{"seed": 6033, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 4.5, "coverage": 0.38, "intros": 83, "ask_cost": 180}
+{"seed": 6033, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.0, "coverage": 0.38, "intros": 83, "ask_cost": 180}
+{"seed": 6033, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.0, "coverage": 0.38, "intros": 80, "ask_cost": 180}
+{"seed": 6034, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.0, "coverage": 0.345, "intros": 72, "ask_cost": 189}
+{"seed": 6034, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 5.5, "coverage": 0.345, "intros": 77, "ask_cost": 189}
+{"seed": 6034, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 8.5, "coverage": 0.34, "intros": 73, "ask_cost": 189}
+{"seed": 6034, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 7.0, "coverage": 0.35, "intros": 78, "ask_cost": 189}
+{"seed": 6034, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 7.5, "coverage": 0.35, "intros": 78, "ask_cost": 189}
+{"seed": 6035, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 8.5, "coverage": 0.39, "intros": 94, "ask_cost": 192}
+{"seed": 6035, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 7.0, "coverage": 0.395, "intros": 96, "ask_cost": 192}
+{"seed": 6035, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 9.5, "coverage": 0.395, "intros": 90, "ask_cost": 192}
+{"seed": 6035, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 7.0, "coverage": 0.395, "intros": 90, "ask_cost": 192}
+{"seed": 6035, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 7.5, "coverage": 0.395, "intros": 92, "ask_cost": 192}
+{"seed": 6036, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.0, "coverage": 0.415, "intros": 93, "ask_cost": 222}
+{"seed": 6036, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 7.5, "coverage": 0.41, "intros": 88, "ask_cost": 222}
+{"seed": 6036, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 7.0, "coverage": 0.425, "intros": 91, "ask_cost": 222}
+{"seed": 6036, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 8.0, "coverage": 0.425, "intros": 96, "ask_cost": 222}
+{"seed": 6036, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 8.0, "coverage": 0.435, "intros": 98, "ask_cost": 222}
+{"seed": 6037, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 4.0, "coverage": 0.27, "intros": 55, "ask_cost": 162}
+{"seed": 6037, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 4.0, "coverage": 0.28, "intros": 57, "ask_cost": 162}
+{"seed": 6037, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 2.5, "coverage": 0.28, "intros": 63, "ask_cost": 162}
+{"seed": 6037, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 3.0, "coverage": 0.28, "intros": 64, "ask_cost": 162}
+{"seed": 6037, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 3.0, "coverage": 0.28, "intros": 64, "ask_cost": 162}
+{"seed": 6038, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 9.5, "coverage": 0.435, "intros": 100, "ask_cost": 219}
+{"seed": 6038, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 1.5, "mutual": 9.5, "coverage": 0.435, "intros": 104, "ask_cost": 219}
+{"seed": 6038, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 10.5, "coverage": 0.43, "intros": 98, "ask_cost": 219}
+{"seed": 6038, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 12.0, "coverage": 0.43, "intros": 95, "ask_cost": 219}
+{"seed": 6038, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 12.5, "coverage": 0.43, "intros": 93, "ask_cost": 219}
+{"seed": 6039, "variant": "delayed", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 8.0, "coverage": 0.415, "intros": 91, "ask_cost": 189}
+{"seed": 6039, "variant": "delayed", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 9.0, "coverage": 0.4, "intros": 97, "ask_cost": 189}
+{"seed": 6039, "variant": "delayed", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 3.5, "coverage": 0.41, "intros": 112, "ask_cost": 189}
+{"seed": 6039, "variant": "delayed", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 7.0, "coverage": 0.415, "intros": 106, "ask_cost": 189}
+{"seed": 6039, "variant": "delayed", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 6.0, "coverage": 0.415, "intros": 103, "ask_cost": 189}
+{"seed": 6000, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 3.0, "coverage": 0.355, "intros": 74, "ask_cost": 189}
+{"seed": 6000, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 4.0, "coverage": 0.355, "intros": 75, "ask_cost": 189}
+{"seed": 6000, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 5.5, "coverage": 0.37, "intros": 81, "ask_cost": 189}
+{"seed": 6000, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 4.5, "coverage": 0.37, "intros": 82, "ask_cost": 189}
+{"seed": 6000, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.0, "coverage": 0.37, "intros": 82, "ask_cost": 189}
+{"seed": 6001, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 8.5, "coverage": 0.39, "intros": 90, "ask_cost": 177}
+{"seed": 6001, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 9.5, "coverage": 0.38, "intros": 82, "ask_cost": 177}
+{"seed": 6001, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.5, "coverage": 0.38, "intros": 99, "ask_cost": 177}
+{"seed": 6001, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 6.5, "coverage": 0.39, "intros": 101, "ask_cost": 177}
+{"seed": 6001, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 6.5, "coverage": 0.385, "intros": 91, "ask_cost": 177}
+{"seed": 6002, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 5.5, "coverage": 0.34, "intros": 86, "ask_cost": 180}
+{"seed": 6002, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 4.0, "coverage": 0.34, "intros": 88, "ask_cost": 180}
+{"seed": 6002, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.5, "coverage": 0.345, "intros": 83, "ask_cost": 180}
+{"seed": 6002, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 5.5, "coverage": 0.34, "intros": 82, "ask_cost": 180}
+{"seed": 6002, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 5.0, "coverage": 0.345, "intros": 79, "ask_cost": 180}
+{"seed": 6003, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 8.0, "coverage": 0.45, "intros": 104, "ask_cost": 198}
+{"seed": 6003, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 10.5, "coverage": 0.445, "intros": 99, "ask_cost": 198}
+{"seed": 6003, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 9.5, "coverage": 0.445, "intros": 103, "ask_cost": 198}
+{"seed": 6003, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 8.5, "coverage": 0.44, "intros": 105, "ask_cost": 198}
+{"seed": 6003, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 7.5, "coverage": 0.455, "intros": 103, "ask_cost": 198}
+{"seed": 6004, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 11.0, "coverage": 0.465, "intros": 129, "ask_cost": 207}
+{"seed": 6004, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 9.0, "coverage": 0.465, "intros": 136, "ask_cost": 207}
+{"seed": 6004, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 9.0, "coverage": 0.47, "intros": 133, "ask_cost": 207}
+{"seed": 6004, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 10.0, "coverage": 0.465, "intros": 133, "ask_cost": 207}
+{"seed": 6004, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 10.0, "coverage": 0.47, "intros": 139, "ask_cost": 207}
+{"seed": 6005, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 7.0, "coverage": 0.37, "intros": 99, "ask_cost": 195}
+{"seed": 6005, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 8.5, "coverage": 0.365, "intros": 89, "ask_cost": 195}
+{"seed": 6005, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 7.5, "coverage": 0.37, "intros": 94, "ask_cost": 195}
+{"seed": 6005, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 6.0, "coverage": 0.375, "intros": 94, "ask_cost": 195}
+{"seed": 6005, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 1.5, "mutual": 7.0, "coverage": 0.375, "intros": 92, "ask_cost": 195}
+{"seed": 6006, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 8.5, "coverage": 0.405, "intros": 91, "ask_cost": 201}
+{"seed": 6006, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 1.5, "mutual": 7.0, "coverage": 0.41, "intros": 97, "ask_cost": 201}
+{"seed": 6006, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 8.0, "coverage": 0.415, "intros": 103, "ask_cost": 201}
+{"seed": 6006, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 7.5, "coverage": 0.415, "intros": 102, "ask_cost": 201}
+{"seed": 6006, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 7.0, "coverage": 0.42, "intros": 104, "ask_cost": 201}
+{"seed": 6007, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 1.5, "mutual": 8.0, "coverage": 0.37, "intros": 72, "ask_cost": 180}
+{"seed": 6007, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 7.5, "coverage": 0.385, "intros": 77, "ask_cost": 180}
+{"seed": 6007, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 8.0, "coverage": 0.385, "intros": 78, "ask_cost": 180}
+{"seed": 6007, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 8.0, "coverage": 0.385, "intros": 77, "ask_cost": 180}
+{"seed": 6007, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 7.5, "coverage": 0.385, "intros": 77, "ask_cost": 180}
+{"seed": 6008, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 1.5, "mutual": 8.0, "coverage": 0.415, "intros": 99, "ask_cost": 216}
+{"seed": 6008, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 4.5, "coverage": 0.415, "intros": 109, "ask_cost": 216}
+{"seed": 6008, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 1.5, "mutual": 7.0, "coverage": 0.415, "intros": 96, "ask_cost": 216}
+{"seed": 6008, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 1.5, "mutual": 8.5, "coverage": 0.415, "intros": 94, "ask_cost": 216}
+{"seed": 6008, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 1.5, "mutual": 7.0, "coverage": 0.415, "intros": 92, "ask_cost": 216}
+{"seed": 6009, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.5, "coverage": 0.375, "intros": 79, "ask_cost": 222}
+{"seed": 6009, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 5.0, "coverage": 0.385, "intros": 95, "ask_cost": 222}
+{"seed": 6009, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 5.5, "coverage": 0.39, "intros": 91, "ask_cost": 222}
+{"seed": 6009, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.5, "coverage": 0.38, "intros": 83, "ask_cost": 222}
+{"seed": 6009, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.0, "coverage": 0.38, "intros": 84, "ask_cost": 222}
+{"seed": 6010, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 8.0, "coverage": 0.39, "intros": 88, "ask_cost": 183}
+{"seed": 6010, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 7.0, "coverage": 0.385, "intros": 89, "ask_cost": 183}
+{"seed": 6010, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 8.5, "coverage": 0.39, "intros": 83, "ask_cost": 183}
+{"seed": 6010, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.5, "coverage": 0.395, "intros": 90, "ask_cost": 183}
+{"seed": 6010, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 7.5, "coverage": 0.395, "intros": 89, "ask_cost": 183}
+{"seed": 6011, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 4.5, "coverage": 0.31, "intros": 83, "ask_cost": 174}
+{"seed": 6011, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 6.0, "coverage": 0.315, "intros": 78, "ask_cost": 174}
+{"seed": 6011, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 6.0, "coverage": 0.315, "intros": 78, "ask_cost": 174}
+{"seed": 6011, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 6.0, "coverage": 0.315, "intros": 76, "ask_cost": 174}
+{"seed": 6011, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 1.5, "mutual": 5.0, "coverage": 0.31, "intros": 73, "ask_cost": 174}
+{"seed": 6012, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 8.5, "coverage": 0.485, "intros": 157, "ask_cost": 180}
+{"seed": 6012, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 11.0, "coverage": 0.48, "intros": 148, "ask_cost": 180}
+{"seed": 6012, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 12.5, "coverage": 0.485, "intros": 151, "ask_cost": 180}
+{"seed": 6012, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 14.5, "coverage": 0.485, "intros": 143, "ask_cost": 180}
+{"seed": 6012, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 14.5, "coverage": 0.485, "intros": 143, "ask_cost": 180}
+{"seed": 6013, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.0, "coverage": 0.41, "intros": 100, "ask_cost": 213}
+{"seed": 6013, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.0, "coverage": 0.425, "intros": 104, "ask_cost": 213}
+{"seed": 6013, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 7.0, "coverage": 0.42, "intros": 96, "ask_cost": 213}
+{"seed": 6013, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 8.0, "coverage": 0.425, "intros": 91, "ask_cost": 213}
+{"seed": 6013, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.5, "coverage": 0.435, "intros": 92, "ask_cost": 213}
+{"seed": 6014, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 7.0, "coverage": 0.375, "intros": 96, "ask_cost": 204}
+{"seed": 6014, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 1.5, "mutual": 5.0, "coverage": 0.38, "intros": 98, "ask_cost": 204}
+{"seed": 6014, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.0, "coverage": 0.385, "intros": 97, "ask_cost": 204}
+{"seed": 6014, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 7.0, "coverage": 0.385, "intros": 98, "ask_cost": 204}
+{"seed": 6014, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 7.5, "coverage": 0.385, "intros": 96, "ask_cost": 204}
+{"seed": 6015, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 7.0, "coverage": 0.405, "intros": 93, "ask_cost": 216}
+{"seed": 6015, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 7.5, "coverage": 0.4, "intros": 87, "ask_cost": 216}
+{"seed": 6015, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 1.5, "mutual": 8.0, "coverage": 0.4, "intros": 87, "ask_cost": 216}
+{"seed": 6015, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 6.0, "coverage": 0.405, "intros": 82, "ask_cost": 216}
+{"seed": 6015, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 6.5, "coverage": 0.405, "intros": 86, "ask_cost": 216}
+{"seed": 6016, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.5, "coverage": 0.31, "intros": 78, "ask_cost": 213}
+{"seed": 6016, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 4.0, "coverage": 0.32, "intros": 81, "ask_cost": 213}
+{"seed": 6016, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 6.0, "coverage": 0.31, "intros": 80, "ask_cost": 213}
+{"seed": 6016, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 4.5, "coverage": 0.32, "intros": 76, "ask_cost": 213}
+{"seed": 6016, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 5.0, "coverage": 0.32, "intros": 75, "ask_cost": 213}
+{"seed": 6017, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 7.0, "coverage": 0.405, "intros": 101, "ask_cost": 162}
+{"seed": 6017, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 9.5, "coverage": 0.395, "intros": 96, "ask_cost": 162}
+{"seed": 6017, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 9.0, "coverage": 0.41, "intros": 101, "ask_cost": 162}
+{"seed": 6017, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 9.0, "coverage": 0.41, "intros": 100, "ask_cost": 162}
+{"seed": 6017, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 7.5, "coverage": 0.41, "intros": 101, "ask_cost": 162}
+{"seed": 6018, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 5.5, "coverage": 0.355, "intros": 95, "ask_cost": 186}
+{"seed": 6018, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 7.5, "coverage": 0.36, "intros": 96, "ask_cost": 186}
+{"seed": 6018, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 5.5, "coverage": 0.36, "intros": 96, "ask_cost": 186}
+{"seed": 6018, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.5, "coverage": 0.36, "intros": 95, "ask_cost": 186}
+{"seed": 6018, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.0, "coverage": 0.36, "intros": 98, "ask_cost": 186}
+{"seed": 6019, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 6.5, "coverage": 0.34, "intros": 73, "ask_cost": 153}
+{"seed": 6019, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 6.0, "coverage": 0.33, "intros": 69, "ask_cost": 153}
+{"seed": 6019, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 5.5, "coverage": 0.33, "intros": 65, "ask_cost": 153}
+{"seed": 6019, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 5.5, "coverage": 0.33, "intros": 69, "ask_cost": 153}
+{"seed": 6019, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 5.0, "coverage": 0.335, "intros": 72, "ask_cost": 153}
+{"seed": 6020, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 4.5, "coverage": 0.3, "intros": 61, "ask_cost": 204}
+{"seed": 6020, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 2.0, "coverage": 0.305, "intros": 63, "ask_cost": 204}
+{"seed": 6020, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 4.0, "coverage": 0.29, "intros": 48, "ask_cost": 204}
+{"seed": 6020, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 3.5, "coverage": 0.3, "intros": 53, "ask_cost": 204}
+{"seed": 6020, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 3.5, "coverage": 0.3, "intros": 53, "ask_cost": 204}
+{"seed": 6021, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 7.5, "coverage": 0.35, "intros": 75, "ask_cost": 177}
+{"seed": 6021, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.5, "coverage": 0.35, "intros": 74, "ask_cost": 177}
+{"seed": 6021, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 7.5, "coverage": 0.35, "intros": 71, "ask_cost": 177}
+{"seed": 6021, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.5, "coverage": 0.355, "intros": 74, "ask_cost": 177}
+{"seed": 6021, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.0, "coverage": 0.355, "intros": 74, "ask_cost": 177}
+{"seed": 6022, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 5.0, "coverage": 0.335, "intros": 85, "ask_cost": 207}
+{"seed": 6022, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 6.0, "coverage": 0.34, "intros": 81, "ask_cost": 207}
+{"seed": 6022, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.5, "coverage": 0.34, "intros": 81, "ask_cost": 207}
+{"seed": 6022, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 7.0, "coverage": 0.34, "intros": 82, "ask_cost": 207}
+{"seed": 6022, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 8.5, "coverage": 0.34, "intros": 79, "ask_cost": 207}
+{"seed": 6023, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 8.5, "coverage": 0.46, "intros": 121, "ask_cost": 189}
+{"seed": 6023, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 10.5, "coverage": 0.455, "intros": 119, "ask_cost": 189}
+{"seed": 6023, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 10.0, "coverage": 0.46, "intros": 122, "ask_cost": 189}
+{"seed": 6023, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 10.0, "coverage": 0.455, "intros": 117, "ask_cost": 189}
+{"seed": 6023, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 9.5, "coverage": 0.46, "intros": 110, "ask_cost": 189}
+{"seed": 6024, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 6.5, "coverage": 0.43, "intros": 100, "ask_cost": 210}
+{"seed": 6024, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 10.0, "coverage": 0.43, "intros": 94, "ask_cost": 210}
+{"seed": 6024, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 7.5, "coverage": 0.45, "intros": 103, "ask_cost": 210}
+{"seed": 6024, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 6.0, "coverage": 0.45, "intros": 104, "ask_cost": 210}
+{"seed": 6024, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 8.0, "coverage": 0.45, "intros": 106, "ask_cost": 210}
+{"seed": 6025, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 8.0, "coverage": 0.42, "intros": 107, "ask_cost": 228}
+{"seed": 6025, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 1.5, "mutual": 8.0, "coverage": 0.42, "intros": 104, "ask_cost": 228}
+{"seed": 6025, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 8.0, "coverage": 0.43, "intros": 119, "ask_cost": 228}
+{"seed": 6025, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 8.0, "coverage": 0.42, "intros": 105, "ask_cost": 228}
+{"seed": 6025, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 7.5, "coverage": 0.425, "intros": 116, "ask_cost": 228}
+{"seed": 6026, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 11.5, "coverage": 0.365, "intros": 87, "ask_cost": 159}
+{"seed": 6026, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 1.5, "mutual": 13.0, "coverage": 0.365, "intros": 81, "ask_cost": 159}
+{"seed": 6026, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 1.5, "mutual": 11.0, "coverage": 0.365, "intros": 85, "ask_cost": 159}
+{"seed": 6026, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 1.5, "mutual": 11.5, "coverage": 0.37, "intros": 82, "ask_cost": 159}
+{"seed": 6026, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 1.5, "mutual": 12.0, "coverage": 0.37, "intros": 82, "ask_cost": 159}
+{"seed": 6027, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 4.0, "coverage": 0.355, "intros": 91, "ask_cost": 165}
+{"seed": 6027, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 7.5, "coverage": 0.35, "intros": 83, "ask_cost": 165}
+{"seed": 6027, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 5.5, "coverage": 0.355, "intros": 91, "ask_cost": 165}
+{"seed": 6027, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 5.5, "coverage": 0.36, "intros": 85, "ask_cost": 165}
+{"seed": 6027, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 3.0, "coverage": 0.36, "intros": 90, "ask_cost": 165}
+{"seed": 6028, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 5.5, "coverage": 0.4, "intros": 93, "ask_cost": 186}
+{"seed": 6028, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.0, "coverage": 0.405, "intros": 93, "ask_cost": 186}
+{"seed": 6028, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.5, "coverage": 0.4, "intros": 94, "ask_cost": 186}
+{"seed": 6028, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.0, "coverage": 0.405, "intros": 94, "ask_cost": 186}
+{"seed": 6028, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.5, "coverage": 0.405, "intros": 96, "ask_cost": 186}
+{"seed": 6029, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 6.0, "coverage": 0.39, "intros": 96, "ask_cost": 207}
+{"seed": 6029, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 5.0, "coverage": 0.39, "intros": 89, "ask_cost": 207}
+{"seed": 6029, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 5.0, "coverage": 0.39, "intros": 99, "ask_cost": 207}
+{"seed": 6029, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 8.0, "coverage": 0.39, "intros": 99, "ask_cost": 207}
+{"seed": 6029, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 8.0, "coverage": 0.39, "intros": 99, "ask_cost": 207}
+{"seed": 6030, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 5.5, "coverage": 0.39, "intros": 94, "ask_cost": 210}
+{"seed": 6030, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 6.0, "coverage": 0.39, "intros": 95, "ask_cost": 210}
+{"seed": 6030, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 7.5, "coverage": 0.39, "intros": 91, "ask_cost": 210}
+{"seed": 6030, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 8.5, "coverage": 0.395, "intros": 97, "ask_cost": 210}
+{"seed": 6030, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 8.0, "coverage": 0.39, "intros": 93, "ask_cost": 210}
+{"seed": 6031, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 4.0, "coverage": 0.35, "intros": 83, "ask_cost": 183}
+{"seed": 6031, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 6.5, "coverage": 0.36, "intros": 87, "ask_cost": 183}
+{"seed": 6031, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 8.5, "coverage": 0.36, "intros": 84, "ask_cost": 183}
+{"seed": 6031, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 8.0, "coverage": 0.36, "intros": 82, "ask_cost": 183}
+{"seed": 6031, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 9.0, "coverage": 0.36, "intros": 81, "ask_cost": 183}
+{"seed": 6032, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 7.0, "coverage": 0.42, "intros": 99, "ask_cost": 213}
+{"seed": 6032, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 6.0, "coverage": 0.44, "intros": 106, "ask_cost": 213}
+{"seed": 6032, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 5.5, "coverage": 0.435, "intros": 110, "ask_cost": 213}
+{"seed": 6032, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.0, "coverage": 0.44, "intros": 106, "ask_cost": 213}
+{"seed": 6032, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.5, "coverage": 0.45, "intros": 115, "ask_cost": 213}
+{"seed": 6033, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 7.0, "coverage": 0.365, "intros": 78, "ask_cost": 180}
+{"seed": 6033, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 7.0, "coverage": 0.37, "intros": 80, "ask_cost": 180}
+{"seed": 6033, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 3.5, "coverage": 0.38, "intros": 84, "ask_cost": 180}
+{"seed": 6033, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 4.0, "coverage": 0.38, "intros": 82, "ask_cost": 180}
+{"seed": 6033, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.5, "coverage": 0.38, "intros": 82, "ask_cost": 180}
+{"seed": 6034, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 5.5, "coverage": 0.32, "intros": 69, "ask_cost": 189}
+{"seed": 6034, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 6.0, "coverage": 0.33, "intros": 77, "ask_cost": 189}
+{"seed": 6034, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 7.5, "coverage": 0.33, "intros": 70, "ask_cost": 189}
+{"seed": 6034, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 5.5, "coverage": 0.34, "intros": 78, "ask_cost": 189}
+{"seed": 6034, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 6.0, "coverage": 0.34, "intros": 78, "ask_cost": 189}
+{"seed": 6035, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 7.0, "coverage": 0.39, "intros": 98, "ask_cost": 192}
+{"seed": 6035, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 1.5, "mutual": 7.0, "coverage": 0.395, "intros": 90, "ask_cost": 192}
+{"seed": 6035, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 1.5, "mutual": 7.5, "coverage": 0.395, "intros": 89, "ask_cost": 192}
+{"seed": 6035, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 6.5, "coverage": 0.395, "intros": 90, "ask_cost": 192}
+{"seed": 6035, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 6.5, "coverage": 0.395, "intros": 86, "ask_cost": 192}
+{"seed": 6036, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 1.5, "mutual": 5.5, "coverage": 0.415, "intros": 94, "ask_cost": 222}
+{"seed": 6036, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 7.5, "coverage": 0.425, "intros": 101, "ask_cost": 222}
+{"seed": 6036, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 8.5, "coverage": 0.43, "intros": 100, "ask_cost": 222}
+{"seed": 6036, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 9.0, "coverage": 0.43, "intros": 98, "ask_cost": 222}
+{"seed": 6036, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 7.0, "coverage": 0.425, "intros": 100, "ask_cost": 222}
+{"seed": 6037, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 3.0, "coverage": 0.28, "intros": 63, "ask_cost": 162}
+{"seed": 6037, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 5.0, "coverage": 0.265, "intros": 58, "ask_cost": 162}
+{"seed": 6037, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 4.0, "coverage": 0.27, "intros": 61, "ask_cost": 162}
+{"seed": 6037, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 3.5, "coverage": 0.27, "intros": 61, "ask_cost": 162}
+{"seed": 6037, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 3.5, "coverage": 0.27, "intros": 61, "ask_cost": 162}
+{"seed": 6038, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 1.5, "mutual": 9.0, "coverage": 0.435, "intros": 107, "ask_cost": 219}
+{"seed": 6038, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 9.0, "coverage": 0.435, "intros": 108, "ask_cost": 219}
+{"seed": 6038, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 10.5, "coverage": 0.435, "intros": 107, "ask_cost": 219}
+{"seed": 6038, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 12.5, "coverage": 0.435, "intros": 103, "ask_cost": 219}
+{"seed": 6038, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 13.5, "coverage": 0.435, "intros": 103, "ask_cost": 219}
+{"seed": 6039, "variant": "development", "policy": "A0 kit greedy baseline", "msmi": 1.5, "mutual": 8.0, "coverage": 0.41, "intros": 100, "ask_cost": 189}
+{"seed": 6039, "variant": "development", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 9.5, "coverage": 0.41, "intros": 103, "ask_cost": 189}
+{"seed": 6039, "variant": "development", "policy": "A2 + value-of-information asker", "msmi": 1.5, "mutual": 4.0, "coverage": 0.41, "intros": 117, "ask_cost": 189}
+{"seed": 6039, "variant": "development", "policy": "A3 + coverage/urgency boost", "msmi": 2.0, "mutual": 6.0, "coverage": 0.415, "intros": 107, "ask_cost": 189}
+{"seed": 6039, "variant": "development", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 5.0, "coverage": 0.415, "intros": 105, "ask_cost": 189}
+{"seed": 6000, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 3.0, "coverage": 0.355, "intros": 74, "ask_cost": 189}
+{"seed": 6000, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 3.5, "coverage": 0.355, "intros": 76, "ask_cost": 189}
+{"seed": 6000, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 5.0, "coverage": 0.37, "intros": 81, "ask_cost": 189}
+{"seed": 6000, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 4.0, "coverage": 0.37, "intros": 83, "ask_cost": 189}
+{"seed": 6000, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.5, "coverage": 0.37, "intros": 83, "ask_cost": 189}
+{"seed": 6001, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 8.0, "coverage": 0.39, "intros": 90, "ask_cost": 177}
+{"seed": 6001, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 9.5, "coverage": 0.38, "intros": 82, "ask_cost": 177}
+{"seed": 6001, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.5, "coverage": 0.38, "intros": 99, "ask_cost": 177}
+{"seed": 6001, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 6.5, "coverage": 0.39, "intros": 101, "ask_cost": 177}
+{"seed": 6001, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 6.0, "coverage": 0.385, "intros": 93, "ask_cost": 177}
+{"seed": 6002, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 5.5, "coverage": 0.34, "intros": 85, "ask_cost": 180}
+{"seed": 6002, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 4.0, "coverage": 0.34, "intros": 88, "ask_cost": 180}
+{"seed": 6002, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.5, "coverage": 0.345, "intros": 83, "ask_cost": 180}
+{"seed": 6002, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 5.5, "coverage": 0.34, "intros": 82, "ask_cost": 180}
+{"seed": 6002, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 4.5, "coverage": 0.345, "intros": 82, "ask_cost": 180}
+{"seed": 6003, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 7.5, "coverage": 0.445, "intros": 105, "ask_cost": 198}
+{"seed": 6003, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 9.5, "coverage": 0.445, "intros": 99, "ask_cost": 198}
+{"seed": 6003, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 8.5, "coverage": 0.445, "intros": 104, "ask_cost": 198}
+{"seed": 6003, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 8.0, "coverage": 0.44, "intros": 105, "ask_cost": 198}
+{"seed": 6003, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 7.5, "coverage": 0.455, "intros": 103, "ask_cost": 198}
+{"seed": 6004, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 9.5, "coverage": 0.465, "intros": 130, "ask_cost": 207}
+{"seed": 6004, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 8.0, "coverage": 0.465, "intros": 138, "ask_cost": 207}
+{"seed": 6004, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 9.0, "coverage": 0.47, "intros": 133, "ask_cost": 207}
+{"seed": 6004, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 9.5, "coverage": 0.465, "intros": 134, "ask_cost": 207}
+{"seed": 6004, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 9.5, "coverage": 0.47, "intros": 139, "ask_cost": 207}
+{"seed": 6005, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 7.0, "coverage": 0.37, "intros": 99, "ask_cost": 195}
+{"seed": 6005, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 7.5, "coverage": 0.365, "intros": 92, "ask_cost": 195}
+{"seed": 6005, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 7.0, "coverage": 0.37, "intros": 96, "ask_cost": 195}
+{"seed": 6005, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 6.0, "coverage": 0.375, "intros": 94, "ask_cost": 195}
+{"seed": 6005, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 1.5, "mutual": 7.0, "coverage": 0.375, "intros": 92, "ask_cost": 195}
+{"seed": 6006, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 8.5, "coverage": 0.405, "intros": 91, "ask_cost": 201}
+{"seed": 6006, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 6.0, "coverage": 0.41, "intros": 100, "ask_cost": 201}
+{"seed": 6006, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 7.5, "coverage": 0.415, "intros": 104, "ask_cost": 201}
+{"seed": 6006, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 7.0, "coverage": 0.415, "intros": 104, "ask_cost": 201}
+{"seed": 6006, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 7.0, "coverage": 0.42, "intros": 103, "ask_cost": 201}
+{"seed": 6007, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 1.5, "mutual": 7.5, "coverage": 0.37, "intros": 72, "ask_cost": 180}
+{"seed": 6007, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 7.0, "coverage": 0.385, "intros": 77, "ask_cost": 180}
+{"seed": 6007, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 7.5, "coverage": 0.385, "intros": 78, "ask_cost": 180}
+{"seed": 6007, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 7.5, "coverage": 0.385, "intros": 77, "ask_cost": 180}
+{"seed": 6007, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 7.5, "coverage": 0.385, "intros": 77, "ask_cost": 180}
+{"seed": 6008, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 7.5, "coverage": 0.415, "intros": 101, "ask_cost": 216}
+{"seed": 6008, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 4.5, "coverage": 0.415, "intros": 109, "ask_cost": 216}
+{"seed": 6008, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 1.5, "mutual": 7.0, "coverage": 0.415, "intros": 96, "ask_cost": 216}
+{"seed": 6008, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 1.5, "mutual": 8.0, "coverage": 0.415, "intros": 94, "ask_cost": 216}
+{"seed": 6008, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 1.5, "mutual": 7.0, "coverage": 0.415, "intros": 92, "ask_cost": 216}
+{"seed": 6009, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.5, "coverage": 0.375, "intros": 80, "ask_cost": 222}
+{"seed": 6009, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 4.5, "coverage": 0.39, "intros": 96, "ask_cost": 222}
+{"seed": 6009, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 5.5, "coverage": 0.39, "intros": 91, "ask_cost": 222}
+{"seed": 6009, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.5, "coverage": 0.38, "intros": 83, "ask_cost": 222}
+{"seed": 6009, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.5, "coverage": 0.38, "intros": 86, "ask_cost": 222}
+{"seed": 6010, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 7.5, "coverage": 0.39, "intros": 88, "ask_cost": 183}
+{"seed": 6010, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.5, "coverage": 0.385, "intros": 89, "ask_cost": 183}
+{"seed": 6010, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 8.0, "coverage": 0.39, "intros": 83, "ask_cost": 183}
+{"seed": 6010, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.5, "coverage": 0.395, "intros": 90, "ask_cost": 183}
+{"seed": 6010, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.0, "coverage": 0.395, "intros": 90, "ask_cost": 183}
+{"seed": 6011, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 4.5, "coverage": 0.31, "intros": 83, "ask_cost": 174}
+{"seed": 6011, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 6.0, "coverage": 0.315, "intros": 78, "ask_cost": 174}
+{"seed": 6011, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 6.0, "coverage": 0.315, "intros": 78, "ask_cost": 174}
+{"seed": 6011, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 5.5, "coverage": 0.315, "intros": 78, "ask_cost": 174}
+{"seed": 6011, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 1.5, "mutual": 5.0, "coverage": 0.31, "intros": 73, "ask_cost": 174}
+{"seed": 6012, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 8.5, "coverage": 0.485, "intros": 157, "ask_cost": 180}
+{"seed": 6012, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 10.5, "coverage": 0.48, "intros": 148, "ask_cost": 180}
+{"seed": 6012, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 12.0, "coverage": 0.485, "intros": 151, "ask_cost": 180}
+{"seed": 6012, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 13.5, "coverage": 0.485, "intros": 142, "ask_cost": 180}
+{"seed": 6012, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 14.5, "coverage": 0.485, "intros": 143, "ask_cost": 180}
+{"seed": 6013, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.0, "coverage": 0.41, "intros": 100, "ask_cost": 213}
+{"seed": 6013, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 4.0, "coverage": 0.425, "intros": 106, "ask_cost": 213}
+{"seed": 6013, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 6.5, "coverage": 0.42, "intros": 96, "ask_cost": 213}
+{"seed": 6013, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 8.0, "coverage": 0.425, "intros": 91, "ask_cost": 213}
+{"seed": 6013, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.5, "coverage": 0.435, "intros": 92, "ask_cost": 213}
+{"seed": 6014, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 6.0, "coverage": 0.375, "intros": 96, "ask_cost": 204}
+{"seed": 6014, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 1.5, "mutual": 5.0, "coverage": 0.38, "intros": 98, "ask_cost": 204}
+{"seed": 6014, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 5.0, "coverage": 0.385, "intros": 101, "ask_cost": 204}
+{"seed": 6014, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.0, "coverage": 0.385, "intros": 100, "ask_cost": 204}
+{"seed": 6014, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 6.5, "coverage": 0.385, "intros": 99, "ask_cost": 204}
+{"seed": 6015, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 7.0, "coverage": 0.405, "intros": 93, "ask_cost": 216}
+{"seed": 6015, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 7.5, "coverage": 0.4, "intros": 87, "ask_cost": 216}
+{"seed": 6015, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 1.5, "mutual": 8.0, "coverage": 0.4, "intros": 87, "ask_cost": 216}
+{"seed": 6015, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 5.5, "coverage": 0.405, "intros": 83, "ask_cost": 216}
+{"seed": 6015, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 6.5, "coverage": 0.405, "intros": 86, "ask_cost": 216}
+{"seed": 6016, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 5.0, "coverage": 0.31, "intros": 80, "ask_cost": 213}
+{"seed": 6016, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 3.5, "coverage": 0.32, "intros": 81, "ask_cost": 213}
+{"seed": 6016, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 5.5, "coverage": 0.31, "intros": 80, "ask_cost": 213}
+{"seed": 6016, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 4.5, "coverage": 0.32, "intros": 76, "ask_cost": 213}
+{"seed": 6016, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 5.0, "coverage": 0.32, "intros": 75, "ask_cost": 213}
+{"seed": 6017, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 7.0, "coverage": 0.405, "intros": 101, "ask_cost": 162}
+{"seed": 6017, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 9.5, "coverage": 0.395, "intros": 96, "ask_cost": 162}
+{"seed": 6017, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 8.5, "coverage": 0.41, "intros": 102, "ask_cost": 162}
+{"seed": 6017, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 9.0, "coverage": 0.41, "intros": 100, "ask_cost": 162}
+{"seed": 6017, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 7.5, "coverage": 0.41, "intros": 101, "ask_cost": 162}
+{"seed": 6018, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 4.5, "coverage": 0.355, "intros": 98, "ask_cost": 186}
+{"seed": 6018, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.5, "coverage": 0.36, "intros": 96, "ask_cost": 186}
+{"seed": 6018, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 5.5, "coverage": 0.36, "intros": 96, "ask_cost": 186}
+{"seed": 6018, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.0, "coverage": 0.36, "intros": 96, "ask_cost": 186}
+{"seed": 6018, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.0, "coverage": 0.36, "intros": 98, "ask_cost": 186}
+{"seed": 6019, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 5.5, "coverage": 0.34, "intros": 74, "ask_cost": 153}
+{"seed": 6019, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 6.0, "coverage": 0.33, "intros": 69, "ask_cost": 153}
+{"seed": 6019, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 5.5, "coverage": 0.33, "intros": 65, "ask_cost": 153}
+{"seed": 6019, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 4.5, "coverage": 0.33, "intros": 69, "ask_cost": 153}
+{"seed": 6019, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.5, "coverage": 0.335, "intros": 72, "ask_cost": 153}
+{"seed": 6020, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 4.5, "coverage": 0.3, "intros": 61, "ask_cost": 204}
+{"seed": 6020, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 2.0, "coverage": 0.305, "intros": 63, "ask_cost": 204}
+{"seed": 6020, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 4.0, "coverage": 0.29, "intros": 48, "ask_cost": 204}
+{"seed": 6020, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 3.5, "coverage": 0.3, "intros": 53, "ask_cost": 204}
+{"seed": 6020, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 3.5, "coverage": 0.3, "intros": 53, "ask_cost": 204}
+{"seed": 6021, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 7.0, "coverage": 0.35, "intros": 76, "ask_cost": 177}
+{"seed": 6021, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.0, "coverage": 0.35, "intros": 74, "ask_cost": 177}
+{"seed": 6021, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 7.5, "coverage": 0.35, "intros": 71, "ask_cost": 177}
+{"seed": 6021, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.5, "coverage": 0.355, "intros": 74, "ask_cost": 177}
+{"seed": 6021, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.5, "coverage": 0.355, "intros": 75, "ask_cost": 177}
+{"seed": 6022, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 5.0, "coverage": 0.335, "intros": 85, "ask_cost": 207}
+{"seed": 6022, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 6.0, "coverage": 0.34, "intros": 81, "ask_cost": 207}
+{"seed": 6022, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.5, "coverage": 0.34, "intros": 81, "ask_cost": 207}
+{"seed": 6022, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 6.0, "coverage": 0.34, "intros": 82, "ask_cost": 207}
+{"seed": 6022, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 7.5, "coverage": 0.34, "intros": 80, "ask_cost": 207}
+{"seed": 6023, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 8.0, "coverage": 0.46, "intros": 123, "ask_cost": 189}
+{"seed": 6023, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 10.0, "coverage": 0.455, "intros": 119, "ask_cost": 189}
+{"seed": 6023, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 10.0, "coverage": 0.46, "intros": 122, "ask_cost": 189}
+{"seed": 6023, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 9.5, "coverage": 0.455, "intros": 118, "ask_cost": 189}
+{"seed": 6023, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 8.5, "coverage": 0.46, "intros": 113, "ask_cost": 189}
+{"seed": 6024, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 6.5, "coverage": 0.43, "intros": 100, "ask_cost": 210}
+{"seed": 6024, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 9.5, "coverage": 0.435, "intros": 96, "ask_cost": 210}
+{"seed": 6024, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 7.5, "coverage": 0.45, "intros": 103, "ask_cost": 210}
+{"seed": 6024, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 6.0, "coverage": 0.45, "intros": 104, "ask_cost": 210}
+{"seed": 6024, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 7.0, "coverage": 0.45, "intros": 106, "ask_cost": 210}
+{"seed": 6025, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 8.0, "coverage": 0.42, "intros": 107, "ask_cost": 228}
+{"seed": 6025, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 1.5, "mutual": 7.5, "coverage": 0.42, "intros": 106, "ask_cost": 228}
+{"seed": 6025, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 7.0, "coverage": 0.43, "intros": 121, "ask_cost": 228}
+{"seed": 6025, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 7.0, "coverage": 0.42, "intros": 106, "ask_cost": 228}
+{"seed": 6025, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 7.5, "coverage": 0.425, "intros": 116, "ask_cost": 228}
+{"seed": 6026, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 11.0, "coverage": 0.365, "intros": 87, "ask_cost": 159}
+{"seed": 6026, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 1.5, "mutual": 12.0, "coverage": 0.365, "intros": 81, "ask_cost": 159}
+{"seed": 6026, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 1.5, "mutual": 10.0, "coverage": 0.365, "intros": 85, "ask_cost": 159}
+{"seed": 6026, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 1.5, "mutual": 11.5, "coverage": 0.37, "intros": 82, "ask_cost": 159}
+{"seed": 6026, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 1.5, "mutual": 12.0, "coverage": 0.37, "intros": 82, "ask_cost": 159}
+{"seed": 6027, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 4.0, "coverage": 0.355, "intros": 91, "ask_cost": 165}
+{"seed": 6027, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 7.5, "coverage": 0.35, "intros": 83, "ask_cost": 165}
+{"seed": 6027, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 5.0, "coverage": 0.355, "intros": 91, "ask_cost": 165}
+{"seed": 6027, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 5.0, "coverage": 0.36, "intros": 85, "ask_cost": 165}
+{"seed": 6027, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 3.0, "coverage": 0.36, "intros": 90, "ask_cost": 165}
+{"seed": 6028, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 5.0, "coverage": 0.4, "intros": 93, "ask_cost": 186}
+{"seed": 6028, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 5.5, "coverage": 0.405, "intros": 95, "ask_cost": 186}
+{"seed": 6028, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 5.5, "coverage": 0.4, "intros": 94, "ask_cost": 186}
+{"seed": 6028, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.0, "coverage": 0.405, "intros": 94, "ask_cost": 186}
+{"seed": 6028, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.5, "coverage": 0.405, "intros": 97, "ask_cost": 186}
+{"seed": 6029, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 5.0, "coverage": 0.39, "intros": 98, "ask_cost": 207}
+{"seed": 6029, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 4.5, "coverage": 0.39, "intros": 91, "ask_cost": 207}
+{"seed": 6029, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 4.5, "coverage": 0.39, "intros": 100, "ask_cost": 207}
+{"seed": 6029, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 7.0, "coverage": 0.39, "intros": 99, "ask_cost": 207}
+{"seed": 6029, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 7.0, "coverage": 0.39, "intros": 99, "ask_cost": 207}
+{"seed": 6030, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 5.5, "coverage": 0.39, "intros": 94, "ask_cost": 210}
+{"seed": 6030, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 6.0, "coverage": 0.39, "intros": 95, "ask_cost": 210}
+{"seed": 6030, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 7.0, "coverage": 0.39, "intros": 93, "ask_cost": 210}
+{"seed": 6030, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 7.0, "coverage": 0.395, "intros": 99, "ask_cost": 210}
+{"seed": 6030, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 7.5, "coverage": 0.39, "intros": 95, "ask_cost": 210}
+{"seed": 6031, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 4.0, "coverage": 0.35, "intros": 83, "ask_cost": 183}
+{"seed": 6031, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.0, "coverage": 0.36, "intros": 88, "ask_cost": 183}
+{"seed": 6031, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 8.5, "coverage": 0.36, "intros": 84, "ask_cost": 183}
+{"seed": 6031, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 7.5, "coverage": 0.36, "intros": 82, "ask_cost": 183}
+{"seed": 6031, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 8.0, "coverage": 0.36, "intros": 82, "ask_cost": 183}
+{"seed": 6032, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 7.0, "coverage": 0.42, "intros": 99, "ask_cost": 213}
+{"seed": 6032, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 6.0, "coverage": 0.44, "intros": 106, "ask_cost": 213}
+{"seed": 6032, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 4.5, "coverage": 0.435, "intros": 111, "ask_cost": 213}
+{"seed": 6032, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.0, "coverage": 0.44, "intros": 106, "ask_cost": 213}
+{"seed": 6032, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.0, "coverage": 0.45, "intros": 115, "ask_cost": 213}
+{"seed": 6033, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.5, "coverage": 0.37, "intros": 79, "ask_cost": 180}
+{"seed": 6033, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 7.0, "coverage": 0.37, "intros": 80, "ask_cost": 180}
+{"seed": 6033, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 3.5, "coverage": 0.38, "intros": 84, "ask_cost": 180}
+{"seed": 6033, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 4.0, "coverage": 0.38, "intros": 82, "ask_cost": 180}
+{"seed": 6033, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.0, "coverage": 0.38, "intros": 83, "ask_cost": 180}
+{"seed": 6034, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 5.5, "coverage": 0.32, "intros": 69, "ask_cost": 189}
+{"seed": 6034, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 5.5, "coverage": 0.33, "intros": 77, "ask_cost": 189}
+{"seed": 6034, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 7.0, "coverage": 0.33, "intros": 70, "ask_cost": 189}
+{"seed": 6034, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 5.5, "coverage": 0.34, "intros": 78, "ask_cost": 189}
+{"seed": 6034, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 5.5, "coverage": 0.34, "intros": 79, "ask_cost": 189}
+{"seed": 6035, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.5, "coverage": 0.39, "intros": 98, "ask_cost": 192}
+{"seed": 6035, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 1.5, "mutual": 7.0, "coverage": 0.395, "intros": 90, "ask_cost": 192}
+{"seed": 6035, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 1.5, "mutual": 7.0, "coverage": 0.395, "intros": 89, "ask_cost": 192}
+{"seed": 6035, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 6.0, "coverage": 0.395, "intros": 90, "ask_cost": 192}
+{"seed": 6035, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 6.0, "coverage": 0.395, "intros": 86, "ask_cost": 192}
+{"seed": 6036, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 1.5, "mutual": 5.0, "coverage": 0.415, "intros": 94, "ask_cost": 222}
+{"seed": 6036, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 7.0, "coverage": 0.425, "intros": 101, "ask_cost": 222}
+{"seed": 6036, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 7.5, "coverage": 0.43, "intros": 100, "ask_cost": 222}
+{"seed": 6036, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 8.5, "coverage": 0.43, "intros": 98, "ask_cost": 222}
+{"seed": 6036, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 6.5, "coverage": 0.43, "intros": 101, "ask_cost": 222}
+{"seed": 6037, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 3.0, "coverage": 0.28, "intros": 63, "ask_cost": 162}
+{"seed": 6037, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 4.5, "coverage": 0.265, "intros": 58, "ask_cost": 162}
+{"seed": 6037, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 3.5, "coverage": 0.27, "intros": 61, "ask_cost": 162}
+{"seed": 6037, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 3.0, "coverage": 0.27, "intros": 61, "ask_cost": 162}
+{"seed": 6037, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 3.0, "coverage": 0.27, "intros": 61, "ask_cost": 162}
+{"seed": 6038, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 8.0, "coverage": 0.435, "intros": 107, "ask_cost": 219}
+{"seed": 6038, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 8.0, "coverage": 0.435, "intros": 108, "ask_cost": 219}
+{"seed": 6038, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 10.0, "coverage": 0.435, "intros": 108, "ask_cost": 219}
+{"seed": 6038, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 12.0, "coverage": 0.435, "intros": 104, "ask_cost": 219}
+{"seed": 6038, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 1.5, "mutual": 12.0, "coverage": 0.435, "intros": 105, "ask_cost": 219}
+{"seed": 6039, "variant": "drift", "policy": "A0 kit greedy baseline", "msmi": 1.5, "mutual": 8.0, "coverage": 0.41, "intros": 100, "ask_cost": 189}
+{"seed": 6039, "variant": "drift", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 8.0, "coverage": 0.41, "intros": 106, "ask_cost": 189}
+{"seed": 6039, "variant": "drift", "policy": "A2 + value-of-information asker", "msmi": 1.5, "mutual": 4.0, "coverage": 0.41, "intros": 117, "ask_cost": 189}
+{"seed": 6039, "variant": "drift", "policy": "A3 + coverage/urgency boost", "msmi": 2.0, "mutual": 5.5, "coverage": 0.415, "intros": 107, "ask_cost": 189}
+{"seed": 6039, "variant": "drift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 4.5, "coverage": 0.415, "intros": 105, "ask_cost": 189}
+{"seed": 6000, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 4.0, "coverage": 0.36, "intros": 77, "ask_cost": 189}
+{"seed": 6000, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 5.0, "coverage": 0.365, "intros": 75, "ask_cost": 189}
+{"seed": 6000, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 5.5, "coverage": 0.37, "intros": 75, "ask_cost": 189}
+{"seed": 6000, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.5, "coverage": 0.37, "intros": 77, "ask_cost": 189}
+{"seed": 6000, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 4.0, "coverage": 0.37, "intros": 80, "ask_cost": 189}
+{"seed": 6001, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 8.5, "coverage": 0.39, "intros": 92, "ask_cost": 177}
+{"seed": 6001, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 9.0, "coverage": 0.385, "intros": 85, "ask_cost": 177}
+{"seed": 6001, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 9.0, "coverage": 0.39, "intros": 94, "ask_cost": 177}
+{"seed": 6001, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 9.0, "coverage": 0.39, "intros": 94, "ask_cost": 177}
+{"seed": 6001, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 7.5, "coverage": 0.385, "intros": 94, "ask_cost": 177}
+{"seed": 6002, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 1.5, "mutual": 7.5, "coverage": 0.34, "intros": 81, "ask_cost": 180}
+{"seed": 6002, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 4.5, "coverage": 0.34, "intros": 86, "ask_cost": 180}
+{"seed": 6002, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.5, "coverage": 0.345, "intros": 81, "ask_cost": 180}
+{"seed": 6002, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 7.5, "coverage": 0.34, "intros": 79, "ask_cost": 180}
+{"seed": 6002, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 7.5, "coverage": 0.345, "intros": 78, "ask_cost": 180}
+{"seed": 6003, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 8.5, "coverage": 0.45, "intros": 103, "ask_cost": 198}
+{"seed": 6003, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 9.0, "coverage": 0.44, "intros": 104, "ask_cost": 198}
+{"seed": 6003, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 9.0, "coverage": 0.44, "intros": 105, "ask_cost": 198}
+{"seed": 6003, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.5, "coverage": 0.445, "intros": 106, "ask_cost": 198}
+{"seed": 6003, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 6.5, "coverage": 0.455, "intros": 104, "ask_cost": 198}
+{"seed": 6004, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 10.5, "coverage": 0.46, "intros": 124, "ask_cost": 207}
+{"seed": 6004, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 8.5, "coverage": 0.46, "intros": 135, "ask_cost": 207}
+{"seed": 6004, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 10.0, "coverage": 0.465, "intros": 135, "ask_cost": 207}
+{"seed": 6004, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 11.5, "coverage": 0.465, "intros": 135, "ask_cost": 207}
+{"seed": 6004, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 8.0, "coverage": 0.465, "intros": 137, "ask_cost": 207}
+{"seed": 6005, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 7.0, "coverage": 0.37, "intros": 95, "ask_cost": 195}
+{"seed": 6005, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.0, "coverage": 0.37, "intros": 96, "ask_cost": 195}
+{"seed": 6005, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 7.5, "coverage": 0.37, "intros": 87, "ask_cost": 195}
+{"seed": 6005, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 8.5, "coverage": 0.375, "intros": 94, "ask_cost": 195}
+{"seed": 6005, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 8.0, "coverage": 0.38, "intros": 90, "ask_cost": 195}
+{"seed": 6006, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 9.0, "coverage": 0.405, "intros": 106, "ask_cost": 201}
+{"seed": 6006, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 5.0, "coverage": 0.415, "intros": 107, "ask_cost": 201}
+{"seed": 6006, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 7.0, "coverage": 0.42, "intros": 105, "ask_cost": 201}
+{"seed": 6006, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.0, "coverage": 0.42, "intros": 110, "ask_cost": 201}
+{"seed": 6006, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 8.0, "coverage": 0.42, "intros": 105, "ask_cost": 201}
+{"seed": 6007, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 7.5, "coverage": 0.37, "intros": 72, "ask_cost": 180}
+{"seed": 6007, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.0, "coverage": 0.385, "intros": 77, "ask_cost": 180}
+{"seed": 6007, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 8.5, "coverage": 0.385, "intros": 78, "ask_cost": 180}
+{"seed": 6007, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 7.5, "coverage": 0.385, "intros": 78, "ask_cost": 180}
+{"seed": 6007, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 8.0, "coverage": 0.385, "intros": 77, "ask_cost": 180}
+{"seed": 6008, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 6.0, "coverage": 0.415, "intros": 105, "ask_cost": 216}
+{"seed": 6008, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 3.5, "coverage": 0.415, "intros": 109, "ask_cost": 216}
+{"seed": 6008, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 5.5, "coverage": 0.415, "intros": 107, "ask_cost": 216}
+{"seed": 6008, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 5.0, "coverage": 0.415, "intros": 108, "ask_cost": 216}
+{"seed": 6008, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 5.5, "coverage": 0.415, "intros": 106, "ask_cost": 216}
+{"seed": 6009, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 5.0, "coverage": 0.38, "intros": 82, "ask_cost": 222}
+{"seed": 6009, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 5.5, "coverage": 0.39, "intros": 96, "ask_cost": 222}
+{"seed": 6009, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.0, "coverage": 0.39, "intros": 91, "ask_cost": 222}
+{"seed": 6009, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.5, "coverage": 0.38, "intros": 83, "ask_cost": 222}
+{"seed": 6009, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.5, "coverage": 0.38, "intros": 87, "ask_cost": 222}
+{"seed": 6010, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 7.5, "coverage": 0.39, "intros": 88, "ask_cost": 183}
+{"seed": 6010, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 8.0, "coverage": 0.385, "intros": 85, "ask_cost": 183}
+{"seed": 6010, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 9.5, "coverage": 0.385, "intros": 79, "ask_cost": 183}
+{"seed": 6010, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.5, "coverage": 0.395, "intros": 90, "ask_cost": 183}
+{"seed": 6010, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 7.0, "coverage": 0.395, "intros": 87, "ask_cost": 183}
+{"seed": 6011, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 3.5, "coverage": 0.315, "intros": 84, "ask_cost": 174}
+{"seed": 6011, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 4.0, "coverage": 0.315, "intros": 79, "ask_cost": 174}
+{"seed": 6011, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 1.5, "mutual": 5.5, "coverage": 0.31, "intros": 74, "ask_cost": 174}
+{"seed": 6011, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 1.5, "mutual": 6.0, "coverage": 0.31, "intros": 74, "ask_cost": 174}
+{"seed": 6011, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 1.5, "mutual": 5.5, "coverage": 0.31, "intros": 74, "ask_cost": 174}
+{"seed": 6012, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 7.0, "coverage": 0.485, "intros": 154, "ask_cost": 180}
+{"seed": 6012, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 11.5, "coverage": 0.48, "intros": 156, "ask_cost": 180}
+{"seed": 6012, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 9.0, "coverage": 0.485, "intros": 153, "ask_cost": 180}
+{"seed": 6012, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 10.0, "coverage": 0.485, "intros": 152, "ask_cost": 180}
+{"seed": 6012, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 1.5, "mutual": 9.5, "coverage": 0.48, "intros": 146, "ask_cost": 180}
+{"seed": 6013, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 6.0, "coverage": 0.41, "intros": 98, "ask_cost": 213}
+{"seed": 6013, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 5.5, "coverage": 0.425, "intros": 99, "ask_cost": 213}
+{"seed": 6013, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 6.0, "coverage": 0.425, "intros": 95, "ask_cost": 213}
+{"seed": 6013, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 6.5, "coverage": 0.43, "intros": 89, "ask_cost": 213}
+{"seed": 6013, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 6.5, "coverage": 0.43, "intros": 87, "ask_cost": 213}
+{"seed": 6014, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 1.5, "mutual": 4.5, "coverage": 0.385, "intros": 101, "ask_cost": 204}
+{"seed": 6014, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 1.5, "mutual": 5.5, "coverage": 0.375, "intros": 99, "ask_cost": 204}
+{"seed": 6014, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 7.5, "coverage": 0.375, "intros": 102, "ask_cost": 204}
+{"seed": 6014, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.5, "coverage": 0.385, "intros": 102, "ask_cost": 204}
+{"seed": 6014, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.0, "coverage": 0.385, "intros": 104, "ask_cost": 204}
+{"seed": 6015, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 5.0, "coverage": 0.4, "intros": 89, "ask_cost": 216}
+{"seed": 6015, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 6.5, "coverage": 0.4, "intros": 92, "ask_cost": 216}
+{"seed": 6015, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 8.0, "coverage": 0.405, "intros": 87, "ask_cost": 216}
+{"seed": 6015, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 1.5, "mutual": 6.0, "coverage": 0.41, "intros": 82, "ask_cost": 216}
+{"seed": 6015, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 1.5, "mutual": 7.5, "coverage": 0.4, "intros": 83, "ask_cost": 216}
+{"seed": 6016, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 5.0, "coverage": 0.31, "intros": 80, "ask_cost": 213}
+{"seed": 6016, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 4.5, "coverage": 0.32, "intros": 81, "ask_cost": 213}
+{"seed": 6016, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 4.5, "coverage": 0.32, "intros": 82, "ask_cost": 213}
+{"seed": 6016, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 5.0, "coverage": 0.32, "intros": 76, "ask_cost": 213}
+{"seed": 6016, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 4.0, "coverage": 0.32, "intros": 76, "ask_cost": 213}
+{"seed": 6017, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 7.5, "coverage": 0.41, "intros": 104, "ask_cost": 162}
+{"seed": 6017, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 8.5, "coverage": 0.395, "intros": 102, "ask_cost": 162}
+{"seed": 6017, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 8.0, "coverage": 0.395, "intros": 101, "ask_cost": 162}
+{"seed": 6017, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 8.0, "coverage": 0.4, "intros": 102, "ask_cost": 162}
+{"seed": 6017, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 7.5, "coverage": 0.4, "intros": 103, "ask_cost": 162}
+{"seed": 6018, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 3.5, "coverage": 0.355, "intros": 99, "ask_cost": 186}
+{"seed": 6018, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 7.5, "coverage": 0.36, "intros": 94, "ask_cost": 186}
+{"seed": 6018, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 4.5, "coverage": 0.36, "intros": 94, "ask_cost": 186}
+{"seed": 6018, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.5, "coverage": 0.36, "intros": 97, "ask_cost": 186}
+{"seed": 6018, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.5, "coverage": 0.36, "intros": 97, "ask_cost": 186}
+{"seed": 6019, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 6.0, "coverage": 0.34, "intros": 74, "ask_cost": 153}
+{"seed": 6019, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 5.0, "coverage": 0.33, "intros": 69, "ask_cost": 153}
+{"seed": 6019, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 3.5, "coverage": 0.33, "intros": 67, "ask_cost": 153}
+{"seed": 6019, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 3.0, "coverage": 0.33, "intros": 70, "ask_cost": 153}
+{"seed": 6019, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 3.5, "coverage": 0.335, "intros": 70, "ask_cost": 153}
+{"seed": 6020, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 2.5, "coverage": 0.305, "intros": 63, "ask_cost": 204}
+{"seed": 6020, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 1.0, "coverage": 0.305, "intros": 66, "ask_cost": 204}
+{"seed": 6020, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 3.0, "coverage": 0.295, "intros": 52, "ask_cost": 204}
+{"seed": 6020, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 4.5, "coverage": 0.3, "intros": 51, "ask_cost": 204}
+{"seed": 6020, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 3.5, "coverage": 0.3, "intros": 51, "ask_cost": 204}
+{"seed": 6021, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 6.5, "coverage": 0.355, "intros": 76, "ask_cost": 177}
+{"seed": 6021, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 4.0, "coverage": 0.35, "intros": 77, "ask_cost": 177}
+{"seed": 6021, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.0, "coverage": 0.35, "intros": 71, "ask_cost": 177}
+{"seed": 6021, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 6.0, "coverage": 0.355, "intros": 73, "ask_cost": 177}
+{"seed": 6021, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.5, "coverage": 0.355, "intros": 75, "ask_cost": 177}
+{"seed": 6022, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 4.5, "coverage": 0.335, "intros": 78, "ask_cost": 207}
+{"seed": 6022, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 4.5, "coverage": 0.34, "intros": 83, "ask_cost": 207}
+{"seed": 6022, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.0, "coverage": 0.34, "intros": 78, "ask_cost": 207}
+{"seed": 6022, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 6.0, "coverage": 0.335, "intros": 80, "ask_cost": 207}
+{"seed": 6022, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 6.5, "coverage": 0.335, "intros": 80, "ask_cost": 207}
+{"seed": 6023, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 9.5, "coverage": 0.46, "intros": 116, "ask_cost": 189}
+{"seed": 6023, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 10.0, "coverage": 0.455, "intros": 117, "ask_cost": 189}
+{"seed": 6023, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 11.5, "coverage": 0.455, "intros": 114, "ask_cost": 189}
+{"seed": 6023, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 12.0, "coverage": 0.46, "intros": 114, "ask_cost": 189}
+{"seed": 6023, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 11.0, "coverage": 0.455, "intros": 112, "ask_cost": 189}
+{"seed": 6024, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 6.0, "coverage": 0.43, "intros": 99, "ask_cost": 210}
+{"seed": 6024, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 9.0, "coverage": 0.435, "intros": 95, "ask_cost": 210}
+{"seed": 6024, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.0, "coverage": 0.45, "intros": 103, "ask_cost": 210}
+{"seed": 6024, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 5.0, "coverage": 0.45, "intros": 103, "ask_cost": 210}
+{"seed": 6024, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 7.0, "coverage": 0.45, "intros": 103, "ask_cost": 210}
+{"seed": 6025, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 10.0, "coverage": 0.42, "intros": 106, "ask_cost": 228}
+{"seed": 6025, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 8.0, "coverage": 0.42, "intros": 111, "ask_cost": 228}
+{"seed": 6025, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.0, "coverage": 0.43, "intros": 122, "ask_cost": 228}
+{"seed": 6025, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 9.5, "coverage": 0.42, "intros": 110, "ask_cost": 228}
+{"seed": 6025, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 9.0, "coverage": 0.425, "intros": 117, "ask_cost": 228}
+{"seed": 6026, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 7.5, "coverage": 0.365, "intros": 90, "ask_cost": 159}
+{"seed": 6026, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 10.5, "coverage": 0.365, "intros": 87, "ask_cost": 159}
+{"seed": 6026, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 8.5, "coverage": 0.365, "intros": 86, "ask_cost": 159}
+{"seed": 6026, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 9.0, "coverage": 0.37, "intros": 84, "ask_cost": 159}
+{"seed": 6026, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 9.0, "coverage": 0.37, "intros": 87, "ask_cost": 159}
+{"seed": 6027, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 3.5, "coverage": 0.35, "intros": 92, "ask_cost": 165}
+{"seed": 6027, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 7.0, "coverage": 0.35, "intros": 84, "ask_cost": 165}
+{"seed": 6027, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 4.5, "coverage": 0.35, "intros": 90, "ask_cost": 165}
+{"seed": 6027, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 5.5, "coverage": 0.355, "intros": 85, "ask_cost": 165}
+{"seed": 6027, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 5.0, "coverage": 0.355, "intros": 85, "ask_cost": 165}
+{"seed": 6028, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 4.5, "coverage": 0.405, "intros": 93, "ask_cost": 186}
+{"seed": 6028, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 7.0, "coverage": 0.4, "intros": 89, "ask_cost": 186}
+{"seed": 6028, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 7.0, "coverage": 0.4, "intros": 93, "ask_cost": 186}
+{"seed": 6028, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 4.0, "coverage": 0.405, "intros": 97, "ask_cost": 186}
+{"seed": 6028, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.5, "coverage": 0.405, "intros": 96, "ask_cost": 186}
+{"seed": 6029, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 6.5, "coverage": 0.39, "intros": 96, "ask_cost": 207}
+{"seed": 6029, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 6.0, "coverage": 0.39, "intros": 98, "ask_cost": 207}
+{"seed": 6029, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 5.5, "coverage": 0.39, "intros": 98, "ask_cost": 207}
+{"seed": 6029, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 8.0, "coverage": 0.39, "intros": 98, "ask_cost": 207}
+{"seed": 6029, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 8.0, "coverage": 0.39, "intros": 98, "ask_cost": 207}
+{"seed": 6030, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 5.5, "coverage": 0.39, "intros": 93, "ask_cost": 210}
+{"seed": 6030, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 1.5, "mutual": 6.0, "coverage": 0.39, "intros": 92, "ask_cost": 210}
+{"seed": 6030, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 6.0, "coverage": 0.385, "intros": 98, "ask_cost": 210}
+{"seed": 6030, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 7.5, "coverage": 0.395, "intros": 96, "ask_cost": 210}
+{"seed": 6030, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 7.5, "coverage": 0.395, "intros": 94, "ask_cost": 210}
+{"seed": 6031, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 6.5, "coverage": 0.35, "intros": 88, "ask_cost": 183}
+{"seed": 6031, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.0, "coverage": 0.36, "intros": 87, "ask_cost": 183}
+{"seed": 6031, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 7.5, "coverage": 0.36, "intros": 84, "ask_cost": 183}
+{"seed": 6031, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 7.5, "coverage": 0.36, "intros": 80, "ask_cost": 183}
+{"seed": 6031, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 8.5, "coverage": 0.36, "intros": 82, "ask_cost": 183}
+{"seed": 6032, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.0, "coverage": 0.425, "intros": 108, "ask_cost": 213}
+{"seed": 6032, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 5.0, "coverage": 0.435, "intros": 107, "ask_cost": 213}
+{"seed": 6032, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 5.5, "coverage": 0.445, "intros": 103, "ask_cost": 213}
+{"seed": 6032, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 5.5, "coverage": 0.44, "intros": 112, "ask_cost": 213}
+{"seed": 6032, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 3.5, "coverage": 0.45, "intros": 117, "ask_cost": 213}
+{"seed": 6033, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.5, "coverage": 0.365, "intros": 76, "ask_cost": 180}
+{"seed": 6033, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 6.0, "coverage": 0.37, "intros": 81, "ask_cost": 180}
+{"seed": 6033, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 3.0, "coverage": 0.38, "intros": 84, "ask_cost": 180}
+{"seed": 6033, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 3.5, "coverage": 0.38, "intros": 82, "ask_cost": 180}
+{"seed": 6033, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.0, "coverage": 0.38, "intros": 83, "ask_cost": 180}
+{"seed": 6034, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 6.0, "coverage": 0.32, "intros": 70, "ask_cost": 189}
+{"seed": 6034, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 6.0, "coverage": 0.335, "intros": 77, "ask_cost": 189}
+{"seed": 6034, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 8.5, "coverage": 0.335, "intros": 76, "ask_cost": 189}
+{"seed": 6034, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 1.0, "mutual": 6.0, "coverage": 0.34, "intros": 78, "ask_cost": 189}
+{"seed": 6034, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 7.0, "coverage": 0.34, "intros": 77, "ask_cost": 189}
+{"seed": 6035, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 5.0, "coverage": 0.39, "intros": 99, "ask_cost": 192}
+{"seed": 6035, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 1.5, "mutual": 5.0, "coverage": 0.395, "intros": 97, "ask_cost": 192}
+{"seed": 6035, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 1.5, "mutual": 6.5, "coverage": 0.395, "intros": 96, "ask_cost": 192}
+{"seed": 6035, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 5.5, "coverage": 0.395, "intros": 96, "ask_cost": 192}
+{"seed": 6035, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 4.5, "coverage": 0.395, "intros": 98, "ask_cost": 192}
+{"seed": 6036, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 6.5, "coverage": 0.415, "intros": 100, "ask_cost": 222}
+{"seed": 6036, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 8.0, "coverage": 0.425, "intros": 101, "ask_cost": 222}
+{"seed": 6036, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 8.5, "coverage": 0.435, "intros": 101, "ask_cost": 222}
+{"seed": 6036, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 6.5, "coverage": 0.445, "intros": 104, "ask_cost": 222}
+{"seed": 6036, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 7.0, "coverage": 0.43, "intros": 100, "ask_cost": 222}
+{"seed": 6037, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 2.5, "coverage": 0.28, "intros": 63, "ask_cost": 162}
+{"seed": 6037, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 4.5, "coverage": 0.265, "intros": 58, "ask_cost": 162}
+{"seed": 6037, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 4.0, "coverage": 0.27, "intros": 61, "ask_cost": 162}
+{"seed": 6037, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 3.5, "coverage": 0.27, "intros": 61, "ask_cost": 162}
+{"seed": 6037, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 3.5, "coverage": 0.27, "intros": 61, "ask_cost": 162}
+{"seed": 6038, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 12.0, "coverage": 0.435, "intros": 110, "ask_cost": 219}
+{"seed": 6038, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 1.0, "mutual": 9.5, "coverage": 0.435, "intros": 113, "ask_cost": 219}
+{"seed": 6038, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 11.0, "coverage": 0.435, "intros": 111, "ask_cost": 219}
+{"seed": 6038, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 11.0, "coverage": 0.435, "intros": 110, "ask_cost": 219}
+{"seed": 6038, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 12.0, "coverage": 0.435, "intros": 107, "ask_cost": 219}
+{"seed": 6039, "variant": "shift", "policy": "A0 kit greedy baseline", "msmi": 1.0, "mutual": 7.5, "coverage": 0.41, "intros": 105, "ask_cost": 189}
+{"seed": 6039, "variant": "shift", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 9.5, "coverage": 0.41, "intros": 107, "ask_cost": 189}
+{"seed": 6039, "variant": "shift", "policy": "A2 + value-of-information asker", "msmi": 1.0, "mutual": 8.5, "coverage": 0.41, "intros": 108, "ask_cost": 189}
+{"seed": 6039, "variant": "shift", "policy": "A3 + coverage/urgency boost", "msmi": 1.5, "mutual": 6.0, "coverage": 0.415, "intros": 99, "ask_cost": 189}
+{"seed": 6039, "variant": "shift", "policy": "A4 + Thompson online learning", "msmi": 1.0, "mutual": 6.0, "coverage": 0.415, "intros": 101, "ask_cost": 189}
+{"seed": 6000, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 1.0, "coverage": 0.14, "intros": 16, "ask_cost": 189}
+{"seed": 6000, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 1.0, "coverage": 0.14, "intros": 16, "ask_cost": 189}
+{"seed": 6000, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 1.0, "coverage": 0.14, "intros": 16, "ask_cost": 189}
+{"seed": 6000, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 1.0, "coverage": 0.14, "intros": 16, "ask_cost": 189}
+{"seed": 6000, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 1.0, "coverage": 0.14, "intros": 16, "ask_cost": 189}
+{"seed": 6001, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 1.5, "coverage": 0.155, "intros": 20, "ask_cost": 195}
+{"seed": 6001, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 1.5, "coverage": 0.155, "intros": 20, "ask_cost": 195}
+{"seed": 6001, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 2.0, "coverage": 0.155, "intros": 21, "ask_cost": 195}
+{"seed": 6001, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 2.0, "coverage": 0.155, "intros": 21, "ask_cost": 195}
+{"seed": 6001, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 2.0, "coverage": 0.155, "intros": 21, "ask_cost": 195}
+{"seed": 6002, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 1.0, "coverage": 0.14, "intros": 21, "ask_cost": 204}
+{"seed": 6002, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 1.0, "coverage": 0.14, "intros": 21, "ask_cost": 204}
+{"seed": 6002, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 2.0, "coverage": 0.14, "intros": 20, "ask_cost": 204}
+{"seed": 6002, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 2.0, "coverage": 0.14, "intros": 20, "ask_cost": 204}
+{"seed": 6002, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 2.0, "coverage": 0.14, "intros": 20, "ask_cost": 204}
+{"seed": 6003, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 2.0, "coverage": 0.15, "intros": 21, "ask_cost": 147}
+{"seed": 6003, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 2.0, "coverage": 0.15, "intros": 21, "ask_cost": 147}
+{"seed": 6003, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 3.0, "coverage": 0.15, "intros": 21, "ask_cost": 147}
+{"seed": 6003, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 2.5, "coverage": 0.155, "intros": 22, "ask_cost": 147}
+{"seed": 6003, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 2.5, "coverage": 0.155, "intros": 22, "ask_cost": 147}
+{"seed": 6004, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 1.0, "coverage": 0.185, "intros": 24, "ask_cost": 210}
+{"seed": 6004, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 1.0, "coverage": 0.185, "intros": 24, "ask_cost": 210}
+{"seed": 6004, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 2.0, "coverage": 0.185, "intros": 24, "ask_cost": 210}
+{"seed": 6004, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 2.0, "coverage": 0.185, "intros": 24, "ask_cost": 210}
+{"seed": 6004, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 2.0, "coverage": 0.185, "intros": 24, "ask_cost": 210}
+{"seed": 6005, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 2.5, "coverage": 0.125, "intros": 14, "ask_cost": 183}
+{"seed": 6005, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 2.5, "coverage": 0.125, "intros": 14, "ask_cost": 183}
+{"seed": 6005, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 3.0, "coverage": 0.125, "intros": 14, "ask_cost": 183}
+{"seed": 6005, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 3.0, "coverage": 0.125, "intros": 14, "ask_cost": 183}
+{"seed": 6005, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 3.0, "coverage": 0.125, "intros": 14, "ask_cost": 183}
+{"seed": 6006, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 0.5, "coverage": 0.155, "intros": 19, "ask_cost": 180}
+{"seed": 6006, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 0.5, "coverage": 0.155, "intros": 19, "ask_cost": 180}
+{"seed": 6006, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 1.5, "coverage": 0.155, "intros": 19, "ask_cost": 180}
+{"seed": 6006, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 1.5, "coverage": 0.155, "intros": 19, "ask_cost": 180}
+{"seed": 6006, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 1.5, "coverage": 0.155, "intros": 19, "ask_cost": 180}
+{"seed": 6007, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 1.5, "coverage": 0.15, "intros": 17, "ask_cost": 156}
+{"seed": 6007, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 1.5, "coverage": 0.15, "intros": 17, "ask_cost": 156}
+{"seed": 6007, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 2.5, "coverage": 0.15, "intros": 17, "ask_cost": 156}
+{"seed": 6007, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 2.5, "coverage": 0.15, "intros": 17, "ask_cost": 156}
+{"seed": 6007, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 2.5, "coverage": 0.15, "intros": 17, "ask_cost": 156}
+{"seed": 6008, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 2.0, "coverage": 0.125, "intros": 17, "ask_cost": 213}
+{"seed": 6008, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 2.5, "coverage": 0.125, "intros": 17, "ask_cost": 213}
+{"seed": 6008, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 3.0, "coverage": 0.125, "intros": 17, "ask_cost": 213}
+{"seed": 6008, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 2.0, "coverage": 0.125, "intros": 17, "ask_cost": 213}
+{"seed": 6008, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 3.0, "coverage": 0.125, "intros": 17, "ask_cost": 213}
+{"seed": 6009, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 3.5, "coverage": 0.225, "intros": 32, "ask_cost": 201}
+{"seed": 6009, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 3.5, "coverage": 0.225, "intros": 32, "ask_cost": 201}
+{"seed": 6009, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 3.0, "coverage": 0.225, "intros": 33, "ask_cost": 201}
+{"seed": 6009, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 3.0, "coverage": 0.225, "intros": 32, "ask_cost": 201}
+{"seed": 6009, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 3.0, "coverage": 0.225, "intros": 32, "ask_cost": 201}
+{"seed": 6010, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 2.0, "coverage": 0.235, "intros": 29, "ask_cost": 171}
+{"seed": 6010, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 2.0, "coverage": 0.235, "intros": 30, "ask_cost": 171}
+{"seed": 6010, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 2.0, "coverage": 0.235, "intros": 29, "ask_cost": 171}
+{"seed": 6010, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 2.0, "coverage": 0.235, "intros": 29, "ask_cost": 171}
+{"seed": 6010, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 2.0, "coverage": 0.235, "intros": 29, "ask_cost": 171}
+{"seed": 6011, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 1.5, "coverage": 0.135, "intros": 18, "ask_cost": 186}
+{"seed": 6011, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 1.0, "coverage": 0.135, "intros": 18, "ask_cost": 186}
+{"seed": 6011, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 1.0, "coverage": 0.135, "intros": 18, "ask_cost": 186}
+{"seed": 6011, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 1.0, "coverage": 0.135, "intros": 18, "ask_cost": 186}
+{"seed": 6011, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 0.5, "coverage": 0.135, "intros": 18, "ask_cost": 186}
+{"seed": 6012, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 2.0, "coverage": 0.21, "intros": 30, "ask_cost": 198}
+{"seed": 6012, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 2.5, "coverage": 0.21, "intros": 29, "ask_cost": 198}
+{"seed": 6012, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 3.5, "coverage": 0.21, "intros": 30, "ask_cost": 198}
+{"seed": 6012, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 3.5, "coverage": 0.21, "intros": 29, "ask_cost": 198}
+{"seed": 6012, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 3.5, "coverage": 0.21, "intros": 29, "ask_cost": 198}
+{"seed": 6013, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 1.5, "coverage": 0.16, "intros": 19, "ask_cost": 180}
+{"seed": 6013, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 1.5, "coverage": 0.16, "intros": 19, "ask_cost": 180}
+{"seed": 6013, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 1.0, "coverage": 0.155, "intros": 18, "ask_cost": 180}
+{"seed": 6013, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 1.0, "coverage": 0.155, "intros": 18, "ask_cost": 180}
+{"seed": 6013, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 1.0, "coverage": 0.155, "intros": 18, "ask_cost": 180}
+{"seed": 6014, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 3.5, "coverage": 0.205, "intros": 24, "ask_cost": 165}
+{"seed": 6014, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 3.5, "coverage": 0.205, "intros": 24, "ask_cost": 165}
+{"seed": 6014, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 4.0, "coverage": 0.205, "intros": 24, "ask_cost": 165}
+{"seed": 6014, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 4.0, "coverage": 0.205, "intros": 24, "ask_cost": 165}
+{"seed": 6014, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 4.0, "coverage": 0.205, "intros": 24, "ask_cost": 165}
+{"seed": 6015, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 1.5, "coverage": 0.15, "intros": 18, "ask_cost": 183}
+{"seed": 6015, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 1.5, "coverage": 0.15, "intros": 18, "ask_cost": 183}
+{"seed": 6015, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 1.5, "coverage": 0.15, "intros": 18, "ask_cost": 183}
+{"seed": 6015, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 1.5, "coverage": 0.15, "intros": 18, "ask_cost": 183}
+{"seed": 6015, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 1.5, "coverage": 0.15, "intros": 18, "ask_cost": 183}
+{"seed": 6016, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 1.5, "coverage": 0.19, "intros": 24, "ask_cost": 225}
+{"seed": 6016, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 1.0, "coverage": 0.19, "intros": 24, "ask_cost": 225}
+{"seed": 6016, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 1.0, "coverage": 0.185, "intros": 23, "ask_cost": 225}
+{"seed": 6016, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 1.0, "coverage": 0.185, "intros": 23, "ask_cost": 225}
+{"seed": 6016, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 1.0, "coverage": 0.185, "intros": 23, "ask_cost": 225}
+{"seed": 6017, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 2.0, "coverage": 0.25, "intros": 31, "ask_cost": 228}
+{"seed": 6017, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 1.5, "coverage": 0.25, "intros": 31, "ask_cost": 228}
+{"seed": 6017, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 2.5, "coverage": 0.255, "intros": 33, "ask_cost": 228}
+{"seed": 6017, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 2.0, "coverage": 0.255, "intros": 33, "ask_cost": 228}
+{"seed": 6017, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 2.0, "coverage": 0.255, "intros": 33, "ask_cost": 228}
+{"seed": 6018, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 1.5, "coverage": 0.16, "intros": 20, "ask_cost": 216}
+{"seed": 6018, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 1.5, "coverage": 0.16, "intros": 20, "ask_cost": 216}
+{"seed": 6018, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 1.0, "coverage": 0.16, "intros": 20, "ask_cost": 216}
+{"seed": 6018, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 1.0, "coverage": 0.16, "intros": 20, "ask_cost": 216}
+{"seed": 6018, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 1.0, "coverage": 0.16, "intros": 20, "ask_cost": 216}
+{"seed": 6019, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 1.5, "coverage": 0.125, "intros": 19, "ask_cost": 189}
+{"seed": 6019, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 1.0, "coverage": 0.125, "intros": 19, "ask_cost": 189}
+{"seed": 6019, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 1.5, "coverage": 0.125, "intros": 19, "ask_cost": 189}
+{"seed": 6019, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 1.5, "coverage": 0.125, "intros": 19, "ask_cost": 189}
+{"seed": 6019, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 1.5, "coverage": 0.125, "intros": 19, "ask_cost": 189}
+{"seed": 6020, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 2.0, "coverage": 0.16, "intros": 20, "ask_cost": 198}
+{"seed": 6020, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 2.0, "coverage": 0.16, "intros": 20, "ask_cost": 198}
+{"seed": 6020, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 1.0, "coverage": 0.16, "intros": 20, "ask_cost": 198}
+{"seed": 6020, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 1.0, "coverage": 0.16, "intros": 20, "ask_cost": 198}
+{"seed": 6020, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 1.0, "coverage": 0.16, "intros": 20, "ask_cost": 198}
+{"seed": 6021, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 1.5, "coverage": 0.125, "intros": 14, "ask_cost": 180}
+{"seed": 6021, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 1.0, "coverage": 0.125, "intros": 14, "ask_cost": 180}
+{"seed": 6021, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 0.5, "coverage": 0.13, "intros": 15, "ask_cost": 180}
+{"seed": 6021, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 0.5, "coverage": 0.13, "intros": 15, "ask_cost": 180}
+{"seed": 6021, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 0.5, "coverage": 0.13, "intros": 15, "ask_cost": 180}
+{"seed": 6022, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 1.0, "coverage": 0.195, "intros": 28, "ask_cost": 219}
+{"seed": 6022, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 0.5, "coverage": 0.19, "intros": 28, "ask_cost": 219}
+{"seed": 6022, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 1.5, "coverage": 0.19, "intros": 27, "ask_cost": 219}
+{"seed": 6022, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 1.5, "coverage": 0.195, "intros": 28, "ask_cost": 219}
+{"seed": 6022, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 1.5, "coverage": 0.19, "intros": 28, "ask_cost": 219}
+{"seed": 6023, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 2.0, "coverage": 0.13, "intros": 14, "ask_cost": 171}
+{"seed": 6023, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 2.0, "coverage": 0.13, "intros": 14, "ask_cost": 171}
+{"seed": 6023, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 2.0, "coverage": 0.13, "intros": 14, "ask_cost": 171}
+{"seed": 6023, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 2.0, "coverage": 0.13, "intros": 14, "ask_cost": 171}
+{"seed": 6023, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 2.0, "coverage": 0.13, "intros": 14, "ask_cost": 171}
+{"seed": 6024, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 2.5, "coverage": 0.18, "intros": 22, "ask_cost": 198}
+{"seed": 6024, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 2.5, "coverage": 0.18, "intros": 22, "ask_cost": 198}
+{"seed": 6024, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 1.5, "coverage": 0.18, "intros": 22, "ask_cost": 198}
+{"seed": 6024, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 1.5, "coverage": 0.18, "intros": 22, "ask_cost": 198}
+{"seed": 6024, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 1.5, "coverage": 0.18, "intros": 22, "ask_cost": 198}
+{"seed": 6025, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 2.0, "coverage": 0.18, "intros": 24, "ask_cost": 189}
+{"seed": 6025, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 2.0, "coverage": 0.18, "intros": 24, "ask_cost": 189}
+{"seed": 6025, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 1.5, "coverage": 0.18, "intros": 24, "ask_cost": 189}
+{"seed": 6025, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 1.5, "coverage": 0.18, "intros": 24, "ask_cost": 189}
+{"seed": 6025, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 1.5, "coverage": 0.18, "intros": 24, "ask_cost": 189}
+{"seed": 6026, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 2.0, "coverage": 0.18, "intros": 20, "ask_cost": 174}
+{"seed": 6026, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 2.0, "coverage": 0.175, "intros": 19, "ask_cost": 174}
+{"seed": 6026, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 0.5, "coverage": 0.18, "intros": 20, "ask_cost": 174}
+{"seed": 6026, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 0.5, "coverage": 0.18, "intros": 20, "ask_cost": 174}
+{"seed": 6026, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 0.0, "coverage": 0.18, "intros": 20, "ask_cost": 174}
+{"seed": 6027, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 1.5, "coverage": 0.245, "intros": 32, "ask_cost": 180}
+{"seed": 6027, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 2.0, "coverage": 0.25, "intros": 32, "ask_cost": 180}
+{"seed": 6027, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 2.5, "coverage": 0.25, "intros": 32, "ask_cost": 180}
+{"seed": 6027, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 2.0, "coverage": 0.25, "intros": 33, "ask_cost": 180}
+{"seed": 6027, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 1.5, "coverage": 0.25, "intros": 33, "ask_cost": 180}
+{"seed": 6028, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 2.5, "coverage": 0.2, "intros": 27, "ask_cost": 216}
+{"seed": 6028, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 1.5, "coverage": 0.2, "intros": 27, "ask_cost": 216}
+{"seed": 6028, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 0.5, "coverage": 0.2, "intros": 27, "ask_cost": 216}
+{"seed": 6028, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 0.5, "coverage": 0.205, "intros": 28, "ask_cost": 216}
+{"seed": 6028, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 0.5, "coverage": 0.205, "intros": 28, "ask_cost": 216}
+{"seed": 6029, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 0.5, "coverage": 0.11, "intros": 13, "ask_cost": 183}
+{"seed": 6029, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 0.5, "coverage": 0.11, "intros": 13, "ask_cost": 183}
+{"seed": 6029, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 1.0, "coverage": 0.11, "intros": 14, "ask_cost": 183}
+{"seed": 6029, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 1.0, "coverage": 0.11, "intros": 14, "ask_cost": 183}
+{"seed": 6029, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 1.0, "coverage": 0.11, "intros": 14, "ask_cost": 183}
+{"seed": 6030, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 2.5, "coverage": 0.16, "intros": 23, "ask_cost": 201}
+{"seed": 6030, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 2.5, "coverage": 0.16, "intros": 22, "ask_cost": 201}
+{"seed": 6030, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 2.5, "coverage": 0.16, "intros": 22, "ask_cost": 201}
+{"seed": 6030, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 2.5, "coverage": 0.16, "intros": 23, "ask_cost": 201}
+{"seed": 6030, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 2.5, "coverage": 0.16, "intros": 23, "ask_cost": 201}
+{"seed": 6031, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 3.0, "coverage": 0.2, "intros": 27, "ask_cost": 168}
+{"seed": 6031, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 3.0, "coverage": 0.2, "intros": 27, "ask_cost": 168}
+{"seed": 6031, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 1.5, "coverage": 0.2, "intros": 26, "ask_cost": 168}
+{"seed": 6031, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 1.5, "coverage": 0.2, "intros": 26, "ask_cost": 168}
+{"seed": 6031, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 1.5, "coverage": 0.2, "intros": 26, "ask_cost": 168}
+{"seed": 6032, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 2.0, "coverage": 0.195, "intros": 24, "ask_cost": 180}
+{"seed": 6032, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 1.5, "coverage": 0.195, "intros": 24, "ask_cost": 180}
+{"seed": 6032, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 3.5, "coverage": 0.195, "intros": 24, "ask_cost": 180}
+{"seed": 6032, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 3.5, "coverage": 0.195, "intros": 24, "ask_cost": 180}
+{"seed": 6032, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 3.5, "coverage": 0.195, "intros": 24, "ask_cost": 180}
+{"seed": 6033, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 0.5, "coverage": 0.095, "intros": 10, "ask_cost": 159}
+{"seed": 6033, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 0.5, "coverage": 0.095, "intros": 10, "ask_cost": 159}
+{"seed": 6033, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 1.0, "coverage": 0.095, "intros": 10, "ask_cost": 159}
+{"seed": 6033, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 1.0, "coverage": 0.095, "intros": 10, "ask_cost": 159}
+{"seed": 6033, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 1.0, "coverage": 0.095, "intros": 10, "ask_cost": 159}
+{"seed": 6034, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 1.5, "coverage": 0.095, "intros": 12, "ask_cost": 162}
+{"seed": 6034, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 1.5, "coverage": 0.095, "intros": 12, "ask_cost": 162}
+{"seed": 6034, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 1.5, "coverage": 0.095, "intros": 12, "ask_cost": 162}
+{"seed": 6034, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 1.5, "coverage": 0.095, "intros": 12, "ask_cost": 162}
+{"seed": 6034, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 1.5, "coverage": 0.095, "intros": 12, "ask_cost": 162}
+{"seed": 6035, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.5, "mutual": 1.0, "coverage": 0.15, "intros": 17, "ask_cost": 168}
+{"seed": 6035, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.5, "mutual": 1.0, "coverage": 0.15, "intros": 17, "ask_cost": 168}
+{"seed": 6035, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 1.0, "coverage": 0.15, "intros": 17, "ask_cost": 168}
+{"seed": 6035, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 1.0, "coverage": 0.15, "intros": 17, "ask_cost": 168}
+{"seed": 6035, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 1.0, "coverage": 0.15, "intros": 17, "ask_cost": 168}
+{"seed": 6036, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 1.0, "coverage": 0.145, "intros": 19, "ask_cost": 225}
+{"seed": 6036, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 0.5, "coverage": 0.145, "intros": 19, "ask_cost": 225}
+{"seed": 6036, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 1.5, "coverage": 0.145, "intros": 19, "ask_cost": 225}
+{"seed": 6036, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 2.0, "coverage": 0.145, "intros": 19, "ask_cost": 225}
+{"seed": 6036, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 2.0, "coverage": 0.145, "intros": 19, "ask_cost": 225}
+{"seed": 6037, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 3.0, "coverage": 0.205, "intros": 30, "ask_cost": 189}
+{"seed": 6037, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 3.0, "coverage": 0.205, "intros": 30, "ask_cost": 189}
+{"seed": 6037, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 0.5, "coverage": 0.205, "intros": 30, "ask_cost": 189}
+{"seed": 6037, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 0.5, "coverage": 0.205, "intros": 30, "ask_cost": 189}
+{"seed": 6037, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 1.0, "coverage": 0.205, "intros": 30, "ask_cost": 189}
+{"seed": 6038, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 1.0, "coverage": 0.15, "intros": 21, "ask_cost": 165}
+{"seed": 6038, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 1.5, "coverage": 0.15, "intros": 21, "ask_cost": 165}
+{"seed": 6038, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.0, "mutual": 2.0, "coverage": 0.15, "intros": 21, "ask_cost": 165}
+{"seed": 6038, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.0, "mutual": 2.0, "coverage": 0.15, "intros": 21, "ask_cost": 165}
+{"seed": 6038, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.0, "mutual": 2.0, "coverage": 0.15, "intros": 21, "ask_cost": 165}
+{"seed": 6039, "variant": "sparse", "policy": "A0 kit greedy baseline", "msmi": 0.0, "mutual": 3.0, "coverage": 0.23, "intros": 27, "ask_cost": 210}
+{"seed": 6039, "variant": "sparse", "policy": "A1 + max-weight matching", "msmi": 0.0, "mutual": 3.0, "coverage": 0.23, "intros": 28, "ask_cost": 210}
+{"seed": 6039, "variant": "sparse", "policy": "A2 + value-of-information asker", "msmi": 0.5, "mutual": 2.0, "coverage": 0.23, "intros": 28, "ask_cost": 210}
+{"seed": 6039, "variant": "sparse", "policy": "A3 + coverage/urgency boost", "msmi": 0.5, "mutual": 2.0, "coverage": 0.23, "intros": 28, "ask_cost": 210}
+{"seed": 6039, "variant": "sparse", "policy": "A4 + Thompson online learning", "msmi": 0.5, "mutual": 2.0, "coverage": 0.23, "intros": 28, "ask_cost": 210}

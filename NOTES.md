@@ -227,6 +227,11 @@ PERSON FLOW
 - Binding-constraints table format for the Round 1 note.
 - Not adopted: uplift (no one meets without intro here), IDF (fixed categories), submodular slates (one intro at a time).
 
+### Prototype ablation (7 Oct, 240 episodes/policy, SKELETON.md §4)
+- MSMI unchanged within noise (0.41 baseline). Mutual acceptances +5% from VOI asker (significant).
+  Coverage +0.5 pt but already near ceiling (0.41 dev / 0.16 sparse).
+- Next levers: unused ask budget (199/720 pts), goal asks for Active people, score full funnel, reply reliability.
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).

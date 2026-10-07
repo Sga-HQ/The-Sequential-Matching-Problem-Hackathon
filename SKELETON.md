@@ -65,6 +65,30 @@ The best pieces from everything we studied, organised into one daily process. Ea
 | 7 | Official checker on chosen pairs | **K** | One invalid pair disqualifies |
 | Test | Develop on mutual acceptances, confirm on MSMI with many seeds | **F** §11 power analysis | MSMI 1.0 → 1.5 per episode needs ~79 episodes per policy (**E** calc) |
 
-## 4. Measured results
+## 4. Measured results (7 Oct)
 
-See section "Results" below (filled in from `experiments/run_ablation.py`).
+`experiments/run_ablation.py`: same protocol as the organiser evaluator (60 days + 40 follow-up), 40 seeds × 6 scenarios = **240 episodes per policy**, pieces added one at a time. Raw data: `experiments/results/ablation_6000-6039.jsonl`. Difference vs A0 is paired by seed, ± one standard error.
+
+| Policy | MSMI /100 (primary) | Mutual accept /100 | Coverage |
+|---|---|---|---|
+| A0 kit greedy baseline | 0.410 | 5.45 | 0.335 |
+| A1 + max-weight matching | 0.408 (−0.002 ± 0.032) | 5.60 (+0.16 ± 0.10) | 0.336 |
+| A2 + value-of-information asker | 0.398 (−0.013 ± 0.038) | **5.74 (+0.29 ± 0.11), +5%** | 0.338 |
+| A3 + coverage/urgency boost | 0.396 (−0.015 ± 0.037) | 5.69 (+0.25 ± 0.10) | 0.339 |
+| A4 + Thompson online learning | 0.400 (−0.010 ± 0.039) | 5.64 (+0.19 ± 0.11) | **0.340 (+0.005 ± 0.001)** |
+
+Reading:
+- **MSMI: no measurable change.** All differences are inside ±0.04 noise. Detecting a 10% change would need thousands of episodes (power analysis, friend §11).
+- **Mutual acceptances: +5% from the asker** (≈2.7 standard errors) — the clearest real gain.
+- **Coverage: +0.5 points, very consistent, but already near the ceiling.** Ceiling (people who have any allowed partner at all) = 0.41 development, 0.16 sparse; we reach 0.39 / 0.17.
+- Thompson learning showed no overall gain; shift-scenario MSMI 0.40 → 0.57 is suggestive but within noise.
+
+## 5. Where the remaining room is (next experiments)
+
+| Lever | Why | Evidence |
+|---|---|---|
+| Spend the unused ask budget | Only 199 of 720 points used per episode; after ~day 17 Pending is empty | **E** |
+| Ask `relationship_goal` (1 pt) for Active people with unknown goal | Goal drives both the first yes and the second-date yes | **K** simulator, **E** weights |
+| Score the whole funnel, not just "both yes" | Second-date chance has its own goal-match term | **K** simulator code |
+| Reply reliability | ~22% of replies never arrive and kill the pair | **K** data; reliability, not rejection reasons |
+| Coverage is near its ceiling | Gains must come from pair quality and repeat introductions | **E** |
