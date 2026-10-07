@@ -1,0 +1,83 @@
+# Research Log: Papers, Open-Source Code and Our Experiments
+
+Goal: not a ready-made solution, but **small pieces** of other people's approaches that we can adopt and improve.
+Code was read at the source level (commit noted), not only the README.
+
+---
+
+## 1. Open-source code read
+
+| Repo (commit) | Licence | What we read | Piece worth adopting |
+|---|---|---|---|
+| [m-ochi/recon](https://github.com/m-ochi/recon) (8dffe38) | see repo | `recon.py`: RECON reciprocal recommender | Compatibility per attribute = share of the person's past interest in that value; **any zero kills the pair**; both directions combined with harmonic mean |
+| [kdevo/chaos-rrs](https://github.com/kdevo/chaos-rrs) (0027f73) | see repo | `recommend/candidates.py`, `recommend/predict/reciprocal.py` | (1) **Candidate-generator chain**: filter → cache → reciprocal filter, each a small composable class. (2) `ReciprocalCG`: forward candidates, then keep only those whose own candidate list contains the user (= our forward + reverse search). (3) Six ways to combine both directions (max, quadratic, arithmetic, geometric, harmonic, **uninorm** `uv/(uv+(1-u)(1-v))`, min). (4) "rank violations" metric: how often one-way ranking disagrees with two-way ranking |
+| [david-cortes/contextualbandits](https://github.com/david-cortes/contextualbandits) (fc49364) | BSD-2 | `online.py` LogisticTS / BootstrappedTS, `utils.py` `_LogisticUCB_n_TS_single` | (1) **Logistic Thompson sampling**: fit logistic regression, covariance Σ = (Xᵀ·diag(p(1−p))·X + λI)⁻¹ (Laplace approx.), draw log-odds + N(0,1)·√(xᵀΣx), then sigmoid. (2) **`beta_prior` cold-start switch**: until an arm has n observations, score it by a Beta draw; switch to the model afterwards. (3) Author's own note: LogisticTS often performs poorly; **BootstrappedTS** (several models on resampled data, pick one at random) is preferred |
+| [SMPyBandits/SMPyBandits](https://github.com/SMPyBandits/SMPyBandits) (012fc13) | MIT | `Policies/Posterior/DiscountedBeta.py`, `Policies/DiscountedThompson.py` | **Discounted Beta**: on each update, successes S ← γS + r, failures F ← γF + (1−r); sample Beta(1+S, 1+F). Exactly our "discount old evidence" idea, ~10 lines. Reference: Raj & Kalyani 2017 |
+| [JohnDickerson/kidney_solver](https://github.com/JohnDickerson/kidney_solver) (dc57446) | GPL-2 (**do not copy code**) | `kidney_digraph.py` `failure_aware_cycle_score`, `kidney_utils.py` chains | **Failure-aware weights**: an exchange's value is multiplied by the chance every edge in it succeeds. For us: pair weight = value × P(A yes) × P(B yes) × P(date happens) |
+| [daffidwilde/matching](https://github.com/daffidwilde/matching) (497602e) | MIT | `algorithms/stable_roommates.py` (Irving) | Stable matching for a **one-sided pool** (our case). Useful as a comparison/ablation: "stable" vs "maximum total value". Needs full preference rankings, so not our main matcher |
+| [networkx/networkx](https://github.com/networkx/networkx) | BSD-3 | `algorithms/matching.py` | `max_weight_matching` (Edmonds blossom, O(n³)); **use integer weights** (the docstring warns float weights can give slightly suboptimal results → scale scores ×10⁶ and round). `maximal_matching` = greedy O(E) fallback |
+| [LeafyChan](https://github.com/LeafyChan) (friend) | – | public repo list | No public repo on recommendation/matching (invoice, games, quantum, cybersecurity). Ask him directly for the friend-suggestion work |
+
+## 2. Papers
+
+| Topic | Paper | Piece for us |
+|---|---|---|
+| Stochastic matching with patience | Chen, Immorlica, Karlin, Mahdian, Rudra. *Approximating Matches Made in Heaven.* ICALP 2009 | Dating-motivated; limited "probes" per person; greedy ≥ 1/4 OPT |
+| Few queries | Blum, Dickerson et al. *Ignorance Is Almost Bliss.* Oper. Res. | O(1) queries per vertex ≈ full optimum → a few asks per person may be enough |
+| Fully online matching | Huang et al. *How to Match when All Vertices Arrive Online.* STOC 2018 | Arrivals + deadlines; Ranking 0.5211-competitive |
+| Stochastic rewards | Mehta & Panigrahi. FOCS 2012 | Matches succeed with probability p |
+| Dynamic matching | Akbarpour, Li, Oveis Gharan. JPE 2020 | Wait only if you know who is about to leave |
+| Logistic Thompson | Chapelle & Li. *An Empirical Evaluation of Thompson Sampling.* NeurIPS 2011 | Laplace-approx. logistic TS; strong baseline |
+| Reciprocal recommenders | Pizzato et al. RECON (RecSys 2010); survey arXiv 2007.16120 | Both-direction compatibility; harmonic mean |
+| Congestion | 2023 field experiment on two-sided matching in online dating (Int. Econ. Review); arXiv 2411.19214 | Ranking by predicted probability concentrates on popular users → matching across the pool fixes it |
+
+## 3. Our experiments (scripts in `experiments/`, run from the organiser kit folder)
+
+### 3.1 Filtering at 100,000 people (`bench_100k.py`) — all 11 dealbreakers, both directions
+35,051 people with complete dealbreakers; every method found the **same 7,970,144 allowed pairs**.
+
+| Method | Build | One new arrival | All pairs |
+|---|---|---|---|
+| User's 1/0 row (early exit) | – | 21.7 ms | 791.5 s |
+| Blocking index (gender × zone buckets) | 0.02 s | 8.7 ms | 289.1 s |
+| Bitmap index (Python big ints) | 0.39 s | 1.4 ms | 35.6 s |
+| **Columnar (numpy arrays)** | 0.30 s | **0.21 ms** | **6.1 s** |
+
+Columnar is ~100× faster than the row-by-row idea per arrival and ~130× for all pairs. Same logic, applied to whole columns at once.
+
+### 3.2 Soft-field weights (`soft_weights.py`) — logistic regression on simulator packets
+Packets = features visible at introduction time + the later observed reply (no-reply dropped). Train seeds 1000–1029, test 2000–2014.
+
+| Feature set | Test log-loss (development) | Test log-loss (shift) |
+|---|---|---|
+| Base rate only | 0.6926 | 0.6863 |
+| **4 soft fields** | **0.6898** | **0.6749** |
+| All 7 soft | 0.6907 | 0.6772 |
+| 7 soft + mutual/other | 0.6912 | 0.6780 |
+
+- Adding mutual fields (wants_children, schedule overlap, same zone, age gap) **made held-out predictions worse** → keep them as filters only.
+- Development weights: goal match +0.71 / differ −0.37 is strongest. Shift weights: pace +0.68, conversations +0.53, lifestyle match −0.23 → **weights must be learned online**.
+- AUC is only ~0.55: soft fields explain a little; hidden personal tendencies and luck dominate. **More good introductions matters more than a perfect scorer.**
+
+### 3.3 Combining both directions (`combine_directions.py`)
+Product, harmonic mean, uninorm, minimum and arithmetic mean all gave AUC 0.561. Reason: soft-field match/differ is symmetric, so P(A yes) = P(B yes) for every pair. The rule only matters once person-level (asymmetric) signals exist. Default: **product** (the actual probability that both say yes, assuming independence).
+
+### 3.4 Predicting what an ask unlocks (`asker_prediction.py`)
+Fill a Pending person's unknown dealbreakers by copying them from random complete people of the same gender (30 samples) and count allowed partners. Truth used only for scoring. 10 worlds, day 0:
+
+| Asking 4 people chosen by | Real partners unlocked (avg) |
+|---|---|
+| Random | 0.62 |
+| **Our prediction** | **1.32** |
+| Perfect hindsight | 2.90 |
+
+Prediction doubles the value of each ask. Correlation predicted vs real: 0.37.
+
+## 4. Adopt list (decisions)
+1. Filter: **columnar numpy masks** (scales best); keep per-rule 1/0 row only for explanations.
+2. Candidate pipeline structure from chaos-rrs: filter → cache → reciprocal check.
+3. Scorer: **discounted Beta** counts (SMPyBandits) for cold start → **bootstrapped logistic TS** once enough replies (contextualbandits pattern).
+4. Pair weight: failure-aware (kidney_solver idea) = P(A yes)·P(B yes)·P(date) × urgency.
+5. Matcher: networkx `max_weight_matching` with **integer-scaled weights**; greedy `maximal_matching` as an ablation.
+6. Asker: donor-imputation prediction of partners unlocked (tested: 2× random).
+7. Ablations to report: stable roommates vs max-weight; harmonic vs product once asymmetric signals exist.

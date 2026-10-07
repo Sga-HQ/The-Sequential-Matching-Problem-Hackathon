@@ -62,21 +62,22 @@ def auc(w, X, y):
     X = np.hstack([np.ones((len(X), 1)), X]); s = X @ w; o = np.argsort(s); r = np.empty(len(s)); r[o] = np.arange(len(s))
     pos = y == 1; return (r[pos].sum() - pos.sum() * (pos.sum() - 1) / 2) / (pos.sum() * (~pos).sum())
 
-for variant in ('development', 'shift'):
-    tr = [p for s in range(1000, 1030) for p in packets(s, variant)]
-    te = [p for s in range(2000, 2015) for p in packets(s, variant)]
-    keys = list(tr[0][0])
-    sets = {
-        'base rate only': [],
-        '4 soft (goal,pace,lifestyle,convo)': [k for k in keys if k.split('=')[0] in FOUR],
-        'all 7 soft': [k for k in keys if not k.startswith('mutual')],
-        '7 soft + mutual/other': keys,
-    }
-    ytr = np.array([v for _, v in tr], float); yte = np.array([v for _, v in te], float)
-    print(f'\n=== variant={variant}  train replies={len(tr)}  test replies={len(te)}  yes-rate={ytr.mean():.2f}')
-    for name, ks in sets.items():
-        Xtr = np.array([[f[k] for k in ks] for f, _ in tr]).reshape(len(tr), len(ks)); Xte = np.array([[f[k] for k in ks] for f, _ in te]).reshape(len(te), len(ks))
-        w = fit(Xtr, ytr)
-        print(f'  {name:36s} test log-loss={logloss(w, Xte, yte):.4f}  test AUC={auc(w, Xte, yte):.3f}')
-        if name == '7 soft + mutual/other':
-            for k, v in sorted(zip(ks, w[1:]), key=lambda t: -abs(t[1])): print(f'      weight {v:+.2f}  {k}')
+if __name__ == "__main__":
+    for variant in ('development', 'shift'):
+        tr = [p for s in range(1000, 1030) for p in packets(s, variant)]
+        te = [p for s in range(2000, 2015) for p in packets(s, variant)]
+        keys = list(tr[0][0])
+        sets = {
+            'base rate only': [],
+            '4 soft (goal,pace,lifestyle,convo)': [k for k in keys if k.split('=')[0] in FOUR],
+            'all 7 soft': [k for k in keys if not k.startswith('mutual')],
+            '7 soft + mutual/other': keys,
+        }
+        ytr = np.array([v for _, v in tr], float); yte = np.array([v for _, v in te], float)
+        print(f'\n=== variant={variant}  train replies={len(tr)}  test replies={len(te)}  yes-rate={ytr.mean():.2f}')
+        for name, ks in sets.items():
+            Xtr = np.array([[f[k] for k in ks] for f, _ in tr]).reshape(len(tr), len(ks)); Xte = np.array([[f[k] for k in ks] for f, _ in te]).reshape(len(te), len(ks))
+            w = fit(Xtr, ytr)
+            print(f'  {name:36s} test log-loss={logloss(w, Xte, yte):.4f}  test AUC={auc(w, Xte, yte):.3f}')
+            if name == '7 soft + mutual/other':
+                for k, v in sorted(zip(ks, w[1:]), key=lambda t: -abs(t[1])): print(f'      weight {v:+.2f}  {k}')

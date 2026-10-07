@@ -206,6 +206,18 @@ PERSON FLOW
   social graph (mutual friends); our people have no social graph → feature-similarity parts transfer, network parts may not.
   Any reused code/maths must be declared (provenance + licence). Teams can have up to 4 members.
 
+### Findings 7 Oct (details in RESEARCH.md)
+- 100k filtering: all methods identical (7,970,144 pairs). Columnar numpy 0.21 ms/arrival, 6.1 s all pairs;
+  user's row idea 21.7 ms, 791 s. → adopt columnar.
+- "Which rule failed" is NOT needed for known failures (one 0 = pair dead). Ask bundle costs 3 for ALL hard
+  fields anyway, so per-field detail only helps estimate whether a Pending person will be compatible.
+- Blocked (refused) people: never matchable, never ask, still in score denominator. Nothing to do. (User agrees.)
+- Soft weights by logistic regression on packets: 4 soft fields best; adding mutual fields hurts held-out
+  log-loss → mutual stays filter-only. Shift scenario flips weights → learn online. AUC ~0.55 → coverage matters more.
+- Combining both directions: all rules identical (symmetric features). Use product.
+- Asker prediction (donor imputation) unlocks 1.32 partners per ask vs 0.62 random (hindsight 2.90).
+- Friend's GitHub (LeafyChan): no public recommendation/matching repo.
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).
