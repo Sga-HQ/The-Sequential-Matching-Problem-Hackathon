@@ -11,6 +11,7 @@ Organiser kit: https://github.com/RomeoJulietLove/The-Sequential-Matching-Proble
 - Round 2 (build): 12–18 Oct 2026, 23:59 IST, via GitHub "Final submission" issue
 - AI tools allowed for planning/coding **if declared**. No AI/network calls inside the graded program.
   Kit §14: "Document external models and coding tools" → the note/report must state AI (Claude) use.
+  User (7 Oct): AI was used **for coding and testing ideas, not planning**. Disclosure wording must match what AI did.
 - **Team: solo (decided 7 Oct).** Friend gave permission to use his research as long as it is not published
   before his; no credit needed (his approval). In the note, cite the original papers for shared concepts
   (Akbarpour 2020, b-matching, power analysis), written in our own words.
@@ -249,6 +250,17 @@ PERSON FLOW
 - Baseline already uses 75% of allowed pairs; unused: 53% paused after success, 27% left app, 20% capacity.
 - Realistic headroom +5–15%. FOCUS: (1) soft-field asks with spare budget, (2) best partners for busy people,
   (3) introduce early. Not: asker order, heavy exploration. Validity first (one invalid pair = disqualified).
+
+### Is the ceiling a wall? (7 Oct)
+- In the PUBLIC simulator it is arithmetic, not opinion: the policy only picks which allowed pairs, when, and asks.
+  Dealbreakers, hidden traits and luck are fixed. E[wins] ≤ Σ over allowed pairs of P(win) = 1.268 vs baseline 0.906
+  (+40%, loose: ignores pausing/busy). No idea can beat +40% there; realistic +5–15% is explained; the 15–40% band
+  is where to hunt.
+- User's point: competitors are strong (professionals, IIT students) → baseline +5% is not enough; validity is table
+  stakes, not an edge. Keep hunting levers. Untested from code: front-load before day 35 (drift), prior strength
+  in shift, reply reliability (MSMI needs each person to answer twice → r² per person).
+- Hidden worlds: families are public, seeds are private (evaluate.py uses kit.generate). Still stress-test
+  beyond them → STRESS_TESTS.md (incl. user's partial-profile idea, 10 s limit at larger pools).
 
 ### Missing-dealbreaker groups (7 Oct, development, 10 worlds, arrived by day 59)
 | Missing dealbreakers | People/world | Has ≥1 allowed partner once answered | Introduced by baseline |
