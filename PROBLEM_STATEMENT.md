@@ -55,7 +55,25 @@ Each person has 11 "dealbreaker" answers: acceptable age range, genders they wan
 | Choose today's pairs | **Maximum-weight matching** on a general graph (Edmonds' blossom) |
 | Safety | Re-check every chosen pair with the official rule checker |
 
-## 8. Timeline
+## 8. Research models we would like your view on
+
+Four models from the literature look very close to our setting. We would value your judgement on which fits best, and which algorithm or proof idea from it we should use.
+
+| Model | Paper | Why it looks relevant |
+|---|---|---|
+| Stochastic matching with patience | Chen, Immorlica, Karlin, Mahdian, Rudra, "Approximating Matches Made in Heaven", ICALP 2009 | Motivated by online dating. Each edge exists with probability p; each person can be probed only a limited number of times (our people get ~7 introductions). A greedy probing strategy gets at least 1/4 of the optimum. |
+| Stochastic matching with few queries | Blum, Dickerson et al., "Ignorance Is Almost Bliss", Operations Research | A constant number of edge queries per vertex achieves almost the full optimum. Our daily "asks" are queries that reveal edges. |
+| Fully online matching | Huang et al., "How to Match when All Vertices Arrive Online", STOC 2018 | Vertices arrive over time and have deadlines, like our arrivals, departures and day 59. Ranking is 0.5211-competitive on general graphs. |
+| Online matching with stochastic rewards | Mehta and Panigrahi, FOCS 2012 | A match only pays off with some probability, like an introduction that can be refused. |
+
+Specific questions:
+
+1. Which of these models fits our problem best?
+2. Is Ranking (or a variant) better than recomputing a maximum-weight matching every day?
+3. How should we choose which vertices to query (ask), given 12 points per day?
+4. Does the theory say to spread introductions over uncertain pairs, or to commit to the most likely ones?
+
+## 9. Timeline
 
 - Round 1 — research note (approach, no code): **9 Oct 2026, 23:59 IST**
 - Round 2 — working program + report: **12–18 Oct 2026**
