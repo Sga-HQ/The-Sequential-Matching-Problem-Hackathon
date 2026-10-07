@@ -10,6 +10,14 @@ Organiser kit: https://github.com/RomeoJulietLove/The-Sequential-Matching-Proble
 - Round 1 results: 11 Oct 2026, 22:00 IST
 - Round 2 (build): 12–18 Oct 2026, 23:59 IST, via GitHub "Final submission" issue
 - AI tools allowed for planning/coding **if declared**. No AI/network calls inside the graded program.
+  Kit §14: "Document external models and coding tools" → the note/report must state AI (Claude) use.
+- **Team: solo (decided 7 Oct).** Friend gave permission to use his research as long as it is not published
+  before his; no credit needed (his approval). In the note, cite the original papers for shared concepts
+  (Akbarpour 2020, b-matching, power analysis), written in our own words.
+- **Aim of the hackathon (kit §1, §10, §15):** a sound, valid, reusable decision policy plus an honest report.
+  Ranked against OTHER TEAMS (not vs baseline) on MSMI over 6 scenarios × 20 private seeds; Round 1 is the research note.
+- **Round 1 workflow:** user writes the logic in plain words → Claude writes math + why + source + evidence
+  (ROUND1_LOGIC_MATH.md). Block 1 (daily pairing) done as a worked example.
 
 ## 2. The problem in one line
 Act as a matchmaker for ~200 synthetic people over 60 days: each day decide **whom to ask questions** and **whom to introduce**, so that the most pairs end up with **both wanting a second date (MSMI)**.
@@ -206,7 +214,7 @@ PERSON FLOW
 - **Friend (friend-suggestion system, ~6 features, own maths):** ask about his features, scoring formula, how he
   combines two directions, missing data, cold start, validation. Caution: friend suggestion = link prediction on a
   social graph (mutual friends); our people have no social graph → feature-similarity parts transfer, network parts may not.
-  Any reused code/maths must be declared (provenance + licence). Teams can have up to 4 members.
+  Update 7 Oct: user is solo; friend approved use without credit (do not publish his work before him).
 
 ### Findings 7 Oct (details in RESEARCH.md)
 - 100k filtering: all methods identical (7,970,144 pairs). Columnar numpy 0.21 ms/arrival, 6.1 s all pairs;
