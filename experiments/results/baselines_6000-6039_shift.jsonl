@@ -1,0 +1,12 @@
+{"seed": 6000, "variant": "shift", "policy": "B no_asks baseline", "msmi": 0.0, "mutual": 0.5, "coverage": 0.065, "intros": 10, "ask_cost": 0}
+{"seed": 6000, "variant": "shift", "policy": "B random baseline", "msmi": 0.0, "mutual": 3.5, "coverage": 0.36, "intros": 78, "ask_cost": 189}
+{"seed": 6001, "variant": "shift", "policy": "B no_asks baseline", "msmi": 0.0, "mutual": 2.0, "coverage": 0.15, "intros": 32, "ask_cost": 0}
+{"seed": 6001, "variant": "shift", "policy": "B random baseline", "msmi": 0.5, "mutual": 10.5, "coverage": 0.385, "intros": 82, "ask_cost": 177}
+{"seed": 6002, "variant": "shift", "policy": "B no_asks baseline", "msmi": 0.0, "mutual": 3.5, "coverage": 0.15, "intros": 30, "ask_cost": 0}
+{"seed": 6002, "variant": "shift", "policy": "B random baseline", "msmi": 1.0, "mutual": 6.0, "coverage": 0.345, "intros": 84, "ask_cost": 180}
+{"seed": 6003, "variant": "shift", "policy": "B no_asks baseline", "msmi": 0.5, "mutual": 2.0, "coverage": 0.175, "intros": 26, "ask_cost": 0}
+{"seed": 6003, "variant": "shift", "policy": "B random baseline", "msmi": 0.5, "mutual": 10.0, "coverage": 0.455, "intros": 95, "ask_cost": 198}
+{"seed": 6004, "variant": "shift", "policy": "B no_asks baseline", "msmi": 0.0, "mutual": 2.5, "coverage": 0.15, "intros": 34, "ask_cost": 0}
+{"seed": 6004, "variant": "shift", "policy": "B random baseline", "msmi": 0.0, "mutual": 9.0, "coverage": 0.465, "intros": 128, "ask_cost": 207}
+{"seed": 6005, "variant": "shift", "policy": "B no_asks baseline", "msmi": 0.0, "mutual": 1.0, "coverage": 0.125, "intros": 25, "ask_cost": 0}
+{"seed": 6005, "variant": "shift", "policy": "B random baseline", "msmi": 0.5, "mutual": 9.0, "coverage": 0.37, "intros": 93, "ask_cost": 195}

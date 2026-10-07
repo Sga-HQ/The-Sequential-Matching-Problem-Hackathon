@@ -1,0 +1,12 @@
+{"seed": 6000, "variant": "cold_start", "policy": "B no_asks baseline", "msmi": 0.0, "mutual": 0.0, "coverage": 0.045, "intros": 6, "ask_cost": 0}
+{"seed": 6000, "variant": "cold_start", "policy": "B random baseline", "msmi": 0.0, "mutual": 4.5, "coverage": 0.33, "intros": 75, "ask_cost": 240}
+{"seed": 6001, "variant": "cold_start", "policy": "B no_asks baseline", "msmi": 0.0, "mutual": 0.0, "coverage": 0.055, "intros": 8, "ask_cost": 0}
+{"seed": 6001, "variant": "cold_start", "policy": "B random baseline", "msmi": 0.5, "mutual": 3.0, "coverage": 0.255, "intros": 51, "ask_cost": 225}
+{"seed": 6002, "variant": "cold_start", "policy": "B no_asks baseline", "msmi": 0.5, "mutual": 1.0, "coverage": 0.055, "intros": 6, "ask_cost": 0}
+{"seed": 6002, "variant": "cold_start", "policy": "B random baseline", "msmi": 1.0, "mutual": 5.5, "coverage": 0.315, "intros": 64, "ask_cost": 228}
+{"seed": 6003, "variant": "cold_start", "policy": "B no_asks baseline", "msmi": 0.0, "mutual": 1.0, "coverage": 0.04, "intros": 8, "ask_cost": 0}
+{"seed": 6003, "variant": "cold_start", "policy": "B random baseline", "msmi": 0.5, "mutual": 2.5, "coverage": 0.3, "intros": 61, "ask_cost": 228}
+{"seed": 6004, "variant": "cold_start", "policy": "B no_asks baseline", "msmi": 0.5, "mutual": 1.5, "coverage": 0.09, "intros": 19, "ask_cost": 0}
+{"seed": 6004, "variant": "cold_start", "policy": "B random baseline", "msmi": 0.0, "mutual": 8.0, "coverage": 0.375, "intros": 94, "ask_cost": 243}
+{"seed": 6005, "variant": "cold_start", "policy": "B no_asks baseline", "msmi": 0.0, "mutual": 1.0, "coverage": 0.045, "intros": 6, "ask_cost": 0}
+{"seed": 6005, "variant": "cold_start", "policy": "B random baseline", "msmi": 0.5, "mutual": 3.0, "coverage": 0.21, "intros": 37, "ask_cost": 237}
