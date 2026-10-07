@@ -76,6 +76,12 @@ The best pieces from everything we studied, organised into one daily process. Ea
 | A2 + value-of-information asker | 0.398 (−0.013 ± 0.038) | **5.74 (+0.29 ± 0.11), +5%** | 0.338 |
 | A3 + coverage/urgency boost | 0.396 (−0.015 ± 0.037) | 5.69 (+0.25 ± 0.10) | 0.339 |
 | A4 + Thompson online learning | 0.400 (−0.010 ± 0.039) | 5.64 (+0.19 ± 0.11) | **0.340 (+0.005 ± 0.001)** |
+| B kit no-asks baseline | 0.117 (−0.294 ± 0.027), −72% | 1.53 (−3.92 ± 0.12) | 0.115 |
+| B kit random-feasible baseline | 0.352 (−0.058 ± 0.033), −14% | 5.64 (+0.19 ± 0.09) | 0.337 |
+
+All three required kit baselines on the same 40 seeds × 6 scenarios (`experiments/run_baselines.py`, `results/baselines_6000-6039_*.jsonl`).
+- **Asking is the biggest lever by far:** without asks, MSMI falls 72%. Most people start with unknown dealbreakers.
+- **Random feasible pairs reach the same mutual acceptances as our full prototype (+4%).** So the order or choice of pairs barely changes "both said yes". Random is lower on MSMI (−14%, about 1.8 standard errors), so choosing pairs may matter more for the later funnel stages.
 
 Reading:
 - **MSMI: no measurable change.** All differences are inside ±0.04 noise. Detecting a 10% change would need thousands of episodes (power analysis, friend §11).

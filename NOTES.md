@@ -251,6 +251,10 @@ PERSON FLOW
 - Realistic headroom +5–15%. FOCUS: (1) soft-field asks with spare budget, (2) best partners for busy people,
   (3) introduce early. Not: asker order, heavy exploration. Validity first (one invalid pair = disqualified).
 
+### All three kit baselines (7 Oct, 240 episodes each, same seeds as ablation)
+- MSMI: greedy 0.410 · random 0.352 (−14%) · no-asks 0.117 (−72%). Our prototype 0.400 (no difference from greedy).
+- Mutual acceptances: random = our prototype (+4% vs greedy). Asking is the big lever; pair choice is small.
+
 ### Is the ceiling a wall? (7 Oct)
 - In the PUBLIC simulator it is arithmetic, not opinion: the policy only picks which allowed pairs, when, and asks.
   Dealbreakers, hidden traits and luck are fixed. E[wins] ≤ Σ over allowed pairs of P(win) = 1.268 vs baseline 0.906
