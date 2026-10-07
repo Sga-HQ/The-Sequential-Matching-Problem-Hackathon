@@ -367,6 +367,49 @@ competing bandits in matching markets; Chen et al. (2013) combinatorial bandits;
 - Do we ever see outcomes of pairs we didn't introduce? → Never (selective feedback).
 - Isn't it always the same dataset? → No: each introduction creates a new pair outcome; simulator gives unlimited new worlds.
 
+## 7e. Lecture 2 (7 Oct): "Building robust ML systems from messy data" (car-park demand forecasting case)
+Case: weekly occupancy forecast for 18 car parks / 3 terminals at an airport, to support dynamic pricing.
+Pipeline: data provenance → objective → modelling (configurable pipeline, hyperparameter search) → evaluation
+(actual vs residual, failure analysis, revenue simulation).
+Key result: XGBoost had the lowest error (MAE), but on the business metric (simulated revenue shortfall against
+perfect information) the naive "same as last week" won (£1.29M vs £1.56M; 8-week planning baseline £2.08M).
+Conclusion: use the model *alongside* handcrafted rules (hybrid).
+
+Lessons → what changes for us:
+| Lecture idea | Our version | Status |
+|---|---|---|
+| Perfect-forecast benchmark (theoretical ceiling) | Perfect-information ceiling (theory_ceilings.py); report "% of achievable gap closed" | ceiling done; add metric |
+| Judge on the business metric, not model accuracy | Choose pieces by MSMI / expected wins in simulation, not scorer AUC or log-loss | adopt |
+| Simple baselines can beat ML | Random pairs = our prototype on mutual acceptances; greedy = prototype on MSMI → say so openly | adopt (honest report) |
+| Use only information available at prediction time; filters learned on training data only | Policy reads only the observation (no truth, no seed); tune on training seeds only | adopt + audit test |
+| Grouped hold-out (split by quarter/terminal/car park) | Split by **seed** (world): tuning seeds ≠ report seeds; report per scenario | adopt |
+| Failure categories: accurate / under / over / extreme / no output | Funnel failure table per scenario: success · one said no · no reply · date did not happen · second answer late/no · person left · never introduced | to build |
+| Data provenance: original → derived → combined → external | Profile + feedback (original); degree, waiting days, reply reliability (derived); pair match/differ features (combined); no external data | for note |
+| Configurable pipeline + automated search | cfg knobs (urgency 1.5/0.5, prior strength 40, γ 0.98, ask mix) tuned by evolutionary search offline | to build |
+| Revenue simulation states its assumptions ("illustrative, not measured impact") | State simulator caveats (kit: simulator performance ≠ relationship prediction) | for note |
+| Hybrid: model alongside rules | Kit greedy kept as fallback (time guard, errors) | to build |
+
+Our own retrospective echo: the asker's +5% did not replicate (like a low-MAE model that loses on revenue).
+
+Lecturer's public repo, code read (keith-17/data-projects @ 8221616): the car-park project notebook uses
+`GroupShuffleSplit` by (quarter, terminal, car park), GridSearchCV, toggles (`naive_split_bool`, `use_weekly`), a CSV
+checkpoint cache, versioned Excel report export. Its feature list includes same-week `total_revenue`/`bookings_count`
+(computed from the same bookings as the target) → likely why MAE looked very low while "same as last week" won on
+revenue (our inference). numerai notebooks: `GroupKFold` by era. research_center_assignment: experiments dict
+(named configs → same evaluation → comparison table), FastAPI + Docker + regression tests with mocks.
+No evolutionary/GA code in the repo; the physics project (wavetime) is unrelated except numba speed-ups.
+
+Organiser Q&A (7 Oct, anonymised):
+- networkx may be added if pinned, licensed (BSD-3) and included in the Docker image.
+- You may challenge the problem framing: say what the statement misses, why it matters, how addressing it improves
+  sequential matching, and show it with experiments; still answer the core challenge.
+- What judges want (user's conversation with organisers): which existing solutions we use and why, how well we
+  handle delayed responses, retrospection and introspection (what went wrong, what we learnt). Aim for ≥10 pages.
+- User: we must try evolutionary methods (lecture 1 also: free simulator evaluations → GA/DE offline).
+- Chat question "a model per terminal = divide and conquer, better than one model?" → for us: matching splits
+  exactly by connected components (same answer, faster); for learning, pooled + per-group adjustment beats
+  separate small models when data is scarce.
+
 ## 8. Research leads
 Dynamic matching markets / kidney exchange ("Thickness and Information in Dynamic Matching Markets"), reciprocal recommender systems, maximum weight matching, value of information / active learning, contextual bandits, Gale–Shapley (why not used).
 From lecture refs: Russo et al. 2018 (Thompson tutorial), Das & Kamenica 2005 (two-sided bandits & dating market), Liu, Mania & Jordan 2020 (competing bandits in matching markets), Joulani et al. 2013 (online learning under delayed feedback), Lakkaraju et al. 2017 (selective labels), Howard 1966 (value of information), Garivier & Moulines 2011 (discounted UCB).

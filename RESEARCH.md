@@ -18,6 +18,13 @@ Code was read at the source level (commit noted), not only the README.
 | [networkx/networkx](https://github.com/networkx/networkx) | BSD-3 | `algorithms/matching.py` | `max_weight_matching` (Edmonds blossom, O(n³)); **use integer weights** (the docstring warns float weights can give slightly suboptimal results → scale scores ×10⁶ and round). `maximal_matching` = greedy O(E) fallback |
 | [LeafyChan](https://github.com/LeafyChan) (friend) | – | public repo list | No public repo on recommendation/matching (invoice, games, quantum, cybersecurity). Ask him directly for the friend-suggestion work |
 
+### Lecturer's repo: keith-17/data-projects @ 8221616312bffceae1b78d6cdc857d6ef3219eb4 (no licence file → ideas only, no code copy)
+- `CAVU/analysis/analysis.ipynb`: car-park forecast. GroupShuffleSplit by quarter/terminal/car park; correlation top-8 feature
+  selection; RF GridSearchCV; LR/ARIMA/RF/XGB/MLP/SVR compared on R², MAE, RMSE; vectorised booking→day expansion (`general_utils.py`).
+  Same-week booking aggregates used as features → possible leakage (our reading).
+- `numerai/*`: GroupKFold by era. `research_center_assignment/`: experiments dict, FastAPI, Docker, pytest regression checks.
+- Takeaways for us: grouped hold-out by world/seed; experiments dict for ablations; regression tests on the policy interface.
+
 ## 2. Papers
 
 | Topic | Paper | Piece for us |
