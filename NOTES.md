@@ -127,6 +127,28 @@ Baselines: greedy 0.50, no-asks 0.33, random 0.25. One invalid pair anywhere = d
 - Design for scale: **do not rely on brute force all-pairs**. Use an index + staged bulk filters.
   Final safety check still runs full `eligibility()` on the few chosen pairs (cheap).
 
+### Table design (user idea, 7 Oct) — split "who I am" from "who I want"
+| Table | Columns | Used for |
+|---|---|---|
+| **profile** (who I am) | age, gender, zone, smoking, has_children | other people's preferences are checked against this |
+| **preferences** (who I want) | age_min/max, who_to_meet, acceptable_zones, partner_smoking, partner_children | checked against other people's profile |
+| **mutual** (must agree/overlap) | relationship_structure, wants_children, schedule | compared both ways |
+| **soft** | goal, pace, lifestyle, conversations (+3 no-effect fields) | scorer only |
+| **status** | per-field observed / not_asked / declined + day observed; available; store (Active/Pending/...) | asker, safety |
+| **history** | introductions + replies | no repeats, scorer counts |
+- Forward search = MY preferences × THEIR profile; reverse = THEIR preferences × MY profile.
+- Matches problem statement §15: "keep normalisation, modelling and allocation separate".
+
+### Daily pair selection for existing people (researched 7 Oct)
+1. Edges = allowed pairs among free people (from the edge list / bitsets).
+2. Weight per edge = Thompson-sampled P(A yes)·P(B yes) × urgency boost (waiting time, few options, near end).
+3. **Maximum-weight matching** over the whole graph (Edmonds blossom — graph is NOT bipartite because of
+   same-gender / non-binary preferences). networkx `max_weight_matching` (BSD, pure Python) or exact search per island.
+4. Wait vs match: Akbarpour–Li–Oveis Gharan (JPE 2020): waiting to thicken the market helps a lot ONLY if you
+   know who is about to leave ("critical"); otherwise matching greedily-ish is near optimal.
+   → match nearly everyone each day; only hold back people with many options when a clearly better partner is likely.
+5. RECON (Pizzato et al.) combines both directions with the **harmonic mean** — penalises one-sided pairs.
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).
@@ -228,6 +250,10 @@ From lecture refs: Russo et al. 2018 (Thompson tutorial), Das & Kamenica 2005 (t
     0.0007 s vs 0.0425 s (~60× faster). Built once per person (on arrival / after ask) → cheap.
   - Still run full `eligibility()` on chosen pairs as final safety check.
   - Same idea for soft fields: per-pair vector match=1 / differ=0 (+ unknown flag) = scorer input.
+  - User's original form: for new person X, compute a 1/0 per dealbreaker for every other person (all 1 = match).
+    Same result as bitsets; bitsets compute the whole column at once. Keep the per-dealbreaker 1/0 vector
+    for "?"/near-miss pairs — it tells WHICH rule fails or is unknown (useful for the asker and explanations).
+  - Industry: bitmap indexes / roaring bitmaps (Elasticsearch, Spark) do exactly this boolean filtering.
 - Divide & conquer: block by gender → zone → age (cuts 9,180 → 2,996 pairs on day 0 (corrected; earlier 3,215 had an age-check bug)). Best use: deciding **whom to ask**.
 - Waiting-time threshold ("aging") — lower the bar the longer someone waits.
 - Recalibrator: on arrival / after an ask, recompute that person's candidates and scores.
