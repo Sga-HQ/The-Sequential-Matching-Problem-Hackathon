@@ -119,6 +119,8 @@ Baselines: greedy 0.50, no-asks 0.33, random 0.25. One invalid pair anywhere = d
   (program restarts per call; memory limit 1 MiB).
 
 ## 5. Decisions so far
+- **Testing rule (user, 7 Oct):** test at the real size (200-person worlds). Use 100k scale tests only when a
+  decision specifically depends on scale; the 100k filtering benchmark is done and not repeated.
 - Ignore group C (refused) for asking — can never be matched.
 - Treat unknown soft fields as **neutral**, never as mismatch.
 - Score each direction separately (A→B, B→A).
