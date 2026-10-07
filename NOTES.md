@@ -218,6 +218,15 @@ PERSON FLOW
 - Asker prediction (donor imputation) unlocks 1.32 partners per ask vs 0.62 random (hindsight 2.90).
 - Friend's GitHub (LeafyChan): no public recommendation/matching repo.
 
+### Friend's math appendix (7 Oct) — adopted pieces (details RESEARCH.md §3.5)
+- Funnel elasticity: raise the cheapest stage (number of valid introductions) since scorer AUC is only ~0.55.
+- Floor ≥ 1 from b-matching: boost never-introduced people (coverage = tie-breaker #1).
+- Power analysis: comparing policies on MSMI needs ~79 episodes per policy for 1.0→1.5 successes/episode;
+  iterate on mutual acceptances (~16 episodes), confirm on MSMI.
+- EPV ≥ 10: online learning within one episode supports only a few parameters → offline-fitted prior, gentle updates.
+- Binding-constraints table format for the Round 1 note.
+- Not adopted: uplift (no one meets without intro here), IDF (fixed categories), submodular slates (one intro at a time).
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).
