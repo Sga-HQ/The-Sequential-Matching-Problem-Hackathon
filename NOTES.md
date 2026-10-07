@@ -178,6 +178,25 @@ PERSON FLOW
  Matched --free again--> Active ;  Matched --both want 2nd date / left--> Retired
 ```
 
+### Algorithm stack (current)
+| Part | Algorithm |
+|---|---|
+| Filter | Bitset index + per-rule 1/0 row (hybrid), reciprocal |
+| Asker | Value-of-information ranking under 12-pt budget (greedy knapsack) |
+| Scorer | Beta–Bernoulli Thompson sampling with discounting ("combinatorial Thompson sampling" with matcher) |
+| Timing | Aging/urgency boost; mostly match daily (Akbarpour et al. 2020) |
+| Matcher | Maximum-weight matching, general graph, Edmonds' blossom |
+| Safety | Official `eligibility()` on chosen pairs |
+
+### People to consult (7 Oct)
+- **DSA professor (graphs):** briefing file = `PROBLEM_STATEMENT.md`. Ask about matching on dynamic graphs,
+  blossom vs simpler exact search on tiny components, online matching / when to wait, incremental edge updates,
+  weighting both directions, bitset indexing.
+- **Friend (friend-suggestion system, ~6 features, own maths):** ask about his features, scoring formula, how he
+  combines two directions, missing data, cold start, validation. Caution: friend suggestion = link prediction on a
+  social graph (mutual friends); our people have no social graph → feature-similarity parts transfer, network parts may not.
+  Any reused code/maths must be declared (provenance + licence). Teams can have up to 4 members.
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).
