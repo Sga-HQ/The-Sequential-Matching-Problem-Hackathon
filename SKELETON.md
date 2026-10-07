@@ -97,6 +97,27 @@ Same matcher for all; only the choice of whom to ask changes. Versus kit order:
 - The +5% both-said-yes for the asker in §4 did **not** repeat on new seeds → most likely luck. Treat it as no effect.
 - Decision: keep the asker simple; spend effort elsewhere.
 
+### Theoretical ceilings (`theory_ceilings.py`, `why_unused.py`; simulator success formula, development, 10 worlds)
+Exact win chance per allowed pair, from the simulator's formula. Same number of introductions per person as the baseline:
+
+| Scenario | Expected wins / episode | vs baseline |
+|---|---|---|
+| Kit greedy baseline | 0.906 | – |
+| Perfect soft-field scorer (all 4 fields known and weighted exactly) | 0.976 | +8% |
+| + perfect knowledge of hidden pickiness and reply rate | 0.992 | +9% |
+| Use every allowed pair (not reachable) | 1.268 | +40% |
+
+The baseline already uses 92 of 124 allowed pairs (75%; 98% in sparse). Why the rest go unused:
+- 53%: one person already found a match and is paused (simulator rule; not recoverable).
+- 27%: one person left the app (exit day 22–60; introducing people earlier recovers some).
+- 20%: one person was busy with many introductions (capacity; choose their best partners).
+
+**Conclusion: realistic headroom over the baseline is roughly +5–15% in wins, not more.** It comes from:
+1. Knowing soft fields (the +8% bound assumes they are known; today ~60% are unknown and 72% of the ask budget is unused) → spend spare points on 1-point soft asks.
+2. Choosing the best partners for people with many options (capacity-limited).
+3. Introducing people as early as possible (beats departures).
+Not worth effort: asker order (≤ 1%), heavy exploration.
+
 ## 5. Where the remaining room is (next experiments)
 
 | Lever | Why | Evidence |

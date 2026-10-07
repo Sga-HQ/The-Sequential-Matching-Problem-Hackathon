@@ -236,6 +236,12 @@ PERSON FLOW
 
 ### Asker ceiling (7 Oct): even oracle/unlimited asking adds ≤ ~1% → asker is NOT a lever. Earlier +5% did not replicate.
 
+### Theoretical ceilings (7 Oct, SKELETON.md §4)
+- Perfect soft scorer +8%, + hidden traits +9%, every allowed pair +40% (unreachable).
+- Baseline already uses 75% of allowed pairs; unused: 53% paused after success, 27% left app, 20% capacity.
+- Realistic headroom +5–15%. FOCUS: (1) soft-field asks with spare budget, (2) best partners for busy people,
+  (3) introduce early. Not: asker order, heavy exploration. Validity first (one invalid pair = disqualified).
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).
