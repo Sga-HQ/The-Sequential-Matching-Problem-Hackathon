@@ -234,6 +234,8 @@ PERSON FLOW
   Coverage +0.5 pt but already near ceiling (0.41 dev / 0.16 sparse).
 - Next levers: unused ask budget (199/720 pts), goal asks for Active people, score full funnel, reply reliability.
 
+### Asker ceiling (7 Oct): even oracle/unlimited asking adds ≤ ~1% → asker is NOT a lever. Earlier +5% did not replicate.
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).

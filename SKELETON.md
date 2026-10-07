@@ -83,6 +83,20 @@ Reading:
 - **Coverage: +0.5 points, very consistent, but already near the ceiling.** Ceiling (people who have any allowed partner at all) = 0.41 development, 0.16 sparse; we reach 0.39 / 0.17.
 - Thompson learning showed no overall gain; shift-scenario MSMI 0.40 → 0.57 is suggestive but within noise.
 
+### Asker ceiling test (`asker_bounds.py`, 180 episodes per asker, 6 scenarios, 200-person worlds)
+Same matcher for all; only the choice of whom to ask changes. Versus kit order:
+
+| Asker | Both-said-yes | Coverage | MSMI |
+|---|---|---|---|
+| Random | +1.2% (± 2.2%) | −0.1% | +9% (noise ±10%) |
+| Ours (value of information) | −0.2% (± 2.4%) | +0.1% | +5% (noise ±10%) |
+| Oracle (knows hidden answers) | −0.1% (± 2.1%) | +0.1% | −4% (noise ±9%) |
+| Unlimited (everyone answers at once) | +0.8% (± 2.3%) | 0.0% | +8.5% (noise ±7%) |
+
+- **Even a perfect or unlimited asker adds about 1% at most.** The order of asking barely matters: the kit asks 4 per day and everyone askable is answered by about day 17, while most matching happens later.
+- The +5% both-said-yes for the asker in §4 did **not** repeat on new seeds → most likely luck. Treat it as no effect.
+- Decision: keep the asker simple; spend effort elsewhere.
+
 ## 5. Where the remaining room is (next experiments)
 
 | Lever | Why | Evidence |
