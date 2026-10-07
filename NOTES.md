@@ -242,6 +242,19 @@ PERSON FLOW
 - Realistic headroom +5–15%. FOCUS: (1) soft-field asks with spare budget, (2) best partners for busy people,
   (3) introduce early. Not: asker order, heavy exploration. Validity first (one invalid pair = disqualified).
 
+### Missing-dealbreaker groups (7 Oct, development, 10 worlds, arrived by day 59)
+| Missing dealbreakers | People/world | Has ≥1 allowed partner once answered | Introduced by baseline |
+|---|---|---|---|
+| 0 (complete) | 69.9 | 58% | 57% |
+| 1 or 2 | 0 | – | – |
+| 3–6 | 0.1 | – | – |
+| 7–9 | 21.2 | 63% | 60% |
+| 10–11 | 44.2 | 61% | 59% |
+| Refused (blocked) | 64.6 | never | never |
+- Nobody is "almost complete": askable people miss 7–11 answers, and the 3-point bundle answers all at once.
+- Once answered they are as matchable as complete people, and the baseline already introduces almost everyone
+  who has any partner (57% of 58%) → coverage is at its ceiling.
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).
