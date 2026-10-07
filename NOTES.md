@@ -192,6 +192,15 @@ PERSON FLOW
 - **DSA professor (graphs):** briefing file = `PROBLEM_STATEMENT.md`. Ask about matching on dynamic graphs,
   blossom vs simpler exact search on tiny components, online matching / when to wait, incremental edge updates,
   weighting both directions, bitset indexing.
+- **Professor: research-level questions (user wants theory, not code tips).** Four closely matching models:
+  1. Stochastic matching with patience: "Approximating Matches Made in Heaven" (Chen, Immorlica, Karlin, Mahdian,
+     Rudra, ICALP 2009). Motivated by dating; edges exist with prob p; each person probed ≤ t times; greedy ≥ 1/4 OPT.
+  2. Stochastic matching with few queries: "Ignorance Is Almost Bliss" (Blum, Dickerson et al., Oper. Res.);
+     O(1) queries per vertex ≈ full optimum. Our asks = edge-revealing queries.
+  3. Fully online matching: "How to Match when All Vertices Arrive Online" (Huang et al., STOC 2018); vertices
+     arrive and have deadlines; Ranking is 0.5211-competitive on general graphs.
+  4. Online matching with stochastic rewards (Mehta & Panigrahi, FOCS 2012); a match pays off with probability p.
+  Key question for her: which model fits best, and which algorithm or proof idea should we use?
 - **Friend (friend-suggestion system, ~6 features, own maths):** ask about his features, scoring formula, how he
   combines two directions, missing data, cold start, validation. Caution: friend suggestion = link prediction on a
   social graph (mutual friends); our people have no social graph → feature-similarity parts transfer, network parts may not.
