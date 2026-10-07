@@ -6,19 +6,9 @@
 
 We must write a program that acts as a **matchmaker** for a population of about 200 synthetic (fake) people over 60 simulated days. Every day the program makes two decisions: **(1) which missing information to ask people for**, under a small daily budget, and **(2) which pairs of people to introduce to each other**. An introduction only counts as a success if **both** people accept it, they go on a date, and **both** say they want a second date. The goal is to maximise the number of successful pairs.
 
-## 2. The graph view
+## 2. The pool at a glance
 
-| Concept | Graph equivalent |
-|---|---|
-| Person | Node (~200, arriving over days 0–20; ~12% leave later) |
-| Pair that satisfies all hard rules in **both directions** | Edge |
-| How likely the pair is to succeed | Edge weight (unknown — must be learned from feedback) |
-| Person whose hard rules are not yet known | Node whose edges are hidden until we "ask" |
-| One day's introductions | A **matching**: set of edges, no node used twice |
-| A person in an active introduction | Node temporarily removed (≈8 days) |
-| A pair already introduced | Edge permanently deleted (no repeats) |
-
-The graph is **general (not bipartite)**: people may want the same gender or non-binary partners. It is **sparse**: of ~19,900 possible pairs, only ~0.5% are allowed, ~13% are unknown, ~87% are ruled out. On a typical day only ~10–20 edges exist among free people, forming several small separate components.
+About 200 people take part in each run. Most are present on day 0, the rest arrive by day 20, and about 12% leave between days 22 and 60. Of roughly 19,900 possible pairs, only about 0.5% are allowed, about 13% are unknown until someone answers questions, and about 87% are ruled out by a dealbreaker. On a typical day only 10–20 allowed pairs exist among people who are free, and they fall into a few small, separate groups. Some people want same-gender or non-binary partners, so the pool cannot be split into two fixed sides.
 
 ## 3. Hard rules (must hold both ways)
 
