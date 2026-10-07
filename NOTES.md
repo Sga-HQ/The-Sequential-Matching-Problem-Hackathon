@@ -220,7 +220,15 @@ Dynamic matching markets / kidney exchange ("Thickness and Information in Dynami
 From lecture refs: Russo et al. 2018 (Thompson tutorial), Das & Kamenica 2005 (two-sided bandits & dating market), Liu, Mania & Jordan 2020 (competing bandits in matching markets), Joulani et al. 2013 (online learning under delayed feedback), Lakkaraju et al. 2017 (selective labels), Howard 1966 (value of information), Garivier & Moulines 2011 (discounted UCB).
 
 ## 9. Idea log
-- Divide & conquer: block by gender → zone → age (cuts 9,180 → 3,215 pairs on day 0). Best use: deciding **whom to ask**.
+- **1/0 encoding = bitsets (user idea, 7 Oct) — tested, works.**
+  - For each value keep a "people bitset" (bit i = person i): has_gender[g], in_zone[z], age_is[a],
+    wants_gender[g], accepts_zone[z], agemin_ok[a], agemax_ok[a]. Unknown → bit set to 1 (passes, stays "?").
+  - Candidates of P = (forward: people P wants) AND (reverse: people who want P) → bitwise AND, one CPU op per rule.
+  - Test world 101, day 0: 2,996 pairs survive gender+zone+age both ways — **identical to official checker**,
+    0.0007 s vs 0.0425 s (~60× faster). Built once per person (on arrival / after ask) → cheap.
+  - Still run full `eligibility()` on chosen pairs as final safety check.
+  - Same idea for soft fields: per-pair vector match=1 / differ=0 (+ unknown flag) = scorer input.
+- Divide & conquer: block by gender → zone → age (cuts 9,180 → 2,996 pairs on day 0 (corrected; earlier 3,215 had an age-check bug)). Best use: deciding **whom to ask**.
 - Waiting-time threshold ("aging") — lower the bar the longer someone waits.
 - Recalibrator: on arrival / after an ask, recompute that person's candidates and scores.
 - ~~Rejection learning per person~~ **DROPPED (user decision):** can't ask why → don't judge individuals from rejections.
