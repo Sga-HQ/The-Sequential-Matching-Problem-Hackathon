@@ -149,6 +149,35 @@ Baselines: greedy 0.50, no-asks 0.33, random 0.25. One invalid pair anywhere = d
    → match nearly everyone each day; only hold back people with many options when a clearly better partner is likely.
 5. RECON (Pizzato et al.) combines both directions with the **harmonic mean** — penalises one-sided pairs.
 
+### Scorer vs Thompson (clarified)
+- Scorer = the component that gives each allowed pair a number (how likely both say yes).
+- Thompson sampling = HOW the scorer gets its numbers: random draw from each yes/no count instead of the plain average.
+- Mutual fields (structure, wants_children, schedule) are HARD rules → filter only, zero weight in scorer.
+  Soft fields only change likelihood → scorer only, never block.
+
+### System overlay
+```
+TABLES (rebuilt from simulator state each call; learned counts kept in `memory`)
+ profile | preferences | mutual | soft | status | history | edges | scorer_counts
+
+DAILY PIPELINE
+ 0 LOAD      state + memory → fill tables, set each person's store
+ 1 INDEX     new/updated full-info people → bitsets → new edges (both directions)
+ 2 ASK       Pending people ranked by value of information → asks (≤12 pts)
+ 3 RE-INDEX  answered people → Active (or Blocked) → new edges
+ 4 SCORE     edges among free people → Thompson draw from scorer_counts → weight
+ 5 URGENCY   weight × waiting-time / few-options / near-end boost
+ 6 MATCH     max-weight matching (blossom) → pairs
+ 7 SAFETY    official eligibility() on every chosen pair
+ 8 SAVE      history + updated counts (+discount) → memory
+ FEEDBACK    replies arrive later → update scorer_counts; wrong-belief check
+
+PERSON FLOW
+ arrive → Blocked (refused) | Pending (missing) | Active (complete)
+ Pending --ask--> Active ;  Active --introduced--> Matched (busy)
+ Matched --free again--> Active ;  Matched --both want 2nd date / left--> Retired
+```
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).
@@ -253,6 +282,17 @@ From lecture refs: Russo et al. 2018 (Thompson tutorial), Das & Kamenica 2005 (t
   - User's original form: for new person X, compute a 1/0 per dealbreaker for every other person (all 1 = match).
     Same result as bitsets; bitsets compute the whole column at once. Keep the per-dealbreaker 1/0 vector
     for "?"/near-miss pairs — it tells WHICH rule fails or is unknown (useful for the asker and explanations).
+  - **Benchmark (7 Oct, all 11 dealbreakers, experiments/bench_filtering.py) — all methods give IDENTICAL pairs:**
+    | pool size | complete people | official | user 1/0 row | user row + early exit | bitsets |
+    |---|---|---|---|---|---|
+    | 200 | 81 | 0.0109s | 0.0044s | **0.0006s** | 0.0009s |
+    | 1,000 | 356 | 0.224s | 0.096s | 0.014s | **0.007s** |
+    | 3,000 | 1,026 | – | – | 0.103s | **0.046s** |
+    | 10,000 | 3,464 | – | – | 1.63s | **0.71s** |
+    - Correction: earlier "60× faster" compared against the slow official checker; vs the user's idea with
+      early exit, bitsets are ~2× faster at scale and about equal at our size (200).
+    - **Decision: hybrid.** Bitsets answer "who passes everything" (scales best); user's per-dealbreaker 1/0 row
+      answers "which rule fails / is unknown" for near-miss and "?" pairs (feeds the asker + explanations).
   - Industry: bitmap indexes / roaring bitmaps (Elasticsearch, Spark) do exactly this boolean filtering.
 - Divide & conquer: block by gender → zone → age (cuts 9,180 → 2,996 pairs on day 0 (corrected; earlier 3,215 had an age-check bug)). Best use: deciding **whom to ask**.
 - Waiting-time threshold ("aging") — lower the bar the longer someone waits.
