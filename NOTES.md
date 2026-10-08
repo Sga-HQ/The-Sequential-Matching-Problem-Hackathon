@@ -329,6 +329,16 @@ PERSON FLOW
   the simulator has no flooding. The "taken" problem here is over time → urgency/scarcity boosts. Optional tests:
   √q, log q + 10, coverage-first.
 
+### Decisions 8 Oct (part 4): scorer
+- Target = whole journey (user). Journey score ∝ P(A yes)·P(B yes)·rA²·rB² (SCORER.md v2, measured).
+- Ageing γ = 1 in the simulator (proof in SCORER.md); Muth formula for the real app.
+- Soft-field asks with spare budget, no enumeration: value of each single question alone (linear cost); ask the goal of
+  people with unknown goal who have ≥2 allowed options (a choice exists); skip 0–1 options. Greedy one-at-a-time
+  is near-optimal for diminishing-returns information (adaptive submodularity, Golovin & Krause 2011, from memory).
+  72% unused = only 199 of 720 points spent per episode (no pending people left after ~day 17).
+- Evolution "knows" only through a fitness function we write: run the policy with the given knobs on training
+  worlds → mean expected wins. DE proposes knob sets, keeps the better ones, mixes them, repeats; checked on held-out worlds.
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).
