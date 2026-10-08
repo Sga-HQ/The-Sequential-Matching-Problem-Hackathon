@@ -12,3 +12,6 @@ Things the user asked to make sure are written into the final document.
 - [ ] **Delayed feedback:** waiting ≠ no; replies arrive up to 7 days later, second-date answers up to 26 days later.
 - [ ] **Data ageing:** old replies × 0.98 per day (drift scenario).
 - [ ] **Honest results:** random pairs = our prototype on first "yes"; asker order matters ≤1%; ceiling +40% (loose), realistic +5–15%.
+- [ ] **Arrival queue (user's decision):** every new person enters one first-in-first-out queue. Each is processed within seconds (added to the tables, then checked against everyone, including earlier arrivals still in the batch), so two people joining at the same moment are never lost. Nightly full re-check as a backup.
+- [ ] **Edge cases** (EDGE_CASES.md): time, competition, data and validity, each with its handling and status.
+- [ ] **"We questioned our own idea":** upper score cutoff → researched → not used, and why (no flooding of popular users in the simulator; real systems use floors, not ceilings).
