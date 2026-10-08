@@ -11,7 +11,7 @@ Every number that can be tuned lives in KNOBS and can be overridden through cfg.
 """
 import math, random
 import networkx as nx
-from kit import eligibility, HARD, baseline_asks
+from kit import eligibility, HARD, baseline_asks, OPTIONS
 
 FIELDS = ['relationship_goal', 'relationship_pace', 'lifestyle', 'conversations']
 KNOBS = dict(
@@ -110,6 +110,8 @@ def ask(state, K):
     for a, b in edges:
         for u in (a, b): deg[u['member_id']] = deg.get(u['member_id'], 0) + 1; by_id[u['member_id']] = u
     cands = sorted((i for i, d in deg.items() if d >= K['soft_min_options']), key=lambda i: -deg[i])
+    if K['soft_rule'] == 'voi':        # decision-aware: expected gain in today's matching value from each single answer
+        return asks + voi_asks(state, K, edges, left)
     if K['soft_rule'] == 'margin':     # matching-margin rule: only people whose top two options are close
         journey, _ = make_scorer(state, {**K, 'mode': 'mean'}, random.Random(0))
         best = {}
@@ -123,6 +125,60 @@ def ask(state, K):
             if by_id[i]['fields'][f] is None and by_id[i]['field_status'][f] != 'declined':
                 asks.append({'member_id': i, 'field': f}); left -= 1
     return asks
+
+def edge_weights(state, K, edges, journey):
+    """Weights exactly as the matcher uses them (score x urgency)."""
+    introduced = {u for i in state['introductions'] for u in (i['user_a'], i['user_b'])}
+    deg = {}
+    for a, b in edges:
+        for u in (a, b): deg[u['member_id']] = deg.get(u['member_id'], 0) + 1
+    def w(a, b):
+        v = journey(a, b)
+        for u in (a, b):
+            if u['member_id'] not in introduced: v *= K['u_new']
+            v *= 1 + K['u_deg'] / deg[u['member_id']]
+        return v
+    return w
+
+def matching_value(G):
+    M = nx.max_weight_matching(G, maxcardinality=True)
+    return sum(G[u][v]['weight'] for u, v in M)
+
+def voi_asks(state, K, edges, budget):
+    """Matching-VOI for 1-point soft questions. For person i and field f: E_answer[V(best matching | answer)] - V(now),
+    computed on i's connected component only. Answers are drawn from the empirical marginal (uniform in public worlds).
+    An answer can only change edges whose partner already knows f, so other questions have zero value and are skipped."""
+    if not edges or budget <= 0: return []
+    journey, _ = make_scorer(state, {**K, 'mode': 'mean'}, random.Random(0))
+    W = edge_weights(state, K, edges, journey)
+    by_id = {}; G = nx.Graph()
+    for a, b in edges:
+        by_id[a['member_id']] = a; by_id[b['member_id']] = b
+        G.add_edge(a['member_id'], b['member_id'], weight=W(a, b))
+    comp = {}
+    for c in nx.connected_components(G):
+        for u in c: comp[u] = frozenset(c)
+    base = {}
+    cands = []
+    for i, m in by_id.items():
+        H = None
+        for f in K['soft_order']:
+            if m['fields'][f] is not None or m['field_status'][f] == 'declined': continue
+            nbrs = [by_id[j] for j in G[i]]
+            if not any(n['fields'][f] is not None for n in nbrs): continue
+            if H is None:
+                H = G.subgraph(comp[i]).copy()
+                if comp[i] not in base: base[comp[i]] = matching_value(H)
+            vals = []
+            for opt in OPTIONS[f]:
+                q = dict(m); q['fields'] = {**m['fields'], f: opt}
+                Ha = H.copy()
+                for n in nbrs: Ha[i][n['member_id']]['weight'] = W(q, n) if i < n['member_id'] else W(n, q)
+                vals.append(matching_value(Ha))
+            gain = sum(vals) / len(vals) - base[comp[i]]
+            if gain > 1e-12: cands.append((gain, i, f))
+    cands.sort(reverse=True)
+    return [{'member_id': i, 'field': f} for _, i, f in cands[:budget]]
 
 def match(state, K, rng):
     members, edges = allowed_edges(state)

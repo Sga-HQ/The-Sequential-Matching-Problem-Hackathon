@@ -28,7 +28,9 @@ def p_win(a, b, variant, day):
         acc = a['response_rate'] * b['response_rate'] * sig(-.25 + a['bias'] + fit + s + drift) * sig(-.25 + b['bias'] + fit + s + drift)
         sec = (a['response_rate'] * .6 * sig(.15 + a['second_bias'] + s + goal)) * (b['response_rate'] * .6 * sig(.15 + b['second_bias'] + s + goal))
         tot += wt / math.sqrt(math.pi) * acc * .78 * sec
-    return tot   # (ignores the delayed scenario's 30-day date rule: a small overestimate there, same for all policies)
+    # Delayed scenario: the date must fall within 30 days of the introduction. Delay = max(two reply delays U{1..7})
+    # + U{1..14} + U{5..12}, independent of pair and day, so the factor is an exact constant: 5368/5488 = 0.9781.
+    return tot * (5368 / 5488 if variant == 'delayed' else 1.0)
 
 def auc(s, y):
     pos = sum(y); neg = len(y) - pos
@@ -49,6 +51,7 @@ def run(world, kind, cfg):
     sim = kit.Simulator(world); T = {m['member_id']: m for m in world['members']}
     preds = {}   # (member, intro day, other) -> predicted P(yes) by this policy's scorer (posterior mean)
     unknown = [0, 0]
+    chg = dict(days=0, changed=0, pairs=0, pairs_diff=0)   # does learned feedback change today's matching vs a frozen scorer?
     for day in range(60):
         st = sim.observe()
         if kind == 'kit': asks = kit_decide({'phase': 'ask', 'state': st, 'memory': None})['asks']
@@ -58,6 +61,11 @@ def run(world, kind, cfg):
         if kind == 'kit': pairs = kit_decide({'phase': 'match', 'state': st, 'memory': None})['pairs']
         elif kind == 'old': pairs = old.decide({'phase': 'match', 'state': st, 'memory': None}, cfg)['pairs']
         else: pairs = v2.decide({'phase': 'match', 'state': st, 'memory': None}, cfg)['pairs']
+        if kind == 'v2' and cfg.get('_compare') is not None:
+            alt = v2.decide({'phase': 'match', 'state': st, 'memory': None}, {**cfg, **cfg['_compare'], '_compare': None})['pairs']
+            a, b = {tuple(p) for p in pairs}, {tuple(p) for p in alt}
+            if a or b:
+                chg['days'] += 1; chg['changed'] += a != b; chg['pairs'] += len(a); chg['pairs_diff'] += len(a - b)
         if pairs:
             M = {m['member_id']: m for m in st['members']}
             if kind == 'v2': _, p_yes = v2.make_scorer(st, {**v2.KNOBS, **cfg, 'mode': 'mean'}, random.Random(0))
@@ -83,7 +91,7 @@ def run(world, kind, cfg):
                 mutual=100 * res['mutual_acceptances'] / n, coverage=len(served & arrived) / n,
                 intros=res['assignments'], ask_cost=res['ask_cost'],
                 auc=auc(s, y), pred_mean=sum(s) / max(1, len(s)), yes_rate=sum(y) / max(1, len(y)), n_replies=len(y),
-                unknown_share=unknown[0] / max(1, unknown[1]))
+                unknown_share=unknown[0] / max(1, unknown[1]), **{'chg_' + k: v for k, v in chg.items()})
 
 if __name__ == '__main__':
     first, count, variant = int(sys.argv[1]), int(sys.argv[2]), sys.argv[3]

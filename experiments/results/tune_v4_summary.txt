@@ -1,0 +1,81 @@
+840 episodes, 120 per policy, scenarios: cold_start, delayed, development, drift, shift, sparse
+
+policy                           exp.wins/100    vs K (paired)   MSMI  mutual  cover  asks    AUC  unknown
+K  kit greedy baseline                 0.3718  +0.0000 ± 0.0000   0.46    5.56  0.339   198  0.539     0.67
+R0 frozen scorecard + margin asks (candidate)       0.3880  +0.0162 ± 0.0029   0.34    5.72  0.342   221  0.572     0.57
+F1 R0 + population field learning       0.3882  +0.0164 ± 0.0033   0.32    5.72  0.342   221  0.543     0.57
+F2 F1 + personal reply/yes learning       0.3857  +0.0138 ± 0.0030   0.34    5.64  0.343   220  0.555     0.57
+V  R0 with matching-VOI asks           0.3893  +0.0175 ± 0.0028   0.36    5.74  0.342   230  0.596     0.55
+D0 R0 without degree scarcity          0.3889  +0.0170 ± 0.0030   0.33    5.80  0.342   221  0.571     0.58
+R1 frozen scorecard + broad soft asks       0.3923  +0.0205 ± 0.0032   0.36    5.65  0.342   270  0.603     0.39
+
+expected wins per 100 by scenario:
+  K  kit greedy baseline           cold_s=0.402  delaye=0.432  develo=0.457  drift=0.431  shift=0.401  sparse=0.108
+  R0 frozen scorecard + margin asks (candidate) cold_s=0.413  delaye=0.455  develo=0.480  drift=0.454  shift=0.418  sparse=0.108
+  F1 R0 + population field learning cold_s=0.411  delaye=0.453  develo=0.480  drift=0.455  shift=0.422  sparse=0.108
+  F2 F1 + personal reply/yes learning cold_s=0.411  delaye=0.450  develo=0.475  drift=0.450  shift=0.418  sparse=0.108
+  V  R0 with matching-VOI asks     cold_s=0.414  delaye=0.450  develo=0.483  drift=0.457  shift=0.423  sparse=0.109
+  D0 R0 without degree scarcity    cold_s=0.411  delaye=0.451  develo=0.486  drift=0.459  shift=0.417  sparse=0.109
+  R1 frozen scorecard + broad soft asks cold_s=0.415  delaye=0.453  develo=0.487  drift=0.461  shift=0.429  sparse=0.109
+
+scorer AUC by scenario:
+  K  kit greedy baseline           cold_s=0.512  delaye=0.545  develo=0.547  drift=0.555  shift=0.523  sparse=0.554
+  R0 frozen scorecard + margin asks (candidate) cold_s=0.560  delaye=0.595  develo=0.603  drift=0.612  shift=0.554  sparse=0.507
+  F1 R0 + population field learning cold_s=0.538  delaye=0.563  develo=0.557  drift=0.573  shift=0.546  sparse=0.484
+  F2 F1 + personal reply/yes learning cold_s=0.546  delaye=0.572  develo=0.572  drift=0.585  shift=0.572  sparse=0.486
+  V  R0 with matching-VOI asks     cold_s=0.592  delaye=0.624  develo=0.617  drift=0.626  shift=0.572  sparse=0.545
+  D0 R0 without degree scarcity    cold_s=0.558  delaye=0.600  develo=0.596  drift=0.601  shift=0.565  sparse=0.504
+  R1 frozen scorecard + broad soft asks cold_s=0.602  delaye=0.629  develo=0.623  drift=0.635  shift=0.582  sparse=0.549
+
+calibration (mean predicted P(yes) vs actual yes-rate):
+  K  kit greedy baseline           predicted 0.476  actual 0.479
+  R0 frozen scorecard + margin asks (candidate) predicted 0.472  actual 0.484
+  F1 R0 + population field learning predicted 0.484  actual 0.482
+  F2 F1 + personal reply/yes learning predicted 0.482  actual 0.478
+  V  R0 with matching-VOI asks     predicted 0.483  actual 0.485
+  D0 R0 without degree scarcity    predicted 0.472  actual 0.484
+  R1 frozen scorecard + broad soft asks predicted 0.469  actual 0.486
+
+paired vs K and vs R0 (expected wins per 100; mean ± 1 SE; n=120):
+K  kit greedy baseline                         vsK +0.0000±0.0000  vsR0 -0.0162±0.0029  mutual vsK +0.00±0.00  msmi vsK +0.000±0.000  asks 198
+   by family vs K: cold_ +0.0000 delay +0.0000 devel +0.0000 drift +0.0000 shift +0.0000 spars +0.0000
+R0 frozen scorecard + margin asks (candidate)  vsK +0.0162±0.0029  vsR0 +0.0000±0.0000  mutual vsK +0.16±0.13  msmi vsK -0.121±0.038  asks 221
+   by family vs K: cold_ +0.0104 delay +0.0229 devel +0.0234 drift +0.0226 shift +0.0168 spars +0.0008
+F1 R0 + population field learning              vsK +0.0164±0.0033  vsR0 +0.0002±0.0011  mutual vsK +0.16±0.13  msmi vsK -0.142±0.037  asks 221
+   by family vs K: cold_ +0.0089 delay +0.0211 devel +0.0236 drift +0.0236 shift +0.0205 spars +0.0005
+F2 F1 + personal reply/yes learning            vsK +0.0138±0.0030  vsR0 -0.0023±0.0012  mutual vsK +0.08±0.13  msmi vsK -0.121±0.040  asks 220
+   by family vs K: cold_ +0.0091 delay +0.0181 devel +0.0189 drift +0.0191 shift +0.0169 spars +0.0008
+V  R0 with matching-VOI asks                   vsK +0.0175±0.0028  vsR0 +0.0013±0.0011  mutual vsK +0.18±0.14  msmi vsK -0.100±0.038  asks 230
+   by family vs K: cold_ +0.0117 delay +0.0183 devel +0.0261 drift +0.0256 shift +0.0215 spars +0.0015
+D0 R0 without degree scarcity                  vsK +0.0170±0.0030  vsR0 +0.0009±0.0018  mutual vsK +0.23±0.13  msmi vsK -0.129±0.039  asks 221
+   by family vs K: cold_ +0.0088 delay +0.0187 devel +0.0296 drift +0.0277 shift +0.0154 spars +0.0018
+R1 frozen scorecard + broad soft asks          vsK +0.0205±0.0032  vsR0 +0.0043±0.0014  mutual vsK +0.08±0.14  msmi vsK -0.096±0.042  asks 270
+   by family vs K: cold_ +0.0132 delay +0.0207 devel +0.0300 drift +0.0297 shift +0.0274 spars +0.0018
+F1 R0 + population field learning: learned feedback changed the matching on 341/3976 decision days (8.6%), 382/9216 pairs (4.1%)
+F2 F1 + personal reply/yes learning: learned feedback changed the matching on 585/3938 decision days (14.9%), 693/9161 pairs (7.6%)
+
+cluster-robust (20 seed clusters; dev/drift/delayed share a world per seed):
+  R1 - K   expected_wins +0.0205 ± 0.0051
+  R1 - K   msmi          -0.0958 ± 0.0503
+  R1 - K   mutual        +0.0833 ± 0.2404
+  R0 - K   expected_wins +0.0162 ± 0.0047
+  R0 - K   msmi          -0.1208 ± 0.0482
+  R0 - K   mutual        +0.1583 ± 0.2271
+  R1 - R0  expected_wins +0.0043 ± 0.0019
+  R1 - R0  msmi          +0.0250 ± 0.0358
+  R1 - R0  mutual        -0.0750 ± 0.0905
+  F1 - R0  expected_wins +0.0002 ± 0.0017
+  F1 - R0  msmi          -0.0208 ± 0.0180
+  F1 - R0  mutual        +0.0042 ± 0.0801
+  F2 - R0  expected_wins -0.0023 ± 0.0014
+  F2 - R0  msmi          +0.0000 ± 0.0242
+  F2 - R0  mutual        -0.0792 ± 0.0936
+
+diagnostic check over all 840 episodes: mean expected wins 0.386 vs mean realised MSMI 0.357 (per 100)
+  K  kit greedy baseline                         expected 0.372  realised 0.458
+  R0 frozen scorecard + margin asks (candidate)  expected 0.388  realised 0.338
+  F1 R0 + population field learning              expected 0.388  realised 0.317
+  F2 F1 + personal reply/yes learning            expected 0.386  realised 0.338
+  V  R0 with matching-VOI asks                   expected 0.389  realised 0.358
+  D0 R0 without degree scarcity                  expected 0.389  realised 0.329
+  R1 frozen scorecard + broad soft asks          expected 0.392  realised 0.362
