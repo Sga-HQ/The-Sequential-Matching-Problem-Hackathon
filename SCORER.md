@@ -62,3 +62,52 @@ The right γ is a trade-off:
 1. **Clues:** the 4 soft fields (data shows the dealbreaker fields add nothing). Add **reply reliability** (people who ignore messages)?
 2. **Target:** score only "both say yes" (now), or the whole journey to "both want a second date"? Goal matters again at the second-date step.
 3. **Spend the unused budget** to ask soft fields (goal first), so fewer clues are unknown?
+
+---
+# Version 2 (8 Oct): conditional probabilities along the whole journey
+Measured with `experiments/funnel_probs.py`: kit greedy baseline, development scenario, 30 worlds, 5,468 reply chances. Only observable fields are used.
+
+## What the data says
+
+| Question | Answer |
+|---|---|
+| P(reply) | 0.76 |
+| P(reply \| replied last time) vs P(reply \| silent last time) | **0.77 vs 0.68**: reply habit is a lasting personal trait |
+| P(yes \| replied) | 0.48 |
+| P(yes \| said yes last time) vs P(yes \| said no last time) | **0.51 vs 0.44**: pickiness is a lasting trait too |
+| P(yes \| goal same) vs P(yes \| goal different) | **0.61 vs 0.37** |
+| P(yes \| goal and pace both same) | 0.70 (predicted by adding the two effects in log-odds: 0.70) |
+| P(yes \| goal and pace both different) | 0.32 |
+| P(date \| both yes) | 0.76 |
+| P(second answer arrives \| date) | 0.79 |
+| P(second yes \| date), goal same / different / unknown | **0.63 / 0.64 / 0.65: no visible effect** |
+| P(second answer on time \| answered) | 0.60 |
+
+(An earlier sample, `yes_rates.py` on 30 other worlds measured on day 70, gave goal 0.56 vs 0.40. Same direction, sampling noise.)
+
+## Conclusions
+1. **Clues add up in log-odds with no interaction.** Goal and pace together: predicted 0.70, observed 0.70. So the logistic model (multiply odds, add log-odds) is the correct form. A table of every combination is not needed. This is the "naive Bayes / logistic" structure, checked on data.
+2. **The second-date step shows no visible goal effect, even though the simulator code has one (+0.4 log-odds).** The reason is **selection bias**: pairs with different goals only reach a date if they had good shared luck, and that same luck also helps at the second step. Ad systems hit the same problem with "click then buy": they model the whole chain over **all** introductions (ESMM, Ma et al., SIGIR 2018, cited from memory).
+   For us: score the whole journey as a chain of conditional probabilities:
+   **P(win) = P(both reply) × P(both yes | replied) × P(date) × P(both answer second) × P(both yes second) × P(both on time)**
+   The visible clues only change the "both yes" factor. The rest is constant across pairs, **except reply habit, which appears twice**: once at the introduction and once at the second date.
+   So for ranking pairs: **journey score ∝ P(A yes) · P(B yes) · rA² · rB²**, where r = the person's reply rate.
+3. **Per-person memory helps.** Reply habit and pickiness carry over between a person's introductions. Each person gets two small Beta counts:
+   - replies: start Beta(7.6, 2.4), i.e. 0.76 worth 10 imaginary replies;
+   - yes: start at their clue-based chance.
+   Each person only has about 3–7 introductions, so the starting counts keep these gentle (this is the normaliser).
+4. **Thompson sampling.** Each day, every uncertain number (each field multiplier, and each person's reply rate and pickiness) is **drawn** from its Beta belief instead of using the average. Pairs we are unsure about sometimes get a high draw and get tried; with more data the beliefs narrow and the draws settle (Chapelle & Li 2011; Russo et al. 2018 tutorial; cited from memory).
+
+## Ageing: the exact number, with proof
+**Claim:** in this simulator the best ageing multiplier is **γ = 1 (no ageing)**.
+1. From `kit.py` `_prob`: each field's effect is **constant for the whole episode** in every scenario.
+   - *shift* uses different weights from day 0, so they are constant within the episode;
+   - *drift* subtracts 0.5 from **everyone's** log-odds from day 35, which changes the base, not the field effects;
+   - hidden traits (pickiness, reply rate) are fixed per person.
+2. For a constant rate p estimated from replies y₁…yₙ with weights wᵢ (Σwᵢ = 1), the variance is p(1−p)·Σwᵢ². By Cauchy–Schwarz, Σwᵢ² ≥ (Σwᵢ)²/n = 1/n, with equality only when all weights are equal. Any γ < 1 gives unequal weights, so **more noise and no reduction in bias** (there is nothing to track). Over 60 days the effective share of data used is γ = 1: 100%, 0.98: 89%, 0.95: 59%, 0.90: 32%.
+3. General formula (when things really do drift, as in a real app): exponential smoothing is the optimal filter for a "slowly wandering level" (Muth 1960). The best weight is α = (−q + √(q² + 4q))/2, where q = (how much the true rate wanders per day)² ÷ (noise of one day's data)², and γ = 1 − α.
+   - Here q = 0, so α = 0 and γ = 1, consistent with the claim.
+   - In a real app, q would be measured from history (e.g. q = 0.001 gives γ = 0.97).
+4. Drift lowers **everyone** equally on the same day, so the order of a person's options is unchanged. Ranking does not need to know the base dropped.
+
+Retrospective: the prototype used γ = 0.98 "for drift". The maths shows that only costs data (11%) and buys nothing here.
