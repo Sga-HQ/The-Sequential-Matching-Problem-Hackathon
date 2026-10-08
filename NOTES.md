@@ -389,6 +389,14 @@ PERSON FLOW
 - Note revised with evidence labels, lexicographic objective, allowed-pair definition, AUC definition, untouched
   confirmation block 50000–50019, AI disclosure; PDF rendered (ROUND1_NOTE.pdf).
 
+### Experiment 4 + final note revision (8 Oct night; ROUND1_NOTE.md §0, §9.6)
+- New block 7400–7419 (120 eps): candidate R1 (frozen scorecard, broad soft asks, no coverage boost) vs kit +0.0205 ±
+  0.0051 cluster-robust expected wins; realised MSMI −0.096 ± 0.050 (kit realised 0.46 vs expected 0.37) → confirmation needed.
+- Online learning changed 8.6% (population) / 14.9% (personal) of daily matchings, no gain (F2 −0.0023 ± 0.0014).
+- Broad asks beat margin asks (+0.0043 ± 0.0019); margin asker lost in cold start; VOI asker +0.0013 vs margin (not vs broad).
+- Degree boost: no measured effect. Delayed 30-day factor = 5368/5488 = 0.9781, exact constant.
+- Note reorganised around the evidence-supported candidate; H7 closed-loop feedback; safer AI disclosure.
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).
