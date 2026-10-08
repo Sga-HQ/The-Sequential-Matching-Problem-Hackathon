@@ -42,22 +42,30 @@ We treat the challenge as **sequential constrained allocation** rather than pair
 | Matching | most pairs first, then best total, × coverage boost 1.5 × degree boost | most pairs first, then best total; **no coverage boost**; degree boost provisional (no measured effect) |
 | Feedback | updates the learner | kept per stage for bookkeeping and availability; **not used to retrain** (it changed decisions without improving them, §9.6) |
 
+> **The current proposal in one box (evidence-supported Round 2 starting candidate).** Exact reciprocal hard-constraint filtering · dealbreaker bundles, then broad soft-field questions for members with ≥ 1 feasible partner · fixed offline directional scorecard · no person-specific online learning · no Thompson sampling · most pairs first, then highest total score · no multiplicative coverage boost · degree-based scarcity adjustment provisional · complete batch validation before output · stage-separated feedback kept for bookkeeping, not used to retrain the scorer.
+
 **Development results** (hidden-information expected-wins diagnostic, §1.4: not the official metric, but shown there to have the same expectation) [dev].
 - **Prototype vs greedy on three disjoint blocks:** +2.7%, +6.3% and +0.2%. Episode-weighted paired mean over 180 episodes: +0.0113 ± 0.0028 per 100 (95% CI +0.0057 to +0.0168). Random-effects estimate: +0.0104 ± 0.0048. The blocks clearly differ (Q = 7.8, 2 degrees of freedom).
-- **Candidate vs greedy on a fourth, new block** (120 episodes): **+0.0205 per 100 (+5.5%)**, ± 0.0051 cluster-robust standard error, about 4 SE.
+- **Principal result.** On a new 120-episode development block (seeds 7400–7419), the candidate improved the validated expected-MSMI diagnostic by **+0.0205 per 100 (+5.5%)**, ± 0.0051 cluster-robust SE, a rough 95% interval of **+2.8% to +8.2%**. This is development evidence, because the block influenced policy selection. Realised MSMI did not confirm the gain at that sample size. The frozen Round 2 candidate will be evaluated once on pre-declared participant-controlled seeds, while realised MSMI on the organisers' held-out worlds remains the official competition outcome.
+- **Complexity was active but unhelpful.** Online learning altered 9–15% of daily matchings without improving expected outcomes, so the candidate uses a fixed scorecard (§9.6).
 - **The one scenario family with a gain in every block is cold start** (+0.023 ± 0.006 over the first three blocks), where information is scarcest.
-- **Realised MSMI does not yet confirm any gain.**
-  - Signs vary across blocks.
-  - On the fourth block the greedy baseline scored higher on realised MSMI (−0.096 ± 0.050, cluster-robust). On that block greedy's realised MSMI was 0.46 against its expected 0.37, while ours was close to its expectation.
-  - **Checked (8 Oct):** reading the source shows the expected-wins formula is the simulator's exact success probability for an assigned introduction, and 360,000 replayed introductions agreed with it within sampling error (simulated/formula = 1.003). Across all 1,980 development episodes the realised-minus-expected gap is −0.037 ± 0.039 per 100 (cluster-robust over the 50 seeds, z = −1.0), which is consistent with chance. So the block-7400 disagreement is outcome noise, not a diagnostic bias (§1.4).
-  - Under the variance observed on block 7400, 120 episodes give about 80% power only for realised-MSMI gains near 38% of baseline, against about 4% for paired expected wins. The confirmation run (§9.7) therefore uses expected wins to select and confirm our policy, and still reports realised MSMI, the official metric.
-  - Current estimate: the candidate's +0.0205 ± 0.0051 per 100 on a greedy baseline of 0.372 is about +5.5%, with a rough 95% interval of +2.8% to +8.2%. It is still development evidence, because this block informed the design.
+- **Realised MSMI does not yet confirm any gain**, and on 120 episodes it cannot resolve one this size: on block 7400 greedy scored higher on realised MSMI (−0.096 ± 0.050). We tested whether the diagnostic was at fault. The formula is the simulator's exact success probability (source derivation; 360,000 replays agree within sampling error), and the realised-minus-expected gap over all 1,980 development episodes is within chance (§1.4). Under the variance observed, realised MSMI over 120 episodes detects only gains near 38% (80% power), against about 4% for paired expected wins (§9.7).
 
 **What remains open.**
 - A relaxed offline oracle suggests limited remaining opportunity from ranking alone. We treat it as an optimistic, simulator-specific diagnostic, **not a formal bound** on all sequential policies.
 - **Open question 1: dynamic option value.** What does occupying a person for 8+ days cost others in a thin, changing graph? A one-line opportunity-cost penalty added nothing measurable beyond removing the coverage boost (§9.4). Short look-ahead (one-day rollout) and selective waiting are untested.
 - **Open question 2: decision-relevant use of feedback.** Online learning from replies changed 9–15% of daily matchings but did not improve expected wins. Shift-specific adaptation and asking rules that value answers by the decisions they change are the remaining candidates (H7).
 - Round 2 will freeze the policy, then evaluate it once on a pre-declared, participant-controlled seed block (§9.7), reporting realised MSMI, coverage, mutual acceptances, clarification cost, waiting time, runtime and invalid-episode counts.
+
+> **What this note does not claim.**
+> - That the candidate has already beaten the kit on the organisers' held-out realised MSMI.
+> - That expected wins is available to the submitted policy (it uses hidden values and exists only offline).
+> - That the relaxed oracle is a formal upper bound on every sequential policy.
+> - That all feedback learning is useless: only that the tested online learners did not improve decisions.
+> - That waiting or future-option planning has been solved.
+> - That synthetic outcomes are evidence about real relationship success.
+
+**Contents.** 0 Summary · 1 Problem interpretation · 2 Hypotheses · 3 Reciprocal feasibility · 4 Clarification policy · 5 Probability model · 6 Allocation · 7 Missing and delayed data · 8 Existing work · 9 Baselines, ablations and results · 10 Failure cases · 11 Observations on the problem framing · 12 Reproducibility and provenance · References · Appendices A–D
 
 ---
 
@@ -118,6 +126,7 @@ This is an offline diagnostic [oracle], computed for the development scenario on
 | Outcome noise | ~1 qualifying outcome per episode; detecting 1.0 → 1.5 needs ~79 episodes per policy [dev] | Compare with a low-variance diagnostic (below), then confirm on MSMI |
 
 **Expected wins (development diagnostic, not the official metric).**
+- **In plain words.** Each introduction is like a lottery ticket with its own chance of winning. Realised MSMI records which tickets happened to win. Expected wins adds up each ticket's exact chance, as the simulator defines it. Over hundreds of introductions both give the same average, but expected wins removes the luck of which particular tickets won. The formal argument follows.
 - For each introduced pair, we compute its success probability from the simulator's outcome formula, using hidden per-person values and integrating over the shared pair term with 5-point Gauss–Hermite quadrature. We then sum these probabilities.
 - **Numerical check:** the 5-point integration was compared with a 60-point Gauss–Hermite reference on 3,000 random pairs from development worlds. Maximum absolute difference 4.1 × 10⁻⁷; mean relative difference 0.001% [dev, `checks_v3.py`]. This validates the numerical integration; the completeness of the formula is checked next.
 - **Delayed scenario: 30-day date rule.** The date delay is max(two reply delays U{1..7}) + U{1..14} + U{5..12}, drawn independently of the pair, the day and the policy [code]. So P(date within 30 days) is an exact constant: 5,368 / 5,488 = 0.9781. The diagnostic now multiplies by it (fourth block onwards). Earlier blocks overstate delayed-scenario expected wins, and their differences, by exactly 2.2%. Relative comparisons are unaffected.
@@ -468,7 +477,7 @@ R0 = frozen offline scorecard + margin asking + no coverage boost. Errors are **
 - **Better prediction ≠ more wins.** Broader asking raised AUC by +0.024 ± 0.006 but not expected wins. A clue only helps where it can change a decision.
 - **An apparent timing effect.** Introductions made on days 35–49 once appeared to almost never succeed (0 of ~430 in two world sets), although their expected success was normal (≈ 1.0%). On 60 fresh worlds the rate was 1.05% (7 of 669): it was chance. Assignment day shows no reliable effect outside the drift scenario's built-in day-35 change.
 - **Complexity that did not pay.** The online learner, Thompson sampling, personal habit terms, the coverage boost and the margin asker each looked principled. None beat a simpler alternative (§9.4–9.6).
-- **Realised MSMI disagreed with the diagnostic on one block.** On block 7400 greedy scored higher on realised MSMI, while expected wins favoured the candidate by about 4 SE. Rather than explain it away, we tested the diagnostic itself: the source derivation makes it the simulator's exact conditional success probability, 360,000 replays agree within sampling error, and the pooled gap is within chance (§1.4). The disagreement is outcome luck, and the realised-MSMI interval on 120 episodes (± 0.10 at 95%) is wider than the effect being measured.
+- **Realised MSMI disagreed with the diagnostic on one block (7400).** Rather than explain it away, we tested the diagnostic itself: it is the exact success probability, and replays agree within sampling error. The disagreement is outcome luck (§1.4).
 - **Corrected early numbers.**
   - "20–30 pairs per day" was really 9–19.
   - The day-0 allowed-pair count was 2,996, not 3,215 (an age-check bug).
@@ -477,19 +486,19 @@ R0 = frozen offline scorecard + margin asking + no coverage boost. Errors are **
 ---
 
 ## 10. Expected failure cases and defences
-| # | Failure | Defence |
-|---|---|---|
-| F1 | Sparse supply (coverage ceiling ≈ 0.16 in sparse) | Prompt matching; global allocation; scarcity and option-value mechanisms under evaluation (H6) |
-| F2 | Withheld answers (≈ 65 of 200 decline a hard field) | Never inferred or asked; kept in the denominator |
-| F3 | Delayed feedback (replies ≤ 7 days, second answers ≤ ~26 days) | Pending ≠ no; prior carries early decisions |
-| F4 | Competition for one person | Global matching prevents duplicate assignment and handles same-day competition exactly; structural scarcity and dynamic option value remain Round 2 experiments |
-| F5 | Shifted weights | Fixed scorecard as the robust default. Round 2: a gradual blend of two offline weight sets, weighted by the likelihood of observed replies, kept only if it helps shift without harming the other five families |
-| F6 | Sparse personal history (~2 introductions each) | The candidate uses no person-specific learned parameters; population- or scenario-level adaptation is adopted only after it shows incremental outcome value |
-| F7 | Invalid output | Batch validation (§3); official checker; budget read from state |
-| F8 | Timeout (10 s per call, including start-up) | A monotonic-time guard keeps a fixed output margin. If optimisation has not started by the cutoff, a pre-validated simple matching over the already-computed feasible graph is used. If safe completion cannot be guaranteed, an empty batch is returned. Both paths are tested [plan] |
-| F9 | Protocol / format faults: NaN or Infinity, NumPy scalar types in JSON, memory near 1 MiB, missing optional keys, empty population, empty feasible graph, all members unavailable, duplicate IDs, members from several pools, declined soft fields | Explicit casting and guards; unit tests for each case [plan]. The policy returns an empty memory object, because the cumulative observable state (introductions, feedback, ask log) is enough to rebuild its statistics on every call; it uses no persistent filesystem state and no information from other episodes |
-| F10 | Larger hidden pools | Column filtering; matching within connected components |
-| F11 | Over-reading noise | Paired seeds; low-variance diagnostic; untouched confirmation block |
+| # | Failure | Defence | Status |
+|---|---|---|---|
+| F1 | Sparse supply (coverage ceiling ≈ 0.16 in sparse) | Prompt matching; global allocation; scarcity and option-value mechanisms under evaluation (H6) | Allocation implemented; option value open |
+| F2 | Withheld answers (≈ 65 of 200 decline a hard field) | Never inferred or asked; kept in the denominator | Implemented; 0 invalid actions in > 1,500 dev episodes |
+| F3 | Delayed feedback (replies ≤ 7 days, second answers ≤ ~26 days) | Pending ≠ no; prior carries early decisions | Implemented |
+| F4 | Competition for one person | Global matching prevents duplicate assignment and handles same-day competition exactly; structural scarcity and dynamic option value remain Round 2 experiments | Matching implemented; scarcity provisional; option value open |
+| F5 | Shifted weights | Fixed scorecard as the robust default. Round 2: a gradual blend of two offline weight sets, weighted by the likelihood of observed replies, kept only if it helps shift without harming the other five families | Fixed default implemented; adaptation planned |
+| F6 | Sparse personal history (~2 introductions each) | The candidate uses no person-specific learned parameters; population- or scenario-level adaptation is adopted only after it shows incremental outcome value | Implemented |
+| F7 | Invalid output | Batch validation (§3); official checker; budget read from state | Implemented and measured (0 invalid) |
+| F8 | Timeout (10 s per call, including start-up) | A monotonic-time guard keeps a fixed output margin. If optimisation has not started by the cutoff, a pre-validated simple matching over the already-computed feasible graph is used. If safe completion cannot be guaranteed, an empty batch is returned. Both paths are tested [plan] | Planned for Round 2. Slowest measured day so far: 45 ms; the guard is not yet in the frozen build |
+| F9 | Protocol / format faults: NaN or Infinity, NumPy scalar types in JSON, memory near 1 MiB, missing optional keys, empty population, empty feasible graph, all members unavailable, duplicate IDs, members from several pools, declined soft fields | Explicit casting and guards; unit tests for each case [plan]. The policy returns an empty memory object, because the cumulative observable state (introductions, feedback, ask log) is enough to rebuild its statistics on every call; it uses no persistent filesystem state and no information from other episodes | Empty memory implemented; unit tests planned |
+| F10 | Larger hidden pools | Column filtering; matching within connected components | Column filtering implemented and benchmarked (Appendix A); component splitting planned |
+| F11 | Over-reading noise | Paired seeds; low-variance diagnostic; untouched confirmation block | Implemented |
 
 ---
 
@@ -506,7 +515,8 @@ R0 = frozen offline scorecard + margin asking + no coverage boost. Errors are **
 ---
 
 ## 12. Reproducibility and provenance
-- **Code and results.** Every number comes from a script in `experiments/`, with raw per-episode JSONL in `experiments/results/`, at commit `d86ff40ecc561157a6c9b15f6b977acc0e556752`.
+- **Measured-code version.** Every number comes from a script in `experiments/`, with raw per-episode JSONL in `experiments/results/`, at commit `d86ff40ecc561157a6c9b15f6b977acc0e556752`.
+- **Research-note version.** This note and its PDF sit in later, document-only commits on the same branch. We checked the diff: between the measured-code commit and the note commits, no experimental code or raw result changed; only `ROUND1_NOTE.md`, `ROUND1_NOTE.pdf` and `.gitignore`. The full note commit and the PDF's full SHA-256 are recorded in `CHECKSUMS.txt` in the repository (a file cannot contain its own checksum).
 
 | Section | Script |
 |---|---|
@@ -520,7 +530,7 @@ R0 = frozen offline scorecard + margin asking + no coverage boost. Errors are **
 | Appendix A | `bench_100k.py` |
 
 - **Commands:** run from the organiser kit folder, for example `python tune_v3.py 7300 10 development > out.jsonl`, then `python summarise_scorer_v2.py out*.jsonl`.
-- **Environment:** Python 3.13.16, numpy 2.5.3, networkx 3.4.2 (BSD-3). These will be pinned in the Round 2 Docker image.
+- **Environment** (checked with `python --version` and the libraries' `__version__`): Python 3.13.16, numpy 2.5.3, networkx 3.4.2 (BSD-3). The experiments use only these plus the Python standard library and the kit. They will be pinned in the Round 2 Docker image.
 - **Inference seed:** deterministic per day and phase (`7919·day + phase`).
 - **Permitted inputs only.** The policy reads only the observation, clarification results, feedback and its own memory. Hidden values appear only in offline measurement scripts (expected wins, oracle ceilings).
 - **AI-assisted tools.** Anthropic Claude was used to help draft and debug experimental scripts, propose and run analyses, prepare mathematical explanations, and edit this research note. The author directed the research questions, reviewed the principal experimental results, and made the final methodological and submission decisions. Source-code interpretations, mathematical arguments and generated prose remain subject to the limitations stated in the note. No external AI service is used by the policy during evaluation.
