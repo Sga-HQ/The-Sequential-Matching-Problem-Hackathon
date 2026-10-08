@@ -279,6 +279,20 @@ PERSON FLOW
 - Once answered they are as matchable as complete people, and the baseline already introduces almost everyone
   who has any partner (57% of 58%) → coverage is at its ceiling.
 
+### Decisions 8 Oct (tables, filter, arrivals, asker, score band)
+- Tables = user's 6 (TABLES.md) + **Pending** as a named list (not ready, not blocked, not busy/retired) → asker input only.
+  Filter runs on ready people only.
+- Allowed-pairs cache: 200 people → recompute daily (≤26 ms). 100k (from earlier benchmark): recompute all pairs
+  ≈ 6 s/day columnar vs ≈ 0.2 ms per new person incremental → cache matters for a real app. But the hackathon carries
+  ≤1 MiB memory between calls and 100k gives ~8M allowed pairs (~64 MB) → cannot carry; real app keeps it in a database.
+- Simultaneous arrivals: the app is day-based; everyone arriving on day d appears together and is checked against
+  everyone (new×new included) because we recompute daily. Incremental design must do new×(old ∪ new).
+- Asker (user's sandbox idea = imputation asker already built, 1.32 vs 0.62 partners/ask). Cheaper exact half:
+  age, gender, zone are always visible → count ready people whose preferences accept the pending person (no guessing).
+  Asker order caps at ~1% → keep cheap.
+- Score band idea: upper cut has no reason (higher = better). Lower floor = user's earlier waiting-time threshold;
+  scorer is weak (AUC 0.55) and partners are scarce → expect ≤0 gain; testable.
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).
