@@ -528,6 +528,28 @@ Organiser Q&A (7 Oct, anonymised):
   exactly by connected components (same answer, faster); for learning, pooled + per-group adjustment beats
   separate small models when data is scarce.
 
+## 7f. Review 3 (8 Oct): status, 10% target, AWS/Microsoft research ideas — triage
+**Checked first (their "Stage 1: verify the measurement system"):**
+- Expected-wins formula vs the kit's own outcome code: 360,000 replayed introductions, ratio 1.003, every family |z| < 0.9
+  (`experiments/pwin_check.py`, `results/pwin_check.txt`). The formula is exact.
+- All 1,980 past episodes: realised − expected = −0.037 ± 0.039 per 100 (clustered by seed), z = −1.0 → luck.
+- Algebra (tower property): each intro's luck is a fresh stream the policy never saw, so E[sum of p_i] = E[realised MSMI]
+  for ANY policy, adaptive or not. Expected wins = same target, ~10× less noise.
+**So we corrected the review's plan:**
+- "Realised MSMI primary, expected wins only a diagnostic" → reversed. 120 episodes can only detect a ~38% realised gain
+  (80% power); expected wins detects ~4%. A "confirmed 10% realised" target would need ~1,700 episodes.
+- Pre-declared in the note §9.7: primary = paired expected wins on 50000–50019; realised reported anyway;
+  extension block 50020–50299 (untouched) for realised MSMI if runtime allows.
+- Official ranking itself: 120 private episodes → about ±26% luck on a paired difference. We control the expectation only.
+**Round 2 target:** +10% expected wins over greedy (6 families equally weighted), zero invalid episodes; stretch 15%.
+  Decide the stretch only after oracle headroom (perfect scorer / perfect asks / future-aware) is measured.
+**Adopted for Round 2 (in this order):** oracle headroom study → broad-then-targeted asker → one-day rollout
+  (stop if < 2% on two blocks) → population normal/shift detector with hysteresis (not personal learning) →
+  2×2×2 factorial of survivors → freeze → confirmation. Cheap side test: hard-ask priority by "visible checks already pass"
+  (drop if < 1%). Coverage: only as a tie-break among near-optimal matchings ("service debt"), never a multiplier.
+**Not adopted:** renewed Thompson/exploration, deep temporal models, personal embeddings, causal-uplift claims.
+**Papers listed in the review:** treat as unverified leads until read; none cited in the note.
+
 ## 8. Research leads
 Dynamic matching markets / kidney exchange ("Thickness and Information in Dynamic Matching Markets"), reciprocal recommender systems, maximum weight matching, value of information / active learning, contextual bandits, Gale–Shapley (why not used).
 From lecture refs: Russo et al. 2018 (Thompson tutorial), Das & Kamenica 2005 (two-sided bandits & dating market), Liu, Mania & Jordan 2020 (competing bandits in matching markets), Joulani et al. 2013 (online learning under delayed feedback), Lakkaraju et al. 2017 (selective labels), Howard 1966 (value of information), Garivier & Moulines 2011 (discounted UCB).

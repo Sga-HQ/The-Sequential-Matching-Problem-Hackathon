@@ -1,0 +1,11 @@
+Expected-wins formula vs the kit simulator's own outcome code (pwin_check.py, 200 pairs x 300 outcome seeds per family)
+drift        sims=60000 simulated_wins=600 formula_expects=596.9 ratio=1.005 z=+0.13
+cold_start   sims=60000 simulated_wins=593 formula_expects=581.5 ratio=1.020 z=+0.48
+delayed      sims=60000 simulated_wins=625 formula_expects=647.3 ratio=0.966 z=-0.88
+sparse       sims=60000 simulated_wins=693 formula_expects=683.1 ratio=1.014 z=+0.38
+development  sims=60000 simulated_wins=658 formula_expects=661.8 ratio=0.994 z=-0.15
+shift        sims=60000 simulated_wins=587 formula_expects=572.8 ratio=1.025 z=+0.59
+TOTAL        sims=360000 simulated_wins=3756 formula_expects=3743.4 ratio=1.003
+
+Realised MSMI minus expected wins over all 1,980 development episodes with both fields (scorer_v2, tune_v2..v4b):
+gap = -0.0374 per 100; cluster-robust SE 0.0388 over 50 seeds (z=-0.96); 0.0233 over 300 (seed, variant) worlds (z=-1.61)
