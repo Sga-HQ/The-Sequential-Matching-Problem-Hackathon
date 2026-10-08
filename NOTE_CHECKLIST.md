@@ -17,3 +17,4 @@ Things the user asked to make sure are written into the final document.
 - [ ] **"We questioned our own idea":** upper score cutoff → researched → not used, and why (no flooding of popular users in the simulator; real systems use floors, not ceilings).
 - [ ] **Framing point (organisers welcome these):** in the simulator, a person who says "no" on day 1 is still busy for 8 days (busy is set at the introduction for both, whatever the answer). A real app should free them as soon as the "no" arrives; that would add introductions without any cost.
 - [ ] **Scorer v2 results** (+2.7% expected wins over the kit, with honest noise discussion) and the tuning list.
+- [ ] **Ideas we checked and rejected, with rule and data reasons:** smart defaults (forbidden: "never fabricate a default preference"; and soft fields are independent in the generator), peer personas (hidden traits are independent of the profile). Context switch kept as a soft Bayesian blend.

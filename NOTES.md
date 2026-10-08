@@ -358,6 +358,19 @@ PERSON FLOW
   regardless of the answer); the policy cannot release them. Real-app point for the note: free people as soon as a
   "no" arrives.
 
+### Three external suggestions checked against the rules (8 Oct)
+- Smart defaults (guess blank soft fields from other answers): writing a guess in = NOT allowed (INTEGRATION.md: "never
+  fabricate a default preference"; DATA_CONTRACT: declined "must not be inferred or bypassed"). Also useless: kit.generate
+  draws every soft field independently and uniformly → other answers carry zero information.
+- Dynamic prompts = 1-point soft-field asks → allowed (resolve_asks) and already planned (ASKER.md rule 4).
+- Context switch (detect shift): allowed if detection uses only observed replies and the candidate weight sets are
+  declared training assets fitted on public variants (PROBLEM_STATEMENT §205). Not allowed: seeds, hidden objects.
+  Method: soft Bayesian blend of 2 weight sets by likelihood of observed replies (not a hard switch). Detection speed
+  to be measured.
+- Peer personas: allowed with observed age/zone/gender (never infer who they want to meet from gender). Useless in the
+  simulator: pickiness and reply habit are drawn independently of the profile → persona average = global average
+  (already our prior). Real-app idea, with a stereotype/fairness caution.
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).
