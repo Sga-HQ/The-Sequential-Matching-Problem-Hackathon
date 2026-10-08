@@ -7,7 +7,7 @@ import collections, json, math, sys
 rows = [json.loads(l) for f in sys.argv[1:] for l in open(f) if l.strip()]
 by = collections.defaultdict(dict)                       # (seed, variant) -> arm -> row
 for r in rows: by[r['seed'], r['variant']][r['policy']] = r
-arms = sorted({r['policy'] for r in rows}, key=lambda a: ['K', 'R1', 'O1', 'O1n', 'O2h', 'O2hs', 'O12', 'O12x', 'O4'].index(a))
+arms = sorted({r['policy'] for r in rows}, key=lambda a: ['K', 'R1', 'O1', 'O1n', 'O2h', 'O2hs', 'O12', 'O12x', 'O4', 'O4c'].index(a))
 
 def paired(arm, ref, metric, variant=None):
     """Mean difference arm - ref and cluster-robust SE (clusters = seeds), over worlds where both ran."""

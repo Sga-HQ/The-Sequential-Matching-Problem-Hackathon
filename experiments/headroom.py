@@ -8,6 +8,7 @@ Arms:
   O2h   all askable hard answers free + R1 scorer    O2hs all askable hard AND soft answers free + R1 scorer
   O12   all answers free + true chances              O12x O12 + knows who leaves within 8 days (priority)
   O4    O12 + 10-day look-ahead in the REAL future (true arrivals/departures; new luck resampled)
+  O4c   O4, but leaves the O12 matching only when the look-ahead gain exceeds 2% (guards against noisy picks)
 Metric: expected wins per 100 arrived (exact success probability summed over introductions; unbiased for MSMI).
 """
 import copy, json, random, sys, time
@@ -57,7 +58,7 @@ def rollout_value(sim, T, variant, first_pairs, horizon, luck):
         s.advance([list(p) for p in pairs])
     return val
 
-def lookahead_pairs(sim, st, T, variant, horizon=10, samples=2, n_alt=2):
+def lookahead_pairs(sim, st, T, variant, horizon=10, samples=2, n_alt=2, margin=0.0):
     base, G = true_matching(st, T, variant)
     if not base: return base
     cands = {('base',): base}
@@ -70,7 +71,9 @@ def lookahead_pairs(sim, st, T, variant, horizon=10, samples=2, n_alt=2):
     seed = sim.world['seed']
     scores = {k: sum(rollout_value(sim, T, variant, v, horizon, hash((seed, sim.day, s)) & 0x7fffffff)
                      for s in range(samples)) for k, v in cands.items()}
-    return cands[max(scores, key=lambda k: (scores[k], k == ('base',)))]
+    best = max(scores, key=lambda k: (scores[k], k == ('base',)))
+    if scores[best] <= scores[('base',)] * (1 + margin): best = ('base',)   # O4c: leave the default only for a clear gain
+    return cands[best]
 
 def run(world, arm):
     sim = kit.Simulator(world); T = {m['member_id']: m for m in world['members']}; variant = world['variant']
@@ -78,7 +81,7 @@ def run(world, arm):
     t0 = time.time()
     for day in range(60):
         if arm in ('O2h',): reveal(sim, HARD)
-        if arm in ('O2hs', 'O12', 'O12x', 'O4'): reveal(sim, list(HARD) + SOFT)
+        if arm in ('O2hs', 'O12', 'O12x', 'O4', 'O4c'): reveal(sim, list(HARD) + SOFT)
         st = sim.observe()
         if arm == 'K': asks = kit_decide({'phase': 'ask', 'state': st, 'memory': None})['asks']
         else: asks = v2.decide({'phase': 'ask', 'state': st, 'memory': None}, R1)['asks']
@@ -91,6 +94,7 @@ def run(world, arm):
             soon = {i for i, m in T.items() if day < m['exit_day'] <= day + 8}
             pairs = true_matching(st, T, variant, exit_soon=soon)[0]
         elif arm == 'O4': pairs = lookahead_pairs(sim, st, T, variant)
+        elif arm == 'O4c': pairs = lookahead_pairs(sim, st, T, variant, margin=0.02)
         sim.advance([list(p) for p in pairs])
     arrived = {m['member_id'] for m in sim.observe()['members'] if m['arrived_day'] <= 59}
     ew = sum(p_win(T[i['user_a']], T[i['user_b']], variant, i['assigned_day']) for i in sim.introductions)
