@@ -1,0 +1,1 @@
+{"seed": 7200, "variant": "sparse", "policy": "K  kit greedy baseline", "msmi": 0.0, "expected_wins": 0.10285193510930983, "mutual": 2.5, "coverage": 0.225, "intros": 28, "ask_cost": 177, "auc": 0.6140350877192983, "pred_mean": 0.46037777633234406, "yes_rate": 0.4418604651162791, "n_replies": 43, "unknown_share": 0.6875}
