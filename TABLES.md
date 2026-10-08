@@ -83,3 +83,34 @@ How each piece is used:
 3. **Busy / Retired bookkeeping.** Mutual yes → the busy timer extends to 6 days after the date. Paused → Retired.
 4. **Waiting is not failure.** An introduction with no answer yet stays "waiting". Only answered events count.
 5. **Wrong-belief check.** If recent yes-rates fall well below what the scorer expects (drift scenario, day 35+), ageing lets the counts catch up.
+
+## One introduction, start to finish (exact simulator rules from `kit.py`)
+There is no chat step in the simulator: the "reply" **is** the yes/no. Someone who does not reply has simply ignored it.
+
+```
+DAY t      Introduced. Both people → BUSY. New row in HISTORY.
+           │
+DAY t+1…t+7  Each person, separately: replies yes / no on a random day 1–7 after the introduction,
+           │  or never replies (we learn "no reply" on day t+7). Chance of replying = that person's hidden reply rate (55–98%).
+           │
+           ├─ Anyone said no or did not reply → journey over. The pair is burned (can never be repeated).
+           │                                     Both free again on DAY t+8 → back to the ready list.
+           │
+           └─ Both said yes → a date is set 1–14 days after the later reply (+5–12 more in the delayed scenario).
+                              Both stay BUSY until 6 days after the date.
+                │
+                ├─ Date did not happen (22%) → journey over; free again 6 days after the date day.
+                │
+                └─ Date happened (78%) → each person answers "second date?" 1–5 days after the date, or never answers.
+                      │   An answer counts as on time if it comes within 3 days (60% chance).
+                      ├─ Both yes → PAUSED → RETIRED for good (on the day the second answer is seen).
+                      │   It scores a point only if both were on time AND the date was ≤ 30 days after the introduction.
+                      └─ Otherwise → free again 6 days after the date.
+```
+
+| Stage | Table | How long |
+|---|---|---|
+| Introduced, waiting for replies | Busy | 8 days |
+| Both said yes, waiting for the date and answers | Busy | until 6 days after the date (in total day t+8 to t+27; longer in the delayed scenario) |
+| Both want a second date | Retired | forever |
+| Journey ended | back to the ready list | – (this pair can never be introduced again) |
