@@ -177,3 +177,49 @@ Next tuning, in order (reasons in TUNING.md):
 - **(b)** prior pooled over all 6 scenarios, and a lower `k_field` (helps shift).
 - **(c)** tune `u_new` / `u_deg`.
 - **(d)** reply-habit and pickiness on/off ablations.
+
+---
+# The standard "how to build a scorer" recipe, checked against our problem (8 Oct)
+The user shared a general recipe (credit-scorecard style plus a dating-app layer). Each step, checked against our data:
+
+| Recipe step | Applies here? | Evidence | What we do |
+|---|---|---|---|
+| 1. Define the target (binary / continuous / time-to-event) | Binary, **whole journey** | The competition counts "both want a second date" | Target = win; score = P(A yes)·P(B yes)·rA²·rB² |
+| Time-to-event | No | Leaving is random (decided at creation); reply timing does not affect the score | – |
+| 2. Weight of Evidence / Information Value | **Yes, done** (`experiments/woe_iv.py`, `results/woe_iv.txt`) | See the IV table below | Use WoE as the multipliers (identical to the log-odds shifts we use) |
+| Binning continuous variables | Not needed | All soft fields are categories (same / different / unknown) | – |
+| 3. Logistic regression vs XGBoost | **Logistic** | Clues add up with no interaction (goal + pace: predicted 0.70 = observed 0.70); ~25 replies in the first 10 days is far too little for trees | Logistic / naive-Bayes form + Beta learning |
+| 4. Points scaling (target score, odds, PDO) | Yes, **for explaining** (ranking is unchanged) | – | Scorecard table below, for the note |
+| 5. Discrimination (AUC / Gini) | Yes | Ours 0.54–0.55. **The best any scorer can reach here is 0.74**, because the rest is pure luck (SCORER.md v3), so "AUC > 0.75 = strong" is impossible in this simulator | Report AUC against our own ceilings |
+| 5. Calibration | Yes | Predicted 0.44 vs actual 0.46 | **Correction to the recipe:** the KS statistic measures *separation*, not calibration. Calibration is checked with a reliability curve or the Brier score |
+| Hard filters → score 0 | **Done** | Dealbreakers both ways; one 0 kills the pair | – |
+| Explicit preferences with user-set importance | Not in the simulator (no importance answers) | – | Real-app idea for the note |
+| Implicit learned weights | **Done** | Beta counts per field, learned online | – |
+| Feature crosses / per-user taste vectors (factorisation machines) | **No** | No interaction found (0.70 vs 0.70). Per-user vectors need many interactions per person; we have a **median of 2**. The simulator gives people one overall pickiness, not personal tastes | Keep per-person pickiness only (a single number) |
+| Cold start: questionnaire first, peer-group average until 50 swipes | Same idea, smaller numbers | People get ~2 introductions, not 50 | Prior = offline fit (the "peer average"), normaliser of 10–40 imaginary replies |
+
+## Information Value per field (yes vs no, decision-time fields, 15 worlds per scenario)
+Industry rule of thumb (Siddiqi 2006, cited from memory): < 0.02 useless · 0.02–0.1 weak · 0.1–0.3 medium · > 0.3 strong.
+
+| Field | development | shift | cold_start |
+|---|---|---|---|
+| goal | **0.074** (WoE same +0.47 / different −0.46) | 0.006 | **0.050** |
+| pace | 0.002 | **0.066** (+0.52 / −0.39) | 0.004 |
+| lifestyle | 0.005 | 0.006 (same −0.18: reversed) | 0.012 |
+| conversations | 0.005 | 0.017 | 0.006 |
+| emotional availability, space, relocate | ≤ 0.002 | ≤ 0.009 | ≤ 0.008 (noise) |
+
+- **No clue reaches even "medium".** The unknown bin (62%, 82% in cold start) has WoE ≈ 0 and dilutes every field. That is why AUC is ~0.55.
+- **The strongest clue changes by scenario** (goal normally, pace in shift). A fixed scorecard cannot handle that; online learning with a modest prior can.
+
+## Scorecard (for explaining the scorer in the note)
+Target 600 points at even odds, PDO = 20 (+20 points doubles the odds of a yes). Factor = 20/ln 2 = 28.9; base (P = 0.48) = **598 points**.
+
+| Clue | Same | Different | Unknown |
+|---|---|---|---|
+| goal | **+20** | −11 | 0 |
+| pace | +10 | −10 | 0 |
+| lifestyle | +7 | −9 | 0 |
+| conversations | +2 | −5 | 0 |
+
+Example: goal same + lifestyle different = 598 + 20 − 9 = 609 points. The odds are 2^(11/20) ≈ 1.46 × the odds at 598 points, i.e. a 57% chance. (These are development-prior points; online learning moves them.)

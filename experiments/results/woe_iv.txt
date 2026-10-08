@@ -1,0 +1,24 @@
+== cold_start
+  relationship_goal       IV 0.050   WoE: same +0.52  different -0.52  unknown -0.01
+  relationship_pace       IV 0.004   WoE: same +0.21  different -0.08  unknown -0.01
+  lifestyle               IV 0.012   WoE: same +0.39  different -0.04  unknown -0.03
+  conversations           IV 0.006   WoE: same +0.36  different -0.04  unknown -0.01
+  emotional_availability  IV 0.000   WoE: same +0.03  different +0.06  unknown -0.01
+  space_for_relationship  IV 0.001   WoE: same -0.00  different +0.07  unknown -0.01
+  relocate                IV 0.008   WoE: same -0.21  different +0.20  unknown -0.01
+== development
+  relationship_goal       IV 0.074   WoE: same +0.47  different -0.46  unknown -0.02
+  relationship_pace       IV 0.002   WoE: same +0.12  different -0.02  unknown -0.01
+  lifestyle               IV 0.005   WoE: same +0.17  different -0.06  unknown -0.01
+  conversations           IV 0.005   WoE: same +0.22  different -0.03  unknown -0.02
+  emotional_availability  IV 0.002   WoE: same -0.10  different +0.01  unknown +0.02
+  space_for_relationship  IV 0.000   WoE: same +0.01  different +0.02  unknown -0.01
+  relocate                IV 0.001   WoE: same -0.02  different -0.05  unknown +0.02
+== shift
+  relationship_goal       IV 0.006   WoE: same +0.02  different -0.18  unknown +0.04
+  relationship_pace       IV 0.066   WoE: same +0.52  different -0.39  unknown +0.05
+  lifestyle               IV 0.006   WoE: same -0.18  different +0.09  unknown +0.00
+  conversations           IV 0.017   WoE: same +0.36  different -0.15  unknown +0.01
+  emotional_availability  IV 0.009   WoE: same -0.17  different -0.09  unknown +0.07
+  space_for_relationship  IV 0.003   WoE: same -0.12  different -0.06  unknown +0.04
+  relocate                IV 0.008   WoE: same -0.03  different -0.15  unknown +0.06
