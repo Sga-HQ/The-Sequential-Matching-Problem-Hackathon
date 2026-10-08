@@ -15,3 +15,5 @@ Things the user asked to make sure are written into the final document.
 - [ ] **Arrival queue (user's decision):** every new person enters one first-in-first-out queue. Each is processed within seconds (added to the tables, then checked against everyone, including earlier arrivals still in the batch), so two people joining at the same moment are never lost. Nightly full re-check as a backup.
 - [ ] **Edge cases** (EDGE_CASES.md): time, competition, data and validity, each with its handling and status.
 - [ ] **"We questioned our own idea":** upper score cutoff → researched → not used, and why (no flooding of popular users in the simulator; real systems use floors, not ceilings).
+- [ ] **Framing point (organisers welcome these):** in the simulator, a person who says "no" on day 1 is still busy for 8 days (busy is set at the introduction for both, whatever the answer). A real app should free them as soon as the "no" arrives; that would add introductions without any cost.
+- [ ] **Scorer v2 results** (+2.7% expected wins over the kit, with honest noise discussion) and the tuning list.

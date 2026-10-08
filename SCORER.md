@@ -152,3 +152,28 @@ AUC = the chance the scorer ranks a random "yes" above a random "no" (0.5 = coin
 - Most of the gap between today (0.55) and a perfect soft-field scorer (0.64) comes from **unknown fields**, not the formula. So **asking soft fields with the unused budget is the scorer's biggest lever.**
 - Pickiness is worth about as much again, but people get only ~2 introductions, so it can only be learned a little.
 - Above 0.75 is impossible: it is luck.
+
+---
+# Test of scorer v2 on 10 new worlds × 6 scenarios (8 Oct)
+`experiments/test_scorer_v2.py` (seeds 7100–7109, 60 episodes per policy, same worlds for every policy). Summary: `experiments/results/scorer_v2_summary.txt`.
+**Expected wins** = the sum of each introduced pair's exact win chance from the simulator's formula (offline measurement only). It has far less luck noise than MSMI.
+
+| Policy | Expected wins /100 | vs kit (paired) | MSMI | Mutual | Coverage | Ask points | Scorer AUC | Fields unknown |
+|---|---|---|---|---|---|---|---|---|
+| K kit greedy | 0.375 | – | 0.31 | 5.48 | 0.334 | 206 | 0.541 | 70% |
+| P old prototype | 0.384 | +0.0086 ± 0.0024 (+2.3%) | 0.44 | 5.18 | 0.337 | 206 | 0.547 | 71% |
+| S2 scorer v2 | 0.384 | +0.0091 ± 0.0024 (+2.4%) | 0.26 | 5.22 | 0.335 | 206 | 0.540 | 71% |
+| S3 scorer v2 + soft asks | **0.385** | **+0.0103 ± 0.0020 (+2.7%)** | 0.38 | 5.28 | 0.334 | 230 | **0.553** | **59%** |
+
+Findings:
+1. **All three of our policies beat the kit by about +2.5% in expected wins.** That is 4–5 standard errors, so it is real but small, as the ceilings predicted. S2 ≈ P; S3 is slightly ahead, but within noise.
+2. **MSMI with 10 seeds is pure noise** (0.26–0.44 for nearly identical expected wins). Use expected wins to compare, and MSMI only with hundreds of episodes.
+3. **Soft asks barely ran:** only +24 points per episode (206 → 230 of 720). The "≥ 2 options" rule rarely fires because most people have 0–1 allowed partners on a given day. Unknown fields still fell 71% → 59%, and AUC rose 0.540 → 0.553 (cold start 0.527 → 0.560).
+4. **Shift:** v2 is lowest there (0.411 vs kit 0.416). The development prior points lifestyle the wrong way, and 10 worlds do not give enough data to overturn it.
+5. **Calibration:** v2 predicts 0.443 vs an actual 0.46, slightly too low (the pickiness shrinkage). Small and fixable.
+
+Next tuning, in order (reasons in TUNING.md):
+- **(a)** `soft_min_options` 2 → 1, and ask soft fields of everyone ready (also speeds up learning).
+- **(b)** prior pooled over all 6 scenarios, and a lower `k_field` (helps shift).
+- **(c)** tune `u_new` / `u_deg`.
+- **(d)** reply-habit and pickiness on/off ablations.

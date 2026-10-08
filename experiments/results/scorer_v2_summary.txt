@@ -1,0 +1,25 @@
+240 episodes, 60 per policy, scenarios: cold_start, delayed, development, drift, shift, sparse
+
+policy                           exp.wins/100    vs K (paired)   MSMI  mutual  cover  asks    AUC  unknown
+K  kit greedy baseline                 0.3751  +0.0000 ± 0.0000   0.31    5.48  0.334   206  0.541     0.70
+P  old prototype (A4)                  0.3837  +0.0086 ± 0.0024   0.44    5.18  0.337   206  0.547     0.71
+S2 scorer v2                           0.3842  +0.0091 ± 0.0024   0.26    5.22  0.335   206  0.540     0.71
+S3 scorer v2 + soft-field asks         0.3854  +0.0103 ± 0.0020   0.38    5.28  0.334   230  0.553     0.59
+
+expected wins per 100 by scenario:
+  K  kit greedy baseline           cold_s=0.364  delaye=0.440  develo=0.463  drift=0.436  shift=0.416  sparse=0.132
+  P  old prototype (A4)            cold_s=0.375  delaye=0.450  develo=0.475  drift=0.448  shift=0.420  sparse=0.135
+  S2 scorer v2                     cold_s=0.384  delaye=0.448  develo=0.479  drift=0.452  shift=0.411  sparse=0.132
+  S3 scorer v2 + soft-field asks   cold_s=0.386  delaye=0.447  develo=0.479  drift=0.451  shift=0.418  sparse=0.132
+
+scorer AUC by scenario:
+  K  kit greedy baseline           cold_s=0.504  delaye=0.565  develo=0.561  drift=0.565  shift=0.552  sparse=0.499
+  P  old prototype (A4)            cold_s=0.491  delaye=0.566  develo=0.580  drift=0.584  shift=0.550  sparse=0.513
+  S2 scorer v2                     cold_s=0.527  delaye=0.549  develo=0.545  drift=0.549  shift=0.557  sparse=0.510
+  S3 scorer v2 + soft-field asks   cold_s=0.560  delaye=0.567  develo=0.565  drift=0.562  shift=0.559  sparse=0.508
+
+calibration (mean predicted P(yes) vs actual yes-rate):
+  K  kit greedy baseline           predicted 0.471  actual 0.468
+  P  old prototype (A4)            predicted 0.472  actual 0.467
+  S2 scorer v2                     predicted 0.444  actual 0.458
+  S3 scorer v2 + soft-field asks   predicted 0.443  actual 0.462

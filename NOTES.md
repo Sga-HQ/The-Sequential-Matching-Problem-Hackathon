@@ -350,6 +350,14 @@ PERSON FLOW
 - Evolution offline cost: one fitness evaluation ≈ 20 worlds × ~5 s = 100 s; 20 candidates × 30 rounds ≈ 17 CPU-hours
   (≈ 4 h on 4 cores); cut with 10 worlds, fewer rounds, faster code. Possible and free, but not before the Round 1 deadline.
 
+### Scorer v2 test (8 Oct, 60 episodes/policy, seeds 7100–7109; SCORER.md end)
+- Expected wins vs kit: old prototype +2.3%, v2 +2.4%, v2 + soft asks +2.7% (each ≈ 4–5 SE). MSMI at 10 seeds = noise.
+- Soft asks spent only +24 points (rule "≥2 options" rarely true); unknown fields 71% → 59%; AUC 0.540 → 0.553.
+- Shift weakest for v2 (prior wrong for lifestyle). Tuning list → TUNING.md.
+- User: why does someone who said "no" stay busy 8 days? Simulator rule (busy = day+8 for both at the introduction,
+  regardless of the answer); the policy cannot release them. Real-app point for the note: free people as soon as a
+  "no" arrives.
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).
