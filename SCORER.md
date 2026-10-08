@@ -111,3 +111,44 @@ Measured with `experiments/funnel_probs.py`: kit greedy baseline, development sc
 4. Drift lowers **everyone** equally on the same day, so the order of a person's options is unchanged. Ranking does not need to know the base dropped.
 
 Retrospective: the prototype used γ = 0.98 "for drift". The maths shows that only costs data (11%) and buys nothing here.
+
+---
+# Version 3 (8 Oct): the extra data a good scorer needs, all 6 scenarios
+`experiments/scorer_data.py`, kit greedy baseline, 15 worlds per scenario. Fields are taken **as known at decision time**. Results are in `experiments/results/scorer_data_*.txt`.
+
+## 1. Yes-rate when a field is the same vs different
+| Field | development | shift | sparse | cold_start | delayed | drift |
+|---|---|---|---|---|---|---|
+| goal | 0.59 / 0.37 | **0.49 / 0.46** | 0.54 / 0.41 | 0.58 / 0.42 | 0.57 / 0.40 | 0.56 / 0.34 |
+| pace | 0.56 / 0.43 | **0.62 / 0.41** | 0.78 / 0.37 | 0.55 / 0.46 | 0.59 / 0.45 | 0.54 / 0.40 |
+| lifestyle | 0.50 / 0.44 | **0.39 / 0.49 (reversed)** | 0.60 / 0.43 | 0.59 / 0.48 | 0.50 / 0.47 | 0.48 / 0.42 |
+| conversations | 0.46 / 0.50 | 0.55 / 0.46 | 0.43 / 0.49 | 0.59 / 0.47 | 0.49 / 0.51 | 0.43 / 0.47 |
+| emotional_availability, space_for_relationship, relocate | ≈ equal in every scenario: **no effect** (matches the code) | | | | | |
+
+- Small cells (sparse: 447 replies in total) are noisy. Conversations moves either way.
+- **Shift really is different:** pace matters most, goal barely matters, and matching lifestyles *lowers* the chance. A starting belief fitted on development points the wrong way for lifestyle.
+
+## 2. How much we can see, and how much we learn
+| | development-like | cold_start | sparse |
+|---|---|---|---|
+| Each soft field unknown at decision time | **61–64%** | **81–83%** | 61–65% |
+| Yes/no replies per world, days 0–9 / 10–19 / 20–29 / … | 25 / 39 / 31 / 20 / 13 / 10 | 15 / 33 / 31 / 19 / 12 / 8 | 9 / 13 / 6 / 1 |
+| Introductions per introduced person | median 2, mean 2.3 | median 2 | median 1 |
+
+- **Learning is slow:** about 25 replies in the first 10 days, and only ~9 of those have a given field known. Detecting the shift scenario's reversed lifestyle effect takes weeks, but most matching happens early. So **the starting belief matters a lot**, and asking soft fields speeds up learning too.
+- **Per-person memory has little data:** most people get only 2 introductions. Reply habit and pickiness help a little, but the starting counts must dominate.
+
+## 3. How good can any scorer ever be? (offline, using the hidden truth)
+AUC = the chance the scorer ranks a random "yes" above a random "no" (0.5 = coin flip, 1 = perfect).
+
+| Scorer knows… | AUC (all scenarios) |
+|---|---|
+| Our scorer today (63% of fields unknown, learned weights) | ~0.55 |
+| **All 4 soft fields exactly, with the true weights** | **0.61–0.65** |
+| + each person's hidden pickiness | 0.70–0.72 |
+| + the pair's hidden shared luck | 0.74–0.75 (the rest is a coin flip) |
+
+**Conclusion:**
+- Most of the gap between today (0.55) and a perfect soft-field scorer (0.64) comes from **unknown fields**, not the formula. So **asking soft fields with the unused budget is the scorer's biggest lever.**
+- Pickiness is worth about as much again, but people get only ~2 introductions, so it can only be learned a little.
+- Above 0.75 is impossible: it is luck.

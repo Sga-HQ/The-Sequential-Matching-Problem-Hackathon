@@ -339,6 +339,17 @@ PERSON FLOW
 - Evolution "knows" only through a fitness function we write: run the policy with the given knobs on training
   worlds → mean expected wins. DE proposes knob sets, keeps the better ones, mixes them, repeats; checked on held-out worlds.
 
+### Findings 8 Oct (scorer data, all 6 scenarios; SCORER.md v3)
+- Busy timings (8 days; until date + 6) come from the organisers' simulator code (kit.py); their written spec only says
+  "occupied through the response/date window" and "repeated pair not permitted within an episode".
+- 3 extra soft fields have no effect. Shift: pace strongest, goal weak, lifestyle reversed.
+- 61–64% of soft fields unknown at decision time (cold start 81–83%). ~25 replies in the first 10 days → slow learning.
+- Median 2 introductions per person → little per-person data.
+- Best possible AUC: fields known 0.64; + pickiness 0.71; + shared luck 0.74. Ours ~0.55 → the gap is mostly unknown
+  fields → soft-field asks are the scorer's biggest lever. ASKER.md collects the asker rules.
+- Evolution offline cost: one fitness evaluation ≈ 20 worlds × ~5 s = 100 s; 20 candidates × 30 rounds ≈ 17 CPU-hours
+  (≈ 4 h on 4 cores); cut with 10 worlds, fewer rounds, faster code. Possible and free, but not before the Round 1 deadline.
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).

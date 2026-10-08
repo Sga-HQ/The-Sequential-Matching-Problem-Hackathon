@@ -1,0 +1,13 @@
+== shift: 2114 yes/no replies over 15 worlds; overall yes-rate 0.46
+  relationship_goal       same 0.49  different 0.46  unknown at decision 63%
+  relationship_pace       same 0.62  different 0.41  unknown at decision 62%
+  lifestyle               same 0.39  different 0.49  unknown at decision 63%
+  conversations           same 0.55  different 0.46  unknown at decision 64%
+  emotional_availability  same 0.47  different 0.49  unknown at decision 63%
+  space_for_relationship  same 0.47  different 0.47  unknown at decision 64%
+  relocate                same 0.49  different 0.49  unknown at decision 64%
+  replies arriving per 10-day block (per world): [25.0, 38.7, 32.5, 19.8, 13.6, 8.6, 2.8]
+  introductions per introduced person: median 2, mean 2.4, max 8
+  best possible AUC using fields                     0.644
+  best possible AUC using fields+pickiness           0.714
+  best possible AUC using fields+pickiness+shared    0.741
