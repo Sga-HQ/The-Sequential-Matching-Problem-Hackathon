@@ -323,6 +323,12 @@ PERSON FLOW
 - New lever from feedback: per-person reply reliability (24% of replies missing; 29% of people miss ≥ half).
 - NOTE_CHECKLIST.md = running list of things that must appear in the final document.
 
+### Decision 8 Oct: fairness / upper cutoff (RESEARCH.md §1)
+- Objective stays Σ score with maxcardinality (most pairs first). No upper cutoff: real systems use floors/quotas for the
+  disadvantaged, never caps on the best. Averaging in real dating apps exists because popular users get flooded;
+  the simulator has no flooding. The "taken" problem here is over time → urgency/scarcity boosts. Optional tests:
+  √q, log q + 10, coverage-first.
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).

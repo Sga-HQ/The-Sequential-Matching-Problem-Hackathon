@@ -25,6 +25,27 @@ Code was read at the source level (commit noted), not only the README.
 - `numerai/*`: GroupKFold by era. `research_center_assignment/`: experiments dict, FastAPI, Docker, pytest regression checks.
 - Takeaways for us: grouped hold-out by world/seed; experiments dict for ablations; regression tests on the policy interface.
 
+### Fairness / "averaging" in matching (researched 8 Oct; V = verified by reading code or abstract, R = from memory, not re-checked)
+- **Code read (V):**
+  - FairRec (github.com/gourabkumarpatro/FairRec_www_2020 @ ad2c455, `FairRec.py`): a cap on how often each producer is shown, plus round-robin picking.
+  - FA*IR (github.com/fair-search/fairsearch-fair-python @ a92a3d6, `re_ranker.py fair_top_k`, `mtable_generator.py`): a minimum-quota floor for the protected group.
+  - Neither uses an upper cutoff; both use floors or quotas for the disadvantaged.
+  - networkx `max_weight_matching(maxcardinality=True)` = the best weight among the matchings with the most pairs.
+- **Papers:**
+  - Dickerson, Procaccia & Sandholm, AAMAS 2014 (V): the price of fairness is usually small.
+  - McElfresh & Dickerson, AAAI 2018 (V): it can be large.
+  - Bertsimas, Farias & Trichakis, Oper. Res. 2011 (R): price of fairness bounds.
+  - Ma, Xu & Xu, AAMAS 2022 (V): group max-min in online matching.
+  - Rios, Saban & Zheng, MSOM 2023 (V): dating apps spread attention because popular users get congested; ≥27% more matches in the field.
+  - Tomita & Yokoyama, arXiv 2601.13609 (V): Nash welfare (Σ log) vs match count.
+  - Caragiannis et al., EC 2016 (R) and Mo & Walrand 2000 (R): Nash welfare and α-fairness.
+- **Conclusion for us:**
+  - Keep Σ q with maxcardinality. **No upper cutoff.**
+  - The real-app reason for averaging (congestion of popular users) does not exist in the simulator.
+  - The real "best pair taken" problem here is over **time** (busy 8 days, people leave) → handled by urgency and scarcity boosts.
+  - Overconfident top scores → shrink scores toward the mean (Beta prior).
+  - Optional toggles to test (same seeds, 50+): √q, log q + 10 (safe only with maxcardinality), coverage-first (q + 10 × number of never-introduced people in the pair), max-min via binary search on a threshold.
+
 ## 2. Papers
 
 | Topic | Paper | Piece for us |
