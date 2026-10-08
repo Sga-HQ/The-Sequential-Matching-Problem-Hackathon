@@ -377,6 +377,18 @@ PERSON FLOW
 - v2 + soft asks vs kit: +6.3% (7200s), +2.7% (7100s) → report ≈ +4.5% with the spread.
 - Round 1 note: first full draft in ROUND1_NOTE.md (~5,500 words).
 
+### External review + experiments (8 Oct evening; ROUND1_NOTE.md §9.4–9.8)
+- Block 7300: current best vs kit +0.0006 ± 0.0047 (no gain). Pooled over 3 blocks +0.0099 ± 0.0018 (≈ +2.6%),
+  heterogeneous (Q = 7.9, df 2).
+- Coverage boost costs ≈ 0.004 expected wins (1.5 SE); opportunity cost λ = 0.5 best (+0.0050 ± 0.0027 vs best) but
+  ≈ removing the boost → H6 (option value) open.
+- Margin asker: same wins, 18% fewer ask points. Simple fixed scorecard ≥ online learner; posterior mean +0.38 ± 0.14
+  mutual vs Thompson → Round 2 default: simple scorecard + margin asking, no coverage boost.
+- Checks: 5-point Gauss–Hermite error ≤ 4e-7. Day 35–49 "dip" did not replicate on 60 fresh worlds (chance).
+- Same seed → development/delayed/drift share world and luck draws (rand_for keyed on seed, pair, day).
+- Note revised with evidence labels, lexicographic objective, allowed-pair definition, AUC definition, untouched
+  confirmation block 50000–50019, AI disclosure; PDF rendered (ROUND1_NOTE.pdf).
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).
