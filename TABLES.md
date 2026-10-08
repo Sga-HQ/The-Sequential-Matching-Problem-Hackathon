@@ -66,3 +66,20 @@ MATCH PHASE (app view refreshed after the asks)
 - **No "asked" column needed:** asking a pending person always makes them ready. Refusals are visible on arrival (→ Blocked), and an ask never creates a refusal.
 - **Leaving:** the simulator decides it at random when the person is created (12% leave, on a random day 22–59). It is unrelated to anything we do or see, so it cannot be reduced, only beaten by introducing people early. We infer a "left" column: unavailable with no busy timer running.
 - **Age:** fixed for the whole 60-day episode (no date of birth in the data). A real app should store the date of birth and recompute the age daily, because people can cross an age-range boundary.
+
+## What comes back after an introduction (History table), and how we use it
+Measured with the kit's greedy baseline, development scenario, 10 worlds (`experiments/feedback_stats.py`). Counts are per world, 86 introductions each on average.
+
+| Event | When it arrives (days after introduction) | Per world | Values |
+|---|---|---|---|
+| Introduction reply (one per person) | median 5, at most 7 (no reply is reported on day 7) | 172 | yes 65 · no 65 · **no reply 42 (24%)** |
+| Date happened (only if both said yes) | median 12.5, at most 21 | 14 | yes 11 · no 3 |
+| Second-date answer (one per person) | median 16, at most 26 | 22 | yes 11 · no 6 · no reply 5 |
+| Paused (both want a second date) | median 16, at most 23 | 2.3 | – |
+
+How each piece is used:
+1. **Learning what people like (scorer).** Every yes/no reply updates the counts per soft field (goal, pace, lifestyle, conversations). "No reply" is **not** a no, so it does not enter the yes/no counts. Old replies count less (× 0.98 per day).
+2. **Reply reliability per person (new).** A win needs each person to reply **twice** (introduction and second date). People who have already ignored replies are less likely to complete the journey. Measured: on average 24% of a person's replies are missing, and 29% of people with ≥2 introductions miss at least half. Use: lower the pair score for people with a record of not replying (with a gentle prior, because counts are small).
+3. **Busy / Retired bookkeeping.** Mutual yes → the busy timer extends to 6 days after the date. Paused → Retired.
+4. **Waiting is not failure.** An introduction with no answer yet stays "waiting". Only answered events count.
+5. **Wrong-belief check.** If recent yes-rates fall well below what the scorer expects (drift scenario, day 35+), ageing lets the counts catch up.

@@ -313,6 +313,16 @@ PERSON FLOW
 - Data ageing lives in the scorer (old replies × 0.98/day; drift scenario from day 35). Profile answers never go stale
   in the simulator (preferences fixed); in a real app, re-confirm old answers.
 
+### Decisions 8 Oct (part 3)
+- Asker priority (user): pending people who could pair with READY people are asked first; pending people whose only
+  possible partners are other pending people are asked only when no such pairs exist.
+- Arrival queue handles each newcomer within seconds; the nightly sweep is only a backup (joining today does not
+  mean waiting until tomorrow). In the hackathon everything happens once per day anyway.
+- Open design parts (user): 1 scorer · 2 asker · 3 introducer (which allowed pairs to introduce; fairness
+  research running) · 4 post-introduction data → TABLES.md "What comes back after an introduction".
+- New lever from feedback: per-person reply reliability (24% of replies missing; 29% of people miss ≥ half).
+- NOTE_CHECKLIST.md = running list of things that must appear in the final document.
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).
