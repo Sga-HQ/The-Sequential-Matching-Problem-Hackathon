@@ -293,6 +293,26 @@ PERSON FLOW
 - Score band idea: upper cut has no reason (higher = better). Lower floor = user's earlier waiting-time threshold;
   scorer is weak (AUC 0.55) and partners are scarce → expect ≤0 gain; testable.
 
+### Decisions 8 Oct (part 2)
+- Report filter scalability with the 100k numbers; say it is meaningless at 200 but cheap, so used from day one.
+  Scope honestly: 100k test = filter only.
+- Real-app allowed-pairs table with scores, ranked per person; simultaneous-arrival fix (insert-then-check, pair key,
+  queue/transaction + nightly sweep) → TABLES.md.
+- Asker sandbox: answers are multi-valued (age ranges, zone lists, gender lists) → enumerating all answer combinations
+  explodes; sampling K answers from similar complete people covers realistic combinations. No precomputed
+  "hypothesis pairs" (the real answer arrives the same day and the filter takes ms). Pending×pending only counts
+  if both get asked → small weight. Asker order ≤1% → keep cheap.
+- Visible for pending people = who they ARE (age, gender, zone), not what they WANT → we can check only the half
+  "does this ready person accept them".
+- User's "upper cutoff" = fairness/averaging: already done by max-total matching (A-B-C-D) + coverage boost. Formal
+  version if wanted: maximise Σ log(score) (proportional fairness) → testable.
+- User's floor idea = multiplier boost (already: ×1.5 never introduced, ×(1+0.5/options)); a boost that grows with
+  days waited is not yet built.
+- Leaving: random at creation (12%, days 22–59), unrelated to policy → cannot reduce, only introduce early.
+- Age fixed in episode (no DOB); real app: store DOB.
+- Data ageing lives in the scorer (old replies × 0.98/day; drift scenario from day 35). Profile answers never go stale
+  in the simulator (preferences fixed); in a real app, re-confirm old answers.
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).

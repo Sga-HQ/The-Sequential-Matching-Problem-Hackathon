@@ -50,3 +50,19 @@ MATCH PHASE (app view refreshed after the asks)
 
 - The slowest day was **45 ms**, against the 10-second limit. Importing numpy and networkx adds about 0.1–0.3 s.
 - After day 20, ~105 people are free and ready, but only ~1–2 allowed pairs exist among them: **most people have used up their partners.** This is the "~3 partners each" wall seen from the inside.
+
+## Real-app design at scale (for the note; decided 8 Oct)
+- **Filter method:** column checks (numpy) from day one. At 200 people every method takes milliseconds. At 100,000 people, measured: 0.21 ms per new person vs 21.7 ms for pair-by-pair; 6.1 s vs 791 s for all pairs; all methods give identical pairs. Cheap, no downside, so use it from the start.
+  *Honest scope:* the 100k test covered the **filter** only. Exact matching (blossom) would be too slow at 100k; there you would match within groups (connected components) or use a greedy approximation.
+- **Allowed-pairs table (real app only):** columns `pair · score · score_day`, kept ranked per person.
+  - The dealbreaker result never changes (preferences are fixed).
+  - The score is refreshed daily (learning changes it). That costs about 8 multiplications per pair.
+  - The hackathon cannot carry it between days (1 MiB memory limit; 100k → ~8M pairs ≈ 64 MB), so there we recheck daily.
+- **Simultaneous arrivals (user's question):** with a saved table, if A and B arrive together and A is checked before B is added, the pair A–B is missed. The fix:
+  1. **Insert first, then check.** Add the whole batch of newcomers to the people table, then check each newcomer against **old + new** people.
+  2. **Store each pair once,** keyed by (smaller ID, larger ID), so A–B and B–A cannot both be added.
+  3. In a live system, process arrivals through one queue (or a database transaction), so a later arrival always sees an earlier one. A nightly full sweep catches anything missed.
+  In the hackathon this cannot happen: the app is day-based and we recheck everyone daily.
+- **No "asked" column needed:** asking a pending person always makes them ready. Refusals are visible on arrival (→ Blocked), and an ask never creates a refusal.
+- **Leaving:** the simulator decides it at random when the person is created (12% leave, on a random day 22–59). It is unrelated to anything we do or see, so it cannot be reduced, only beaten by introducing people early. We infer a "left" column: unavailable with no busy timer running.
+- **Age:** fixed for the whole 60-day episode (no date of birth in the data). A real app should store the date of birth and recompute the age daily, because people can cross an age-range boundary.
