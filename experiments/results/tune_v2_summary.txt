@@ -1,0 +1,37 @@
+420 episodes, 60 per policy, scenarios: cold_start, delayed, development, drift, shift, sparse
+
+policy                           exp.wins/100    vs K (paired)   MSMI  mutual  cover  asks    AUC  unknown
+K  kit greedy baseline                 0.3602  +0.0000 ± 0.0000   0.35    5.29  0.327   200  0.537     0.70
+S3 v2 + soft asks (as tested)          0.3830  +0.0228 ± 0.0065   0.28    4.93  0.330   227  0.565     0.57
+T1 asks: soft_min_options=1            0.3839  +0.0237 ± 0.0067   0.31    4.92  0.330   272  0.589     0.41
+T2 prior: k_field=12                   0.3711  +0.0110 ± 0.0057   0.33    5.33  0.330   226  0.556     0.58
+T3 pickiness stronger: k_pick=3        0.3834  +0.0233 ± 0.0065   0.30    5.08  0.330   227  0.557     0.57
+T4 pickiness off                       0.3835  +0.0234 ± 0.0071   0.30    5.34  0.331   227  0.549     0.57
+T5 T1+T2+T3 combined                   0.3809  +0.0207 ± 0.0058   0.33    5.11  0.330   271  0.575     0.41
+
+expected wins per 100 by scenario:
+  K  kit greedy baseline           cold_s=0.357  delaye=0.444  develo=0.443  drift=0.417  shift=0.396  sparse=0.104
+  S3 v2 + soft asks (as tested)    cold_s=0.379  delaye=0.460  develo=0.482  drift=0.455  shift=0.418  sparse=0.103
+  T1 asks: soft_min_options=1      cold_s=0.373  delaye=0.457  develo=0.483  drift=0.456  shift=0.431  sparse=0.103
+  T2 prior: k_field=12             cold_s=0.375  delaye=0.440  develo=0.460  drift=0.434  shift=0.415  sparse=0.103
+  T3 pickiness stronger: k_pick=3  cold_s=0.371  delaye=0.454  develo=0.488  drift=0.457  shift=0.427  sparse=0.103
+  T4 pickiness off                 cold_s=0.367  delaye=0.460  develo=0.490  drift=0.455  shift=0.426  sparse=0.103
+  T5 T1+T2+T3 combined             cold_s=0.366  delaye=0.463  develo=0.477  drift=0.451  shift=0.424  sparse=0.103
+
+scorer AUC by scenario:
+  K  kit greedy baseline           cold_s=0.519  delaye=0.561  develo=0.546  drift=0.556  shift=0.548  sparse=0.494
+  S3 v2 + soft asks (as tested)    cold_s=0.574  delaye=0.560  develo=0.584  drift=0.596  shift=0.569  sparse=0.510
+  T1 asks: soft_min_options=1      cold_s=0.586  delaye=0.591  develo=0.608  drift=0.618  shift=0.573  sparse=0.560
+  T2 prior: k_field=12             cold_s=0.564  delaye=0.560  develo=0.571  drift=0.572  shift=0.559  sparse=0.512
+  T3 pickiness stronger: k_pick=3  cold_s=0.566  delaye=0.562  develo=0.559  drift=0.557  shift=0.572  sparse=0.528
+  T4 pickiness off                 cold_s=0.546  delaye=0.566  develo=0.561  drift=0.576  shift=0.542  sparse=0.504
+  T5 T1+T2+T3 combined             cold_s=0.553  delaye=0.572  develo=0.588  drift=0.591  shift=0.588  sparse=0.556
+
+calibration (mean predicted P(yes) vs actual yes-rate):
+  K  kit greedy baseline           predicted 0.474  actual 0.469
+  S3 v2 + soft asks (as tested)    predicted 0.468  actual 0.462
+  T1 asks: soft_min_options=1      predicted 0.465  actual 0.466
+  T2 prior: k_field=12             predicted 0.477  actual 0.474
+  T3 pickiness stronger: k_pick=3  predicted 0.462  actual 0.468
+  T4 pickiness off                 predicted 0.467  actual 0.464
+  T5 T1+T2+T3 combined             predicted 0.450  actual 0.470

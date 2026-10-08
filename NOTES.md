@@ -371,6 +371,12 @@ PERSON FLOW
   simulator: pickiness and reply habit are drawn independently of the profile → persona average = global average
   (already our prior). Real-app idea, with a stereotype/fairness caution.
 
+### Tuning round 1 (8 Oct; ROUND1_NOTE.md §9.3)
+- Soft asks for 1+ options: AUC +0.024 ± 0.006, blanks 57% → 41%, wins unchanged → adopted (default now 1).
+- Normaliser 12 instead of 40: −0.0118 ± 0.0027 expected wins → rejected. Pickiness k = 3: no gain. Pickiness off: AUC −0.016.
+- v2 + soft asks vs kit: +6.3% (7200s), +2.7% (7100s) → report ≈ +4.5% with the spread.
+- Round 1 note: first full draft in ROUND1_NOTE.md (~5,500 words).
+
 ## 6. Open questions / hard parts
 - [ ] Asker rule: exactly how to rank whom to ask.
 - [ ] Scorer: how to turn soft fields + history into a number (see plan below).

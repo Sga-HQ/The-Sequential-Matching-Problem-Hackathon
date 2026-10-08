@@ -28,7 +28,7 @@ KNOBS = dict(
     gamma=1.0,               # ageing per day (1 = none)
     mode='thompson',         # 'thompson' | 'mean'
     u_new=1.5, u_deg=0.5,    # urgency: never introduced, few options
-    soft_asks=False, soft_min_options=2,
+    soft_asks=False, soft_min_options=1,   # tuning round 1: 1 beats 2 on AUC (+0.024 ± 0.006)
     soft_order=['relationship_goal', 'relationship_pace', 'lifestyle', 'conversations'],
 )
 

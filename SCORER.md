@@ -223,3 +223,11 @@ Target 600 points at even odds, PDO = 20 (+20 points doubles the odds of a yes).
 | conversations | +2 | −5 | 0 |
 
 Example: goal same + lifestyle different = 598 + 20 − 9 = 609 points. The odds are 2^(11/20) ≈ 1.46 × the odds at 598 points, i.e. a 57% chance. (These are development-prior points; online learning moves them.)
+
+
+---
+# Tuning round 1 (seeds 7200–7209, 60 paired episodes per version) — see ROUND1_NOTE.md §9.3
+- **Adopted:** soft asks for anyone with 1+ option. AUC +0.024 ± 0.006; blank clues 57% → 41%; expected wins unchanged.
+- **Rejected:** normaliser 12 (expected wins −0.0118 ± 0.0027, too noisy early); pickiness k = 3 (no gain).
+- **Kept:** pickiness on (AUC −0.016 ± 0.006 without it).
+- v2 + soft asks vs kit: +6.3% here, +2.7% on seeds 7100–7109 → report ≈ +4.5% with that spread.

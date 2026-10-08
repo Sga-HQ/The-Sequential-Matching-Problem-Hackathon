@@ -3,7 +3,7 @@
 **Team:** solo · **Kit version:** participant specification 1.0.0 · **Date:** 9 October 2026
 **Repository (all scripts, raw results, notes):** `sga-hq/the-sequential-matching-problem-hackathon_round1`, branch `claude/keen-mendel-pvprxr`
 
-> **Draft status (remove before submitting):** items marked **[CONFIRM]** need the author's decision. **[PENDING]** marks results from runs still in progress.
+> **Draft status (remove before submitting):** items marked **[CONFIRM]** need the author's decision.
 
 ---
 
@@ -29,7 +29,7 @@
 - a maximum-weight, maximum-cardinality matching (Edmonds' blossom algorithm) with urgency boosts for people with few options;
 - an official eligibility re-check before every output.
 
-**Current result:** our policies beat the kit's greedy baseline by **+2.3% to +2.7% in expected wins** (60 paired episodes, ≈4–5 standard errors). That is real but small, which is exactly what the ceilings predicted. **[PENDING: tuning round 1 results, §9.3]**
+**Current result:** our best policy beats the kit's greedy baseline by **+2.7% and +6.3% in expected wins** on two independent sets of 60 new episodes (≈3.5–5 standard errors each). That is real but small, exactly as the ceilings predicted. Asking soft fields more widely raises scorer AUC from 0.565 to 0.589, and blank clues fall from 57% to 41%.
 
 **Where we question the framing (§11):**
 - A person who says "no" on day 1 still stays occupied for 8 days.
@@ -331,12 +331,20 @@ MSMI differences are all within ±0.04 noise. The asker's apparent +5% in both-s
 - Both-said-yes did not increase (−0.20 ± 0.17 vs kit). The gain comes from later stages of the journey.
 - Weak spot: the shift scenario (0.411 vs the kit's 0.416). The development prior points lifestyle the wrong way.
 
-**[PENDING] Tuning round 1** (10 further new worlds × 6 scenarios), testing five changes:
-1. asking soft fields of anyone with 1+ option;
-2. a normaliser of 12 instead of 40;
-3. stronger pickiness (k = 3);
-4. pickiness off;
-5. 1–3 combined.
+**Tuning round 1** (10 further new worlds × 6 scenarios, seeds 7200–7209, 60 paired episodes per version; `experiments/tune_v2.py`, `results/tune_v2_summary.txt`)
+
+| Change vs scorer v2 + soft asks | Expected wins (paired) | AUC (paired) | Verdict |
+|---|---|---|---|
+| (reference) v2 + soft asks vs kit | **+0.0228 ± 0.0065 (+6.3%)** | +0.028 ± 0.008 | – |
+| T1: ask soft fields of anyone with 1+ option | +0.0009 ± 0.0018 | **+0.024 ± 0.006** | **adopt.** Blank clues 57% → 41%; best calibration (0.465 vs 0.466) |
+| T2: normaliser 40 → 12 imaginary replies | **−0.0118 ± 0.0027** | −0.009 ± 0.006 | **reject.** Learning faster from ~25 early replies just learns noise |
+| T3: stronger pickiness (k = 3) | +0.0004 ± 0.0021 | −0.008 ± 0.006 | reject (no gain) |
+| T4: pickiness off | +0.0005 ± 0.0029 | −0.016 ± 0.006 | keep pickiness (helps prediction, not yet wins) |
+| T5: T1 + T2 + T3 | −0.0021 ± 0.0032 | +0.009 ± 0.007 | reject (T2 drags it down) |
+
+- Across the two independent sets of new worlds, scorer v2 + soft asks beat the kit by **+2.7%** (seeds 7100–7109) and **+6.3%** (7200–7209) in expected wins. **We report roughly +4.5% with that spread**, rather than the more flattering figure.
+- More asking makes the scorer clearly better (AUC 0.565 → 0.589) without yet adding wins. This is consistent with §1.4: better ranking only pays where a choice exists.
+- Lowering the normaliser was a plausible idea that the data rejected clearly (4.4 standard errors worse).
 
 ### 9.4 Retrospective: what we got wrong, and how we found out
 - **"+5% from the asker"** (240 episodes, 2.7 standard errors) did not repeat on new worlds. An oracle asker gains ≤ 1%. *Lesson:* one significant-looking result is not a finding. Replicate on held-out worlds.
