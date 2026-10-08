@@ -5,7 +5,7 @@
 | **Team** | solo |
 | **Version date** | 8 October 2026 |
 | **Repository** | https://github.com/Sga-HQ/The-Sequential-Matching-Problem-Hackathon_round1 |
-| **Code and results behind every number** | commit `cb78ff68eed632a5543d25a2714c2e5928b58f16` |
+| **Code and results behind every number** | commit `d86ff40ecc561157a6c9b15f6b977acc0e556752` |
 | **Organiser kit** | participant specification 1.0.0, kit commit `a8e26b35118cfa8e886a02f93984923e43ab64f6` |
 
 **How to read the claims.** Each claim is labelled by the kind of evidence behind it:
@@ -42,14 +42,15 @@ We treat the challenge as **sequential constrained allocation** rather than pair
 | Matching | most pairs first, then best total, × coverage boost 1.5 × degree boost | most pairs first, then best total; **no coverage boost**; degree boost provisional (no measured effect) |
 | Feedback | updates the learner | kept per stage for bookkeeping and availability; **not used to retrain** (it changed decisions without improving them, §9.6) |
 
-**Development results** (hidden-information expected-wins diagnostic, §1.4; not the official metric) [dev].
+**Development results** (hidden-information expected-wins diagnostic, §1.4: not the official metric, but shown there to have the same expectation) [dev].
 - **Prototype vs greedy on three disjoint blocks:** +2.7%, +6.3% and +0.2%. Episode-weighted paired mean over 180 episodes: +0.0113 ± 0.0028 per 100 (95% CI +0.0057 to +0.0168). Random-effects estimate: +0.0104 ± 0.0048. The blocks clearly differ (Q = 7.8, 2 degrees of freedom).
 - **Candidate vs greedy on a fourth, new block** (120 episodes): **+0.0205 per 100 (+5.5%)**, ± 0.0051 cluster-robust standard error, about 4 SE.
 - **The one scenario family with a gain in every block is cold start** (+0.023 ± 0.006 over the first three blocks), where information is scarcest.
 - **Realised MSMI does not yet confirm any gain.**
   - Signs vary across blocks.
   - On the fourth block the greedy baseline scored higher on realised MSMI (−0.096 ± 0.050, cluster-robust). On that block greedy's realised MSMI was 0.46 against its expected 0.37, while ours was close to its expectation.
-  - We read this as outcome noise, but it is exactly why the confirmation run (§9.7) must use realised MSMI.
+  - **Checked (8 Oct):** the expected-wins formula reproduces the simulator's own outcome code exactly (360,000 replayed introductions, simulated/formula = 1.003). Across all 1,980 development episodes the realised-minus-expected gap is −0.037 ± 0.039 per 100 (cluster-robust over the 50 seeds, z = −1.0), which is consistent with chance. So the block-7400 disagreement is outcome noise, not a diagnostic bias (§1.4).
+  - With 120 episodes, realised MSMI can only detect gains of roughly 38% or more (80% power), while expected wins can detect about 4%. The confirmation run (§9.7) therefore reports both, and is sized for realised MSMI as well.
 
 **What remains open.**
 - A relaxed offline oracle suggests limited remaining opportunity from ranking alone. We treat it as an optimistic, simulator-specific diagnostic, **not a formal bound** on all sequential policies.
@@ -117,10 +118,12 @@ This is an offline diagnostic [oracle], computed for the development scenario on
 
 **Expected wins (development diagnostic, not the official metric).**
 - For each introduced pair, we compute its success probability from the simulator's outcome formula, using hidden per-person values and integrating over the shared pair term with 5-point Gauss–Hermite quadrature. We then sum these probabilities.
-- **Numerical check:** the 5-point integration was compared with a 60-point Gauss–Hermite reference on 3,000 random pairs from development worlds. Maximum absolute difference 4.1 × 10⁻⁷; mean relative difference 0.001% [dev, `checks_v3.py`]. This validates the numerical integration only, not the completeness of the probability factorisation.
+- **Numerical check:** the 5-point integration was compared with a 60-point Gauss–Hermite reference on 3,000 random pairs from development worlds. Maximum absolute difference 4.1 × 10⁻⁷; mean relative difference 0.001% [dev, `checks_v3.py`]. This validates the numerical integration; the completeness of the formula is checked next.
 - **Delayed scenario: 30-day date rule.** The date delay is max(two reply delays U{1..7}) + U{1..14} + U{5..12}, drawn independently of the pair, the day and the policy [code]. So P(date within 30 days) is an exact constant: 5,368 / 5,488 = 0.9781. The diagnostic now multiplies by it (fourth block onwards). Earlier blocks overstate delayed-scenario expected wins, and their differences, by exactly 2.2%. Relative comparisons are unaffected.
 - **Check against outcomes:** over 840 fourth-block episodes, mean expected wins 0.386 vs realised MSMI 0.357 per 100. Per-policy realised minus expected values vary in sign across blocks for every policy, including greedy, so we see no sign of a policy-specific bias in the diagnostic.
-- It is unavailable to the policy. We use it only to reduce outcome noise when selecting candidates. Final claims must rest on realised MSMI over untouched seeds (§9.7).
+- **Exactness check against the simulator** [dev, `experiments/pwin_check.py`]. We replayed the kit's own `advance()` and `metrics()` code on 1,200 random pairs (eligibility does not enter the outcome code, so it was bypassed; 200 per scenario family, assignment days 0, 10 and 40), each under 300 independent outcome seeds: 360,000 introductions. Simulated wins 3,756 vs formula 3,743.4 (ratio 1.003). Per family, the ratios were 0.97–1.03 and every |z| < 0.9. Combined with the code reading (outcomes are drawn once at assignment from a stream keyed on seed, pair and day; leaving after an introduction does not affect its outcome; every outcome lands before day 100), this means the per-introduction formula is the simulator's exact success probability.
+- **Why that makes it an unbiased estimate of MSMI** [code + algebra]. Write realised MSMI as a sum over introductions of win indicators W_i. Each introduction's luck is a fresh random stream that the policy cannot have seen when it chose the pair (no pair can be repeated). So E[W_i | everything up to assignment] = p_i, the formula's value, even though the policy adapts to earlier feedback. By the tower property, E[Σ p_i] = E[Σ W_i]: summed expected wins has the same expectation as realised MSMI for any policy, adaptive or not. It removes only the outcome-luck variance, which is why its paired standard errors are about 10× smaller. Across all 1,980 development episodes the realised-minus-expected gap is −0.037 ± 0.039 per 100 (cluster-robust over the 50 seeds, z = −1.0), consistent with this.
+- It is unavailable to the policy. We use it only to reduce outcome noise when selecting candidates. Claims of improvement are judged on untouched seeds (§9.7).
 
 ---
 
@@ -435,7 +438,8 @@ R0 = frozen offline scorecard + margin asking + no coverage boost. Errors are **
 
 ### 9.7 Development vs confirmation data
 - Seeds 6000–6039, 7000–7029, 7100–7109, 7200–7209, 7300–7309 and 7400–7419 are **development sets**: their results influenced choices. Seeds in the 9000s were used for descriptive analyses.
-- **Participant-controlled confirmation block, declared now and untouched:** seeds **50000–50019** for each of the 6 scenario families, 120 episodes. These are public-simulator seeds we control, not equivalent to the organisers' held-back worlds. Once run they are no longer untouched: no tuning on them, and every result will be reported. It will be run once, after the Round 2 policy is frozen, reporting realised MSMI with 95% intervals alongside coverage, mutual acceptances, clarification cost, waiting time to first introduction, runtime and invalid-episode count.
+- **Participant-controlled confirmation block, declared now and untouched:** seeds **50000–50019** for each of the 6 scenario families, 120 episodes. These are public-simulator seeds we control, not equivalent to the organisers' held-back worlds. Once run they are no longer untouched: no tuning on them, and every result will be reported. It will be run once, after the Round 2 policy is frozen, reporting realised MSMI with 95% intervals alongside expected wins, coverage, mutual acceptances, clarification cost, waiting time to first introduction, runtime and invalid-episode count.
+- **Pre-declared statistics and power.** On block 7400 the paired standard error over 120 episodes was 0.050 per 100 for realised MSMI and 0.0051 for expected wins. At 80% power these detect differences of about 0.14 (≈ 38% of greedy) and 0.014 (≈ 4%). A 10% realised-MSMI gain would need roughly 1,700 episodes to detect. We therefore declare now: (1) the primary confirmation statistic is the paired expected-wins difference on seeds 50000–50019, which has the same expectation as the realised-MSMI difference (§1.4); (2) realised MSMI on the same 120 episodes is reported with its interval, whatever its sign; (3) if runtime allows, an extension block, seeds **50020–50299** (1,680 further episodes, also untouched), is run with the same frozen policy so realised MSMI alone can resolve a gain near 10%.
 - Seed blocks are **disjoint**, not necessarily independent: within one seed, the development, delayed and drift scenarios share the same generated world, and outcome draws are keyed on (seed, pair, day) [code: `rand_for`]. So per-scenario results within a block are correlated.
 - **Multiple comparisons.** We tested many variants, and all are reported. The largest observed development gains are subject to selection bias, so we treat them as provisional until the confirmation run.
 
@@ -457,7 +461,7 @@ R0 = frozen offline scorecard + margin asking + no coverage boost. Errors are **
 - **Better prediction ≠ more wins.** Broader asking raised AUC by +0.024 ± 0.006 but not expected wins. A clue only helps where it can change a decision.
 - **An apparent timing effect.** Introductions made on days 35–49 once appeared to almost never succeed (0 of ~430 in two world sets), although their expected success was normal (≈ 1.0%). On 60 fresh worlds the rate was 1.05% (7 of 669): it was chance. Assignment day shows no reliable effect outside the drift scenario's built-in day-35 change.
 - **Complexity that did not pay.** The online learner, Thompson sampling, personal habit terms, the coverage boost and the margin asker each looked principled. None beat a simpler alternative (§9.4–9.6).
-- **Realised MSMI disagreed with the diagnostic on one block.** On block 7400 greedy scored higher on realised MSMI, while expected wins favoured the candidate by about 4 SE. We do not explain this away; it is the reason for the confirmation run.
+- **Realised MSMI disagreed with the diagnostic on one block.** On block 7400 greedy scored higher on realised MSMI, while expected wins favoured the candidate by about 4 SE. Rather than explain it away, we tested the diagnostic itself: it matches the simulator exactly, and the pooled gap is within chance (§1.4). The disagreement is outcome luck, and the realised-MSMI interval on 120 episodes (± 0.10 at 95%) is wider than the effect being measured.
 - **Corrected early numbers.**
   - "20–30 pairs per day" was really 9–19.
   - The day-0 allowed-pair count was 2,996, not 3,215 (an age-check bug).
@@ -485,7 +489,7 @@ R0 = frozen offline scorecard + margin asking + no coverage boost. Errors are **
 ## 11. Observations on the problem framing
 1. **Early negative answers do not release people.** Both people stay unavailable for 8 days after an introduction, even after a definitive "no" on day 1 [code]. In a real service, immediate release after a definitive negative answer could increase opportunity without weakening any eligibility constraint.
 2. **Thickness more than ranking.** With ~3 allowed partners per person and ~75% of them already used by greedy [oracle], improvements are more likely to come from information (clarification), timing (before departures) and availability than from better pair ranking.
-3. **Outcome noise.** With about one qualifying outcome per episode, rankings on realised MSMI over 20 seeds per family will have wide intervals. We report low-variance diagnostics alongside MSMI for development, while recognising why an official metric should rest on realised, observable outcomes.
+3. **Outcome noise.** With about one qualifying outcome per episode, rankings on realised MSMI over 20 seeds per family will have wide intervals: in our runs, a paired 95% interval of about ±0.10 per 100 on a baseline of about 0.37, i.e. roughly ±26%. We report low-variance diagnostics alongside MSMI for development, while recognising why an official metric should rest on realised, observable outcomes.
 4. **Real-service extensions outside the simulator:**
    - retry members who ignored a message;
    - recompute age from date of birth;
@@ -495,7 +499,7 @@ R0 = frozen offline scorecard + margin asking + no coverage boost. Errors are **
 ---
 
 ## 12. Reproducibility and provenance
-- **Code and results.** Every number comes from a script in `experiments/`, with raw per-episode JSONL in `experiments/results/`, at commit `41051bd8a976976b3ba341aa4bbee86aaa9bee15`.
+- **Code and results.** Every number comes from a script in `experiments/`, with raw per-episode JSONL in `experiments/results/`, at commit `d86ff40ecc561157a6c9b15f6b977acc0e556752`.
 
 | Section | Script |
 |---|---|
@@ -505,7 +509,7 @@ R0 = frozen offline scorecard + margin asking + no coverage boost. Errors are **
 | §9.6 | `tune_v4.py`, `tune_v4b.py` |
 | §5.2 | `funnel_probs.py`, `woe_iv.py` |
 | §5.6 | `scorer_data.py` |
-| §1.4 | `theory_ceilings.py`, `why_unused.py`, `daily_cost.py` |
+| §1.4 | `theory_ceilings.py`, `why_unused.py`, `daily_cost.py`, `checks_v3.py`, `pwin_check.py` |
 | Appendix A | `bench_100k.py` |
 
 - **Commands:** run from the organiser kit folder, for example `python tune_v3.py 7300 10 development > out.jsonl`, then `python summarise_scorer_v2.py out*.jsonl`.
