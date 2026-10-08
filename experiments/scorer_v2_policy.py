@@ -30,6 +30,9 @@ KNOBS = dict(
     u_new=1.5, u_deg=0.5,    # urgency: never introduced, few options
     soft_asks=False, soft_min_options=1,   # tuning round 1: 1 beats 2 on AUC (+0.024 ± 0.006)
     soft_order=['relationship_goal', 'relationship_pace', 'lifestyle', 'conversations'],
+    soft_rule='all',         # 'all' = ask anyone with >= soft_min_options; 'margin' = only if an answer could flip their top choice
+    margin_ratio=0.6,        # 'margin': ask when second-best edge >= margin_ratio x best edge (a soft answer moves odds ~x0.7-x1.4)
+    opt_lambda=0.0,          # opportunity cost: value_ij - lambda * (alternatives i and j give up, weighted by partner scarcity)
 )
 
 sig = lambda z: 1 / (1 + math.exp(-z))
@@ -107,6 +110,13 @@ def ask(state, K):
     for a, b in edges:
         for u in (a, b): deg[u['member_id']] = deg.get(u['member_id'], 0) + 1; by_id[u['member_id']] = u
     cands = sorted((i for i, d in deg.items() if d >= K['soft_min_options']), key=lambda i: -deg[i])
+    if K['soft_rule'] == 'margin':     # matching-margin rule: only people whose top two options are close
+        journey, _ = make_scorer(state, {**K, 'mode': 'mean'}, random.Random(0))
+        best = {}
+        for a, b in edges:
+            v = journey(a, b)
+            for u in (a['member_id'], b['member_id']): best.setdefault(u, []).append(v)
+        cands = [i for i in cands if len(best[i]) >= 2 and sorted(best[i])[-2] >= K['margin_ratio'] * max(best[i])]
     for f in K['soft_order']:                             # goal for everyone first, then pace, ...
         for i in cands:
             if left <= 0: return asks
@@ -122,13 +132,22 @@ def match(state, K, rng):
     deg = {}
     for a, b in edges:
         for u in (a, b): deg[u['member_id']] = deg.get(u['member_id'], 0) + 1
-    G = nx.Graph()
+    G = nx.Graph(); val = {}
     for a, b in edges:
         w = journey(a, b)
         for u in (a, b):
             if u['member_id'] not in introduced: w *= K['u_new']
             w *= 1 + K['u_deg'] / deg[u['member_id']]
-        G.add_edge(a['member_id'], b['member_id'], weight=int(w * 1e9) + 1)
+        val[a['member_id'], b['member_id']] = w
+    if K['opt_lambda']:                # option value each person keeps: alternatives weighted by the partner's scarcity
+        opt = {}
+        for (i, j), w in val.items():
+            opt[i] = opt.get(i, 0) + w / deg[j]; opt[j] = opt.get(j, 0) + w / deg[i]
+        for (i, j), w in list(val.items()):
+            lost = (opt[i] - w / deg[j]) + (opt[j] - w / deg[i])   # alternatives given up by occupying i and j
+            val[i, j] = w - K['opt_lambda'] * lost + 100.0          # +constant is harmless: all max-cardinality matchings have equal size
+    for (i, j), w in val.items():
+        G.add_edge(i, j, weight=int(w * 1e9) + 1)
     M = {m['member_id']: m for m in members}
     return [sorted([u, v]) for u, v in nx.max_weight_matching(G, maxcardinality=True)
             if eligibility(M[u], M[v])['status'] == 'feasible']

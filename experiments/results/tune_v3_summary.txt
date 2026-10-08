@@ -1,0 +1,49 @@
+480 episodes, 60 per policy, scenarios: cold_start, delayed, development, drift, shift, sparse
+
+policy                           exp.wins/100    vs K (paired)   MSMI  mutual  cover  asks    AUC  unknown
+K  kit greedy baseline                 0.3924  +0.0000 ± 0.0000   0.28    5.33  0.359   200  0.545     0.67
+B  current best (v2 + soft asks 1+)       0.3930  +0.0006 ± 0.0047   0.35    5.49  0.361   274  0.568     0.38
+A1 no urgency (pure max-card, max-weight)       0.3938  +0.0014 ± 0.0048   0.38    5.40  0.358   274  0.566     0.38
+A2 no coverage boost (u_new=1)         0.3971  +0.0047 ± 0.0033   0.38    5.38  0.359   275  0.570     0.38
+A3 opportunity cost lambda=0.5 (no urgency)       0.3980  +0.0056 ± 0.0037   0.38    5.42  0.359   274  0.570     0.38
+C1 matching-margin asker               0.3933  +0.0009 ± 0.0046   0.40    5.47  0.361   225  0.544     0.56
+S1 simple fixed scorecard (no learning)       0.3940  +0.0016 ± 0.0030   0.38    5.83  0.359   273  0.595     0.38
+S2 posterior mean (no Thompson)        0.3901  -0.0023 ± 0.0039   0.37    5.87  0.360   274  0.577     0.38
+
+expected wins per 100 by scenario:
+  K  kit greedy baseline           cold_s=0.433  delaye=0.452  develo=0.484  drift=0.453  shift=0.416  sparse=0.116
+  B  current best (v2 + soft asks 1+) cold_s=0.458  delaye=0.455  develo=0.472  drift=0.445  shift=0.408  sparse=0.119
+  A1 no urgency (pure max-card, max-weight) cold_s=0.452  delaye=0.461  develo=0.476  drift=0.447  shift=0.407  sparse=0.119
+  A2 no coverage boost (u_new=1)   cold_s=0.450  delaye=0.464  develo=0.482  drift=0.453  shift=0.414  sparse=0.119
+  A3 opportunity cost lambda=0.5 (no urgency) cold_s=0.453  delaye=0.466  develo=0.482  drift=0.454  shift=0.414  sparse=0.119
+  C1 matching-margin asker         cold_s=0.448  delaye=0.455  develo=0.477  drift=0.450  shift=0.411  sparse=0.119
+  S1 simple fixed scorecard (no learning) cold_s=0.447  delaye=0.459  develo=0.482  drift=0.453  shift=0.406  sparse=0.116
+  S2 posterior mean (no Thompson)  cold_s=0.456  delaye=0.454  develo=0.471  drift=0.443  shift=0.400  sparse=0.116
+
+scorer AUC by scenario:
+  K  kit greedy baseline           cold_s=0.493  delaye=0.580  develo=0.567  drift=0.565  shift=0.539  sparse=0.526
+  B  current best (v2 + soft asks 1+) cold_s=0.592  delaye=0.592  develo=0.585  drift=0.594  shift=0.547  sparse=0.498
+  A1 no urgency (pure max-card, max-weight) cold_s=0.595  delaye=0.589  develo=0.582  drift=0.585  shift=0.547  sparse=0.498
+  A2 no coverage boost (u_new=1)   cold_s=0.602  delaye=0.599  develo=0.582  drift=0.587  shift=0.552  sparse=0.498
+  A3 opportunity cost lambda=0.5 (no urgency) cold_s=0.603  delaye=0.595  develo=0.585  drift=0.589  shift=0.552  sparse=0.498
+  C1 matching-margin asker         cold_s=0.547  delaye=0.560  develo=0.554  drift=0.559  shift=0.530  sparse=0.515
+  S1 simple fixed scorecard (no learning) cold_s=0.604  delaye=0.618  develo=0.619  drift=0.619  shift=0.584  sparse=0.527
+  S2 posterior mean (no Thompson)  cold_s=0.584  delaye=0.594  develo=0.598  drift=0.602  shift=0.570  sparse=0.514
+
+calibration (mean predicted P(yes) vs actual yes-rate):
+  K  kit greedy baseline           predicted 0.476  actual 0.452
+  B  current best (v2 + soft asks 1+) predicted 0.433  actual 0.444
+  A1 no urgency (pure max-card, max-weight) predicted 0.439  actual 0.451
+  A2 no coverage boost (u_new=1)   predicted 0.438  actual 0.447
+  A3 opportunity cost lambda=0.5 (no urgency) predicted 0.438  actual 0.447
+  C1 matching-margin asker         predicted 0.448  actual 0.448
+  S1 simple fixed scorecard (no learning) predicted 0.465  actual 0.461
+  S2 posterior mean (no Thompson)  predicted 0.452  actual 0.462
+K  kit greedy baseline                       vs B: expected_wins -0.0006±0.0047  auc -0.0230±0.0089  coverage -0.0018±0.0007  mutual -0.1583±0.1524  msmi -0.0667±0.0588
+B  current best (v2 + soft asks 1+)          vs B: expected_wins +0.0000±0.0000  auc +0.0000±0.0000  coverage +0.0000±0.0000  mutual +0.0000±0.0000  msmi +0.0000±0.0000
+A1 no urgency (pure max-card, max-weight)    vs B: expected_wins +0.0007±0.0021  auc -0.0021±0.0036  coverage -0.0024±0.0006  mutual -0.0917±0.0819  msmi +0.0250±0.0301
+A2 no coverage boost (u_new=1)               vs B: expected_wins +0.0041±0.0027  auc +0.0019±0.0031  coverage -0.0013±0.0005  mutual -0.1083±0.0973  msmi +0.0333±0.0162
+A3 opportunity cost lambda=0.5 (no urgency)  vs B: expected_wins +0.0050±0.0027  auc +0.0023±0.0033  coverage -0.0014±0.0005  mutual -0.0750±0.0942  msmi +0.0333±0.0162
+C1 matching-margin asker                     vs B: expected_wins +0.0003±0.0016  auc -0.0239±0.0071  coverage +0.0003±0.0006  mutual -0.0167±0.0761  msmi +0.0500±0.0258
+S1 simple fixed scorecard (no learning)      vs B: expected_wins +0.0010±0.0033  auc +0.0269±0.0076  coverage -0.0012±0.0007  mutual +0.3417±0.1448  msmi +0.0333±0.0409
+S2 posterior mean (no Thompson)              vs B: expected_wins -0.0029±0.0032  auc +0.0090±0.0063  coverage -0.0007±0.0007  mutual +0.3750±0.1409  msmi +0.0167±0.0356
