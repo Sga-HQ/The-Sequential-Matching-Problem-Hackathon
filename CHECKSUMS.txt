@@ -3,9 +3,9 @@ Round 1 submission provenance (repository Sga-HQ/The-Sequential-Matching-Problem
 Measured-code commit (scripts and raw results behind every number):
   d86ff40ecc561157a6c9b15f6b977acc0e556752
 Research-note commit (ROUND1_NOTE.md and the PDF below; document-only after the measured-code commit):
-  b165747659901384894b400b495a07e4920e69b2
+  a790eaedb6ae0f330405cea83a1ab1c6bae8b95c
 
 SHA-256 of the submitted PDF:
-fa519919eb253ee153801473941122f70268d3e6b43544ec58cbe87d6fe6054b  ROUND1_NOTE.pdf
+07e9d61972c09f249af2d8f0f91916783e9f89f4ea352e6bc2b495e1203b5e54  ROUND1_NOTE.pdf
 
-Verify: git show b165747659901384894b400b495a07e4920e69b2:ROUND1_NOTE.pdf | sha256sum
+Verify: git show a790eaedb6ae0f330405cea83a1ab1c6bae8b95c:ROUND1_NOTE.pdf | sha256sum
