@@ -61,3 +61,21 @@ A shadow price is how much the result would improve if one hard limit were loose
 - This is open question 1 in the note. Stage B (look-ahead oracle) measures it. Stage B is paused while Round 1 is finalised; resume with `headroom.py 7500 10 <scenario> O4,O4c`.
 
 **What the measurements decide:** improve the asker if the budget curve is still rising at 12, or the introducer's timing if the availability price is large. If both are small, the remaining work is robustness rather than score.
+
+## Which levers are left (decision rules from review 5, applied to stage A)
+| Lever | Oracle test (seeds 7500–7519, paired, per 100) | Share of kit score | Decision |
+|---|---|---|---|
+| Scorer (perfect pair chances, same timing) | O1 − R1 = +0.0021 ± 0.0027 | +0.6% | below 2%: stop scorer work |
+| "Most pairs first" too aggressive? | O1n − O1 = +0.0014 ± 0.0015 | +0.4% | keep |
+| Degree boost (block 7400) | D0 − R0 = +0.0009 ± 0.0018 | – | provisional; remove if simpler |
+| Shift detector ceiling (true shifted weights, shift scenario only) | O1 − R1 = −0.0022 ± 0.0064 | ≈ 0 | low priority |
+| Hard-question asker | O2h − R1 = +0.0012 ± 0.0034 | +0.3% | low priority |
+| All information free plus true chances (same-day ceiling) | O12 − R1 = +0.0042 ± 0.0041 | +1.2% | same-day work is nearly exhausted |
+| **Timing (future-aware)** | **stage B: O4 / O4c − O12** | **pending** | the only unmeasured lever |
+
+**Arithmetic toward 10%.** On fresh seeds the candidate is +4.2% over the kit, so reaching 10% needs about +5.6% more. A perfect same-day policy reaches +5.4% over the kit. So 10% is possible only if timing is worth roughly 4–5% at oracle level, and a real policy captures only part of an oracle's gain.
+
+**Stage B rule:**
+- below 2% over O12: stop dynamic work and put the effort into robustness;
+- 2–5%: test selective waiting;
+- above 5%: build a one-day rollout.
