@@ -25,7 +25,7 @@ All tunable numbers live in `KNOBS` in `experiments/scorer_v2_policy.py`. Each r
 ## Introducer (matching)
 | Knob | Now | Why | Range | If wrong |
 |---|---|---|---|---|
-| `u_new` (boost for never-introduced people) | 1.5 | Coverage is tie-breaker #1; friend's "floor ≥ 1" | 1 – 5 | Too high: weak pairs win just to raise coverage |
+| `u_new` (boost for never-introduced people) | 1.5 | Coverage is tie-breaker #1; a coverage floor (everyone ≥ 1 introduction) | 1 – 5 | Too high: weak pairs win just to raise coverage |
 | `u_deg` (boost for few options) | 0.5 | Scarce people first (edge case A1; Akbarpour et al.) | 0 – 3 | Too high: ignores pair quality |
 | waiting-days boost | not built | User's waiting-time idea | 0 – 0.1 per day | – |
 | front-load before day 35 | not built | Drift scenario (edge case A5) | on/off | – |

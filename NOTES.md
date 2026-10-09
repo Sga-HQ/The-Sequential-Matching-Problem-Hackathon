@@ -12,13 +12,12 @@ Organiser kit: https://github.com/RomeoJulietLove/The-Sequential-Matching-Proble
 - AI tools allowed for planning/coding **if declared**. No AI/network calls inside the graded program.
   Kit §14: "Document external models and coding tools" → the note/report must state AI (Claude) use.
   User (7 Oct): AI was used **for coding and testing ideas, not planning**. Disclosure wording must match what AI did.
-- **Team: solo (decided 7 Oct).** Friend gave permission to use his research as long as it is not published
-  before his; no credit needed (his approval). In the note, cite the original papers for shared concepts
+- **Team: solo (decided 7 Oct).** In the note, cite the original papers for shared concepts
   (Akbarpour 2020, b-matching, power analysis), written in our own words.
 - **Aim of the hackathon (kit §1, §10, §15):** a sound, valid, reusable decision policy plus an honest report.
   Ranked against OTHER TEAMS (not vs baseline) on MSMI over 6 scenarios × 20 private seeds; Round 1 is the research note.
-- **Round 1 workflow:** user writes the logic in plain words → Claude writes math + why + source + evidence
-  (ROUND1_LOGIC_MATH.md). Block 1 (daily pairing) done as a worked example.
+- **Round 1 workflow:** user writes the logic in plain words → Claude writes math + why + source + evidence.
+  Block 1 (daily pairing) done as a worked example.
 
 ## 2. The problem in one line
 Act as a matchmaker for ~200 synthetic people over 60 days: each day decide **whom to ask questions** and **whom to introduce**, so that the most pairs end up with **both wanting a second date (MSMI)**.
@@ -200,7 +199,7 @@ PERSON FLOW
 | Safety | Official `eligibility()` on chosen pairs |
 
 ### People to consult (7 Oct)
-- **DSA professor (graphs):** briefing file = `PROBLEM_STATEMENT.md`. Ask about matching on dynamic graphs,
+- **DSA professor (graphs):** Ask about matching on dynamic graphs,
   blossom vs simpler exact search on tiny components, online matching / when to wait, incremental edge updates,
   weighting both directions, bitset indexing.
 - **Professor: research-level questions (user wants theory, not code tips).** Four closely matching models:
@@ -212,10 +211,6 @@ PERSON FLOW
      arrive and have deadlines; Ranking is 0.5211-competitive on general graphs.
   4. Online matching with stochastic rewards (Mehta & Panigrahi, FOCS 2012); a match pays off with probability p.
   Key question for her: which model fits best, and which algorithm or proof idea should we use?
-- **Friend (friend-suggestion system, ~6 features, own maths):** ask about his features, scoring formula, how he
-  combines two directions, missing data, cold start, validation. Caution: friend suggestion = link prediction on a
-  social graph (mutual friends); our people have no social graph → feature-similarity parts transfer, network parts may not.
-  Update 7 Oct: user is solo; friend approved use without credit (do not publish his work before him).
 
 ### Findings 7 Oct (details in RESEARCH.md)
 - 100k filtering: all methods identical (7,970,144 pairs). Columnar numpy 0.21 ms/arrival, 6.1 s all pairs;
@@ -227,25 +222,15 @@ PERSON FLOW
   log-loss → mutual stays filter-only. Shift scenario flips weights → learn online. AUC ~0.55 → coverage matters more.
 - Combining both directions: all rules identical (symmetric features). Use product.
 - Asker prediction (donor imputation) unlocks 1.32 partners per ask vs 0.62 random (hindsight 2.90).
-- Friend's GitHub (LeafyChan): no public recommendation/matching repo.
 
-### Friend's math appendix (7 Oct) — adopted pieces (details RESEARCH.md §3.5)
-- Funnel elasticity: raise the cheapest stage (number of valid introductions) since scorer AUC is only ~0.55.
-- Floor ≥ 1 from b-matching: boost never-introduced people (coverage = tie-breaker #1).
-- Power analysis: comparing policies on MSMI needs ~79 episodes per policy for 1.0→1.5 successes/episode;
-  iterate on mutual acceptances (~16 episodes), confirm on MSMI.
-- EPV ≥ 10: online learning within one episode supports only a few parameters → offline-fitted prior, gentle updates.
-- Binding-constraints table format for the Round 1 note.
-- Not adopted: uplift (no one meets without intro here), IDF (fixed categories), submodular slates (one intro at a time).
-
-### Prototype ablation (7 Oct, 240 episodes/policy, SKELETON.md §4)
+### Prototype ablation (7 Oct, 240 episodes/policy, ROUND1_NOTE.md §9)
 - MSMI unchanged within noise (0.41 baseline). Mutual acceptances +5% from VOI asker (significant).
   Coverage +0.5 pt but already near ceiling (0.41 dev / 0.16 sparse).
 - Next levers: unused ask budget (199/720 pts), goal asks for Active people, score full funnel, reply reliability.
 
 ### Asker ceiling (7 Oct): even oracle/unlimited asking adds ≤ ~1% → asker is NOT a lever. Earlier +5% did not replicate.
 
-### Theoretical ceilings (7 Oct, SKELETON.md §4)
+### Theoretical ceilings (7 Oct, ROUND1_NOTE.md §9)
 - Perfect soft scorer +8%, + hidden traits +9%, every allowed pair +40% (unreachable).
 - Baseline already uses 75% of allowed pairs; unused: 53% paused after success, 27% left app, 20% capacity.
 - Realistic headroom +5–15%. FOCUS: (1) soft-field asks with spare budget, (2) best partners for busy people,
@@ -321,7 +306,6 @@ PERSON FLOW
 - Open design parts (user): 1 scorer · 2 asker · 3 introducer (which allowed pairs to introduce; fairness
   research running) · 4 post-introduction data → TABLES.md "What comes back after an introduction".
 - New lever from feedback: per-person reply reliability (24% of replies missing; 29% of people miss ≥ half).
-- NOTE_CHECKLIST.md = running list of things that must appear in the final document.
 
 ### Decision 8 Oct: fairness / upper cutoff (RESEARCH.md §1)
 - Objective stays Σ score with maxcardinality (most pairs first). No upper cutoff: real systems use floors/quotas for the

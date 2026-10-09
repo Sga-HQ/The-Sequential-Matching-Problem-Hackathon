@@ -58,7 +58,7 @@ A shadow price is how much the result would improve if one hard limit were loose
 
 **2. Availability (each introduction occupies both people for 8+ days).**
 - Price = (best future value if a person stays free) − (best future value if they are occupied).
-- This is open question 1 in the note. Stage B (look-ahead oracle) measures it. Stage B is paused while Round 1 is finalised; resume with `headroom.py 7500 10 <scenario> O4,O4c`.
+- This is open question 1 in the note. Stage B (look-ahead oracle) measures it. Stage B has been run; results below.
 
 **What the measurements decide:** improve the asker if the budget curve is still rising at 12, or the introducer's timing if the availability price is large. If both are small, the remaining work is robustness rather than score.
 

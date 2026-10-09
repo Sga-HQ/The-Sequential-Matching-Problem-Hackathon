@@ -1,14 +1,14 @@
-"""Prototype policy assembled from the research pieces (see RESEARCH.md / SKELETON.md).
+"""Prototype policy assembled from the research pieces (see RESEARCH.md).
 Uses ONLY the observable request (state + memory) and the kit's public eligibility() checker.
 Each piece can be switched off for ablations via the `cfg` dict.
 
 Pieces and where they came from:
   asker   - value of information (lecture slide 21) + donor imputation (user idea, tested in asker_prediction.py)
-            + 'help people with few options' (friend's appendix §7 floor)
+            + 'help people with few options' (coverage floor >= 1)
   scorer  - logistic weights fitted offline on simulator packets (soft_weights.py) used as a prior,
             discounted Beta counts updated from replies (SMPyBandits DiscountedBeta),
-            Thompson draw (lecture slides 19-20; Chapelle & Li 2011), gentle updates (friend's §14 EPV)
-  urgency - floor >= 1 / coverage boost (friend's §7), waiting-time aging (user idea)
+            Thompson draw (lecture slides 19-20; Chapelle & Li 2011), gentle updates (few events per parameter)
+  urgency - floor >= 1 / coverage boost, waiting-time aging (user idea)
   matcher - maximum-weight matching, max cardinality, integer weights (networkx blossom; funnel argument §2)
   safety  - official eligibility() re-check before returning
 """
@@ -125,7 +125,7 @@ def match(state, cfg, rng):
         if cfg['urgency']:
             for u in (a, b):
                 uid = u['member_id']
-                if uid not in introduced: w *= 1.5                # floor >= 1 / coverage (friend §7)
+                if uid not in introduced: w *= 1.5                # floor >= 1 / coverage
                 w *= 1 + 0.5 / deg[uid]                           # few options -> act now (Akbarpour et al.)
         G.add_edge(a['member_id'], b['member_id'], weight=int(w * 1e6) + 1)   # integer weights (networkx docs)
     M = {m['member_id']: m for m in members}

@@ -16,7 +16,6 @@ Code was read at the source level (commit noted), not only the README.
 | [JohnDickerson/kidney_solver](https://github.com/JohnDickerson/kidney_solver) (dc57446) | GPL-2 (**do not copy code**) | `kidney_digraph.py` `failure_aware_cycle_score`, `kidney_utils.py` chains | **Failure-aware weights**: an exchange's value is multiplied by the chance every edge in it succeeds. For us: pair weight = value × P(A yes) × P(B yes) × P(date happens) |
 | [daffidwilde/matching](https://github.com/daffidwilde/matching) (497602e) | MIT | `algorithms/stable_roommates.py` (Irving) | Stable matching for a **one-sided pool** (our case). Useful as a comparison/ablation: "stable" vs "maximum total value". Needs full preference rankings, so not our main matcher |
 | [networkx/networkx](https://github.com/networkx/networkx) | BSD-3 | `algorithms/matching.py` | `max_weight_matching` (Edmonds blossom, O(n³)); **use integer weights** (the docstring warns float weights can give slightly suboptimal results → scale scores ×10⁶ and round). `maximal_matching` = greedy O(E) fallback |
-| [LeafyChan](https://github.com/LeafyChan) (friend) | – | public repo list | No public repo on recommendation/matching (invoice, games, quantum, cybersecurity). Ask him directly for the friend-suggestion work |
 
 ### Lecturer's repo: keith-17/data-projects @ 8221616312bffceae1b78d6cdc857d6ef3219eb4 (no licence file → ideas only, no code copy)
 - `CAVU/analysis/analysis.ipynb`: car-park forecast. GroupShuffleSplit by quarter/terminal/car park; correlation top-8 feature
@@ -100,26 +99,6 @@ Fill a Pending person's unknown dealbreakers by copying them from random complet
 | Perfect hindsight | 2.90 |
 
 Prediction doubles the value of each ask. Correlation predicted vs real: 0.37.
-
-## 3.5 Friend's work: "Fresher Friend Matching" architecture + mathematical appendix (25 pp)
-Campus friend recommender (N≈500): ingestion → scoring (MaxSim-IDF interests, co-location uplift, schedule
-Jaccard, hand-set weights) → assignment (degree-capped b-matching with floor ≥ 1, greedy ½-approx; submodular
-slate diversification) → serving (80/20 exploit/explore, propensity logging) → measurement (IPW, A/B power).
-
-| His section | Idea | Fit for us | Action |
-|---|---|---|---|
-| §2 Funnel, elasticity = 1 | Output = product of stage rates; +x% at any stage = +x% output | ✅ MSMI = intros × P(both yes) × P(date) × P(both 2nd yes) | Since the scorer only reaches AUC ~0.55, raise the cheapest stage: **number of valid introductions** (asker, daily matching) |
-| §3 Compute budget | At small n, score all pairs; no retrieval system | ✅ at 200 | Already shown: columnar does both small and 100k |
-| §4 IDF / MaxSim | Rare shared interests count more; soft document frequency | ⚠️ our soft fields are 2–4 fixed categories, simulator rewards any match equally | Not adopted (could test) |
-| §5 Uplift Δ = P(do: rec) − P(no rec) | Don't waste slots on pairs who'd meet anyway | ❌ in our simulator nobody meets without an introduction | Keep idea of opportunity cost via urgency |
-| §6 Hand-set weights (too little data) | Prior weights, revise by A/B | ⚠️ we can fit offline from unlimited simulator data | Fitted weights = prior; online updates must be gentle (see §14) |
-| §7 b-matching with **floor ≥ 1** | Top-k per user starves low scorers; guarantee each user ≥ 1 | ✅ coverage is our 1st tie-breaker | Boost never-introduced people; "repair pass" for anyone with an edge but no intro |
-| §8 Submodular slate diversity | 1 − ∏(1 − q): correlated bets are one bet | ⚠️ one intro at a time here | Optional: vary partner profile across a person's successive intros |
-| §9 ε-greedy from **mid-score band**, propensity logging, IPS | Explore among plausible, not bottom decile | ✅ Thompson already explores near ties; IPS unnecessary (we run full simulator episodes) | Keep exploration within plausible pairs |
-| §10 Null-model noise floor (CV) | Check a feature's spread when there is no signal | ✅ method | Use to sanity-check any new feature |
-| §11 Power for A/B | n per arm from z-scores | ✅ critical | **MSMI ~1 success/episode → detecting 1.0→1.5 needs ~79 episodes per policy; 1.0→1.25 needs ~283.** Develop on mutual acceptances (18→22.5 needs ~16) and confirm on MSMI |
-| §14 Events-per-variable ≥ 10 | Cap model size by outcome count | ✅ | One episode gives ~190 replies (~95 of the rarer class) → ≤ 9 parameters online; early days far fewer → strong prior from offline fit, light online updates |
-| §16 Binding-constraints table | One table of the numbers that limit everything | ✅ format | Use in our Round 1 note |
 
 ## 4. Adopt list (decisions)
 1. Filter: **columnar numpy masks** (scales best); keep per-rule 1/0 row only for explanations.
