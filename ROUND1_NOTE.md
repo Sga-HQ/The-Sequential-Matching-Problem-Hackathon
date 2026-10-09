@@ -43,6 +43,7 @@ All uncertainties written ± are **one paired standard error (SE) across episode
 | Coverage boost, degree boost | Multipliers on a pair's score: the coverage boost favours people never introduced; the degree boost favours people with few allowed partners (§6). |
 | Online learner, Thompson sampling | A prototype scorer that updated its estimates from replies during the episode, and a way of choosing randomly among plausible estimates to explore. Both were tested and dropped (§9.5–9.6). |
 | Oracle | An offline diagnostic that may see hidden simulator values. It measures what is possible; it is never a policy we could submit. |
+| Headroom | The most extra improvement an oracle finds when one imperfect part of the policy is replaced by an idealised one. |
 | Round 1, Round 2 | Round 1 is this research note. Round 2 (12–18 October) is the build and submission of the policy itself. |
 
 Short labels such as A0–A4, B, C1, S1, S2, R0, R1, F1, F2, V and D0 name policy variants within one results table; each is defined in its table.
@@ -69,12 +70,12 @@ We treat the challenge as **sequential constrained allocation** rather than pair
 | Soft clarification | 1-point questions, broad | **broad** (anyone with ≥ 1 feasible partner); the margin rule (ask only when a person's two best options are close) was tested and rejected (§9.6) |
 | Scorer | online Beta learner, Thompson draws, personal reply and yes terms | **fixed offline scorecard** (posterior means, no online updates, no personal terms) |
 | Matching | most pairs first, then best total, × coverage boost 1.5 × degree boost | most pairs first, then best total; **no coverage boost**; degree boost provisional (no measured effect) |
-| Feedback | updates the learner | kept per stage for bookkeeping and availability; **not used to retrain** (it changed decisions without improving them, §9.6) |
+| Feedback | updates the learner | **effectively unused**: the code still counts replies, but the fixed scorecard is weighted as 10⁶ pseudo-replies, so an episode's few hundred replies cannot change any score materially, and personal terms are off. Availability and past pairs are read from the observable `available` flag and `introductions` list. (Learning changed decisions without improving them, §9.6.) |
 
-> **The current proposal in one box (evidence-supported Round 2 starting candidate).** Exact reciprocal hard-constraint filtering · dealbreaker bundles, then broad soft-field questions for members with ≥ 1 feasible partner · fixed offline directional scorecard · no person-specific online learning · no Thompson sampling · most pairs first, then highest total score · no multiplicative coverage boost · degree-based scarcity adjustment provisional · complete batch validation before output · stage-separated feedback kept for bookkeeping, not used to retrain the scorer.
+> **The current proposal in one box (evidence-supported Round 2 starting candidate).** Exact reciprocal hard-constraint filtering · dealbreaker bundles, then broad soft-field questions for members with ≥ 1 feasible partner · fixed offline directional scorecard · no person-specific online learning · no Thompson sampling · most pairs first, then highest total score · no multiplicative coverage boost · degree-based scarcity adjustment provisional · complete batch validation before output · feedback events effectively unused (availability and introduction history come from the observable state).
 
 **Development results** (hidden-information expected-wins diagnostic, §1.4: not the official metric, but shown there to have the same expectation) [dev].
-- **Prototype vs greedy on three disjoint blocks:** +2.7%, +6.3% and +0.2%. Episode-weighted paired mean over 180 episodes: +0.0113 ± 0.0028 per 100 (95% CI +0.0057 to +0.0168). Random-effects estimate: +0.0104 ± 0.0048. The blocks clearly differ (Q = 7.8, 2 degrees of freedom).
+- **Prototype vs greedy on three disjoint blocks:** +2.7%, +6.3% and +0.2%. Episode-weighted paired mean over 180 episodes: +0.0113 ± 0.0028 per 100 (95% CI +0.0057 to +0.0168). Random-effects estimate: +0.0104 ± 0.0048. The blocks clearly differ (Q = 7.8, 2 degrees of freedom; Q tests whether effects vary between seed blocks more than sampling noise would predict).
 - **Principal result.** On a new 120-episode development block (seeds 7400–7419), the candidate improved the validated expected-MSMI diagnostic by **+0.0205 per 100 (+5.5%)**, ± 0.0051 cluster-robust SE, a rough 95% interval of **+2.8% to +8.2%**. This is development evidence, because the block influenced policy selection. Realised MSMI did not confirm the gain at that sample size. The frozen Round 2 candidate will be evaluated once on pre-declared participant-controlled seeds, while realised MSMI on the organisers' held-out worlds remains the official competition outcome.
 - **Complexity was active but unhelpful.** Online learning altered 9–15% of daily matchings without improving expected outcomes, so the candidate uses a fixed scorecard (§9.6).
 - **The one scenario family with a gain in every block is cold start** (+0.023 ± 0.006 over the first three blocks), where information is scarcest.
@@ -82,8 +83,14 @@ We treat the challenge as **sequential constrained allocation** rather than pair
 
 **What remains open.**
 - A relaxed offline oracle suggests limited remaining opportunity from ranking alone. We treat it as an optimistic, simulator-specific diagnostic, **not a formal bound** on all sequential policies.
-- **Open question 1: dynamic option value.** What does occupying a person for 8+ days cost others in a thin, changing graph? A one-line opportunity-cost penalty added nothing measurable beyond removing the coverage boost (§9.4). Short look-ahead (one-day rollout) and selective waiting are untested.
-- **Open question 2: decision-relevant use of feedback.** Online learning from replies changed 9–15% of daily matchings but did not improve expected wins. Shift-specific adaptation and asking rules that value answers by the decisions they change are the remaining candidates (H7).
+- **Late headroom diagnostic [oracle, dev; new seeds 7500–7519, used for no tuning].** After the candidate was chosen, offline oracles measured how much several idealised mechanisms could still add over it (expected wins per 100, ± one cluster-robust SE; percentages of the greedy baseline):
+  - perfect pair-success probabilities: about +0.6% (+0.0021 ± 0.0027);
+  - every hard and soft answer revealed free: about +0.7% (+0.0023 ± 0.0039);
+  - both together: about +1.2% (+0.0042 ± 0.0041);
+  - a 10-day look-ahead that also knew the real future arrivals and departures, compared with the same perfect information decided one day at a time: no measurable gain (+0.0001 ± 0.0027; seeds 7500–7509).
+  
+  No material headroom was found in the tested scoring, clarification or 10-day timing mechanisms. This bounds those mechanisms; it does not prove that every sequential policy is equivalent, or that the organisers' worlds have the same ceiling. On the same block the candidate itself was +4.2% over greedy (+0.0149 ± 0.0040), replicating the direction of the 7400 result. Round 2 therefore prioritises reliability, runtime safety and the frozen confirmation run over more planning complexity. Code and data: `experiments/headroom.py`, `HEADROOM.md`.
+- **Feedback.** Online learning from replies changed 9–15% of daily matchings but did not improve expected wins (H7). Population-level shift detection is deferred; in the late diagnostic, even the true shifted weights added nothing measurable in the shift scenario (−0.0022 ± 0.0064).
 - Round 2 will freeze the policy, then evaluate it once on a pre-declared, participant-controlled seed block (§9.7), reporting realised MSMI, coverage, mutual acceptances, clarification cost, waiting time, runtime and invalid-episode counts.
 
 > **What this note does not claim.**
@@ -91,7 +98,7 @@ We treat the challenge as **sequential constrained allocation** rather than pair
 > - That expected wins is available to the submitted policy (it uses hidden values and exists only offline).
 > - That the relaxed oracle is a formal upper bound on every sequential policy.
 > - That all feedback learning is useless: only that the tested online learners did not improve decisions.
-> - That waiting or future-option planning has been solved.
+> - That no sequential policy could beat the candidate: the late diagnostic bounds only the mechanisms it tested.
 > - That synthetic outcomes are evidence about real relationship success.
 
 **Contents.** Terms (above) · 0 Summary · 1 Problem interpretation · 2 Hypotheses · 3 Reciprocal feasibility · 4 Clarification policy · 5 Probability model · 6 Allocation · 7 Missing and delayed data · 8 Existing work · 9 Baselines, ablations and results · 10 Failure cases · 11 Observations on the problem framing · 12 Reproducibility and provenance · References · Appendices A–D
@@ -162,7 +169,7 @@ This is an offline diagnostic [oracle], computed for the development scenario on
 - **Check against outcomes:** over 840 episodes of the fourth block (7400), mean expected wins 0.386 vs realised MSMI 0.357 per 100. Per-policy realised minus expected values vary in sign across blocks for every policy, including greedy, so we see no sign of a policy-specific bias in the diagnostic.
 - **Exactness check against the simulator** [dev, `experiments/pwin_check.py`]. We replayed the kit's own `advance()` and `metrics()` code on 1,200 random pairs (eligibility does not enter the outcome code, so it was bypassed; 200 per scenario family, assignment days 0, 10 and 40), each under 300 independent outcome seeds: 360,000 introductions. Simulated wins 3,756 vs formula 3,743.4 (ratio 1.003). Per family, the ratios were 0.97–1.03 and every |z| < 0.9. **Exactness comes from the derivation; the replay validates it.** Reading the source [code] shows that outcomes are drawn once at assignment from a stream keyed on seed, pair and day, that leaving after an introduction does not affect its outcome, and that every outcome lands before day 100. So the formula is the simulator's exact conditional success probability at the kit commit above. The replays agree with it within sampling error, with no significant family-level discrepancy.
 - **Scope of the replay check.** It validates the probability of qualifying *given that an introduction was assigned*. It does not validate eligibility, clarification, allocation or which pairs a policy selects; those are tested in complete simulator episodes (§3, §9).
-- **Why that makes it an unbiased estimate of MSMI** [code + algebra]. Write realised MSMI as a sum over introductions of win indicators W_i. Each introduction's luck is a fresh random stream that the policy cannot have seen when it chose the pair (no pair can be repeated). So E[W_i | everything up to assignment] = p_i, the formula's value, even though the policy adapts to earlier feedback. By the tower property, E[Σ p_i] = E[Σ W_i] for any policy, adaptive or not. The episode score is 100 · Σ W_i / N, where N (members arrived by day 59) is fixed by arrivals, not by outcome luck, so E[100 · Σ p_i / N] = E[100 · Σ W_i / N]. Averaging episodes within a family and then the six family means is linear, so the equality carries through to the ranking statistic's expectation. Expected wins is therefore not the official metric, but a validated, unbiased, lower-noise estimate of its expectation under the inspected public simulator. It uses hidden values, so it exists only offline. It removes only the outcome-luck variance, which is why its paired standard errors are about 10× smaller. Across all 1,980 development episodes the realised-minus-expected gap is −0.037 ± 0.039 per 100 (cluster-robust over the 50 seeds, z = −1.0), consistent with this.
+- **Why that makes it an unbiased estimate of MSMI** [code + algebra]. Write realised MSMI as a sum over introductions of win indicators W_i. Each introduction's luck is a fresh random stream that the policy cannot have seen when it chose the pair (no pair can be repeated). So E[W_i | everything up to assignment] = p_i, the formula's value, even though the policy adapts to earlier feedback. By the tower property (the average of conditional averages equals the overall average), E[Σ p_i] = E[Σ W_i] for any policy, adaptive or not. The episode score is 100 · Σ W_i / N, where N (members arrived by day 59) is fixed by arrivals, not by outcome luck, so E[100 · Σ p_i / N] = E[100 · Σ W_i / N]. Averaging episodes within a family and then the six family means is linear, so the equality carries through to the ranking statistic's expectation. Expected wins is therefore not the official metric, but a validated, unbiased, lower-noise estimate of its expectation under the inspected public simulator. It uses hidden values, so it exists only offline. It removes only the outcome-luck variance, which is why its paired standard errors are about 10× smaller. Across all 1,980 development episodes the realised-minus-expected gap is −0.037 ± 0.039 per 100 (cluster-robust over the 50 seeds, z = −1.0), consistent with this.
 - It is unavailable to the policy. We use it only to reduce outcome noise when selecting candidates. Claims of improvement are judged on untouched seeds (§9.7).
 
 ---
@@ -172,9 +179,9 @@ This is an offline diagnostic [oracle], computed for the development scenario on
 - **H2 (reply behaviour).** Because each person's reply probability applies at both the introduction and the second-date stage [code], down-weighting people with a record of non-reply should improve expected wins. *Not supported so far (§9.5).*
 - **H3 (global allocation).** Lexicographic maximum-cardinality, maximum-weight matching avoids known same-day failures of best-pair-first selection. Whether this produces measurable episode-level gains in the thin public simulator is an empirical question.
 - **H4 (limited discounting).** For stationary public scenarios, equal weighting minimises variance. The drift scenario shifts the common intercept on day 35, so equal weighting can bias absolute probabilities. γ = 1 is a default, not a proved optimum (§5.5). It is moot for the candidate, which does not learn online.
-- **H5 (headroom).** Under our relaxed oracle, sequential scarcity leaves roughly ≤ 40% improvement over the public baseline; oracle soft-field ranking alone leaves about 8%. We will challenge these values with stronger oracle policies, and check whether omitted timing or assignment mechanisms break the relaxation.
-- **H6 (option value, open).** Accounting for what an introduction takes from other people's future options (8+ day occupancy, departures, arrivals) beats same-day matching.
-- **H7 (closed-loop feedback, partly tested).** Post-introduction events help only if their stage-specific updates change later decisions for the better before the horizon ends. Test so far (§9.6): population field learning and personal learning changed 9% and 15% of daily matchings, with no improvement in expected wins. Remaining Round 2 tests: shift-specific adaptation, and asking rules valued by changes to the full matching.
+- **H5 (headroom).** Under our relaxed oracle, sequential scarcity leaves roughly ≤ 40% improvement over the public baseline; oracle soft-field ranking alone leaves about 8%. Stronger oracles were run later (§0, late headroom diagnostic) and found little remaining headroom in the tested mechanisms.
+- **H6 (dynamic option value, provisionally unsupported).** Accounting for what an introduction takes from other people's future options (8+ day occupancy, departures, arrivals) would beat same-day matching. A 10-day oracle with the real future arrivals and departures found no measurable gain over same-day matching on seeds 7500–7509 (§0). This bounds the tested look-ahead; it does not establish that every sequential policy is equivalent.
+- **H7 (closed-loop feedback, tested and unsupported for the tested mechanisms).** Post-introduction events help only if their updates change later decisions for the better before the horizon ends. Population and personal online learners changed 9% and 15% of daily matchings without improving expected wins (§9.6), so the candidate does not learn from feedback. Population-level shift detection remains a deferred experiment, not part of the candidate.
 
 ---
 
@@ -350,17 +357,17 @@ Coverage is only a tie-breaker after MSMI and mutual acceptances [rule]. A multi
 | Member unavailable with no active introduction | Treated as currently non-actionable; we do not infer the reason |
 | Delayed scenario | Longer occupancy; dates > 30 days after introduction cannot qualify (not controllable) |
 
-**Each feedback event updates only the stage it belongs to.**
+**Offline interpretation of feedback events.** The candidate does not learn from these events (its scorecard is fixed). The table separates them by stage for research analysis, funnel measurement and the prototype's evaluation.
 
-| Event | What it is evidence about | Prototype use | Candidate use |
+| Event | What it is evidence about | Prototype use | Candidate |
 |---|---|---|---|
-| Introduction reply missing (day t+7) | that person's first-stage reply probability | reply habit | bookkeeping only |
-| Introduction "no" | that person's acceptance of this partner (not reply failure) | field counts, yes-propensity | bookkeeping only |
-| Introduction "yes" | reply happened; acceptance | field counts, yes-propensity, reply habit | bookkeeping only |
-| Both yes, date did not happen | date occurrence (constant 0.78 for every pair [code]) | – | occupancy timing |
-| Second-stage answer missing | second-stage reply (same hidden reply probability [code]) | reply habit | bookkeeping only |
-| Second-stage "no" / "yes" | second-meeting preference | – | pause / occupancy |
-| Late second-stage "yes" (> 3 days) | positive preference, but no MSMI credit | – | bookkeeping only |
+| Introduction reply missing (day t+7) | that person's first-stage reply probability | reply habit | not used by the candidate |
+| Introduction "no" | that person's acceptance of this partner (not reply failure) | field counts, yes-propensity | not used by the candidate |
+| Introduction "yes" | reply happened; acceptance | field counts, yes-propensity, reply habit | not used by the candidate |
+| Both yes, date did not happen | date occurrence (constant 0.78 for every pair [code]) | – | not used by the candidate |
+| Second-stage answer missing | second-stage reply (same hidden reply probability [code]) | reply habit | not used by the candidate |
+| Second-stage "no" / "yes" | second-meeting preference | – | not used by the candidate |
+| Late second-stage "yes" (> 3 days) | positive preference, but no MSMI credit | – | not used by the candidate |
 
 Population-level stage rates (date occurrence, on-time answering) are the same for every pair in the simulator [code]. Learning them online cannot change any ranking, so they were not tested as a learning arm. The arms that could change decisions (field effects, personal habits) were tested in §9.6.
 
@@ -378,7 +385,7 @@ Data per world (development, kit baseline): 172 reply opportunities (65 yes, 65 
 | Beta beliefs + Thompson sampling | Chapelle & Li (NeurIPS 2011); Russo et al. (2018); organiser session "Exploration, Exploitation and Online Learning" (6 Oct 2026) | tested; rejected (§9.5–9.6) | – |
 | Whole-chain target | ESMM (Ma et al., SIGIR 2018) | motivation | §5.3 |
 | No discounting | Muth (1960) | argument under inspected mechanism | §5.5 |
-| Prompt matching in thin markets | Akbarpour, Li & Oveis Gharan (JPE 2020) | motivation; waiting not yet tested | H6 |
+| Prompt matching in thin markets | Akbarpour, Li & Oveis Gharan (JPE 2020) | motivation; 10-day future-aware oracle tested, no measurable gain | H6, §0 |
 | Perfect-information benchmark; judge on business outcome | organiser guest session "Building robust ML systems from messy data" (7 Oct 2026) | adopted as diagnostic | §1.4 |
 | Grouped hold-out | same session; GroupKFold practice | adopted (seed blocks) | §9.7 |
 
@@ -414,6 +421,7 @@ All MSMI differences are within about ±0.04 (1 SE). The A2 mutual-acceptance ga
 
 ### 9.3 Second-version scorer ("v2", the prototype's scorer) and first tuning round [dev; expected wins per 100 arrived members]
 "Soft asks (≥ 2 options)" means soft questions only for people with at least two currently allowed partners; "≥ 1" means at least one.
+
 | Seed block | Comparison | Expected wins (paired, vs reference) | AUC | Blank clues |
 |---|---|---|---|---|
 | 7100–7109 | kit greedy → v2 + soft asks (≥ 2 options) | 0.375 → 0.385 (+0.0103 ± 0.0020, +2.7%) | 0.541 → 0.553 | 70% → 59% |
@@ -438,7 +446,7 @@ All comparisons are paired against the current best ("B" = scorer v2 + soft asks
 
 - **On this block, B did not beat greedy** (+0.0006 ± 0.0047). This is the third disjoint block; pooled results are in §0.
 - **The coverage boost buys a little coverage (+0.0013) at a likely cost in expected wins (≈ −0.004, about 1.5 SE).** Optimising a tie-breaker can sacrifice the primary objective. Round 2 default: no coverage boost, or a boost applied only within a narrow score tolerance.
-- **Opportunity cost:** after controlling for the removal of the coverage boost, the heuristic showed no clear extra benefit (A3 − A2 paired: +0.0009 ± 0.0007). **H6 remains open.** A one-line penalty is a weak proxy for option value. Round 2 will test explicit one-day look-ahead and selective waiting for contested people.
+- **Opportunity cost:** after controlling for the removal of the coverage boost, the heuristic showed no clear extra benefit (A3 − A2 paired: +0.0009 ± 0.0007). A one-line penalty is a weak proxy for option value. A later 10-day future-aware oracle found no measurable timing gain (§0, H6), so one-day rollout and selective waiting are not current priorities unless new evidence contradicts that result.
 
 ### 9.5 Clarification rule and scorer complexity [dev, same 60 episodes]
 | Variant (vs B, paired) | Expected wins /100 | AUC* | Mutual /100 | Clarification cost / episode |
@@ -518,10 +526,10 @@ R0 = frozen offline scorecard + margin asking + no coverage boost. Errors are **
 ## 10. Expected failure cases and defences
 | # | Failure | Defence | Status |
 |---|---|---|---|
-| F1 | Sparse supply (coverage ceiling ≈ 0.16 in sparse) | Prompt matching; global allocation; scarcity and option-value mechanisms under evaluation (H6) | Allocation implemented; option value open |
+| F1 | Sparse supply (coverage ceiling ≈ 0.16 in sparse) | Prompt same-day matching and global allocation. A 10-day future-aware oracle found no measurable gain from waiting in the tested worlds (H6) | Implemented |
 | F2 | Withheld answers (≈ 65 of 200 decline a hard field) | Never inferred or asked; kept in the denominator | Implemented; 0 invalid actions in > 1,500 dev episodes |
 | F3 | Delayed feedback (replies ≤ 7 days, second answers ≤ ~26 days) | Pending ≠ no; prior carries early decisions | Implemented |
-| F4 | Competition for one person | Global matching prevents duplicate assignment and handles same-day competition exactly; structural scarcity and dynamic option value remain Round 2 experiments | Matching implemented; scarcity provisional; option value open |
+| F4 | Competition for one person | Global matching prevents duplicate assignment and handles same-day competition exactly. A future-aware oracle found no measurable added value from 10-day look-ahead | Implemented; degree boost provisional |
 | F5 | Shifted weights | Fixed scorecard as the robust default. Round 2: a gradual blend of two offline weight sets, weighted by the likelihood of observed replies, kept only if it helps shift without harming the other five families | Fixed default implemented; adaptation planned |
 | F6 | Sparse personal history (~2 introductions each) | The candidate uses no person-specific learned parameters; population- or scenario-level adaptation is adopted only after it shows incremental outcome value | Implemented |
 | F7 | Invalid output | Batch validation (§3); official checker; budget read from state | Implemented and measured (0 invalid) |
@@ -563,7 +571,7 @@ R0 = frozen offline scorecard + margin asking + no coverage boost. Errors are **
 - **Environment** (checked with `python --version` and the libraries' `__version__`): Python 3.13.16, numpy 2.5.3, networkx 3.4.2 (BSD-3). The experiments use only these plus the Python standard library and the kit. They will be pinned in the Round 2 Docker image.
 - **Inference seed:** deterministic per day and phase (`7919·day + phase`).
 - **Permitted inputs only.** The policy reads only the observation, clarification results, feedback and its own memory. Hidden values appear only in offline measurement scripts (expected wins, oracle ceilings).
-- **AI-assisted tools.** Anthropic Claude was used to help draft and debug experimental scripts, propose and run analyses, prepare mathematical explanations, and edit this research note. The author directed the research questions, reviewed the principal experimental results, and made the final methodological and submission decisions. Source-code interpretations, mathematical arguments and generated prose remain subject to the limitations stated in the note. No external AI service is used by the policy during evaluation.
+- **AI-assisted tools.** Anthropic Claude was used to help draft and debug experimental scripts, propose and run analyses, prepare mathematical explanations, and edit this research note. Microsoft 365 Copilot was used to review drafts of the note. The author directed the research questions, reviewed the principal experimental results, and made the final methodological and submission decisions. Source-code interpretations, mathematical arguments and generated prose remain subject to the limitations stated in the note. No external AI service is used by the policy during evaluation.
 
 ## References
 - Akbarpour, M., Li, S., & Oveis Gharan, S. (2020). Thickness and information in dynamic matching markets. *Journal of Political Economy* 128(3).
