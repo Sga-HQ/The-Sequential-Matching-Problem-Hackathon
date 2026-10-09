@@ -71,7 +71,7 @@ A shadow price is how much the result would improve if one hard limit were loose
 | Shift detector ceiling (true shifted weights, shift scenario only) | O1 − R1 = −0.0022 ± 0.0064 | ≈ 0 | low priority |
 | Hard-question asker | O2h − R1 = +0.0012 ± 0.0034 | +0.3% | low priority |
 | All information free plus true chances (same-day ceiling) | O12 − R1 = +0.0042 ± 0.0041 | +1.2% | same-day work is nearly exhausted |
-| **Timing (future-aware)** | **stage B: O4 / O4c − O12** | **pending** | the only unmeasured lever |
+| Timing (future-aware look-ahead) | O4 − O12 = −0.0011 ± 0.0040; O4c − O12 = +0.0001 ± 0.0027 (seeds 7500–7509) | ≈ 0 | below 2%: stop dynamic work |
 
 **Arithmetic toward 10%.** On fresh seeds the candidate is +4.2% over the kit, so reaching 10% needs about +5.6% more. A perfect same-day policy reaches +5.4% over the kit. So 10% is possible only if timing is worth roughly 4–5% at oracle level, and a real policy captures only part of an oracle's gain.
 
@@ -79,3 +79,28 @@ A shadow price is how much the result would improve if one hard limit were loose
 - below 2% over O12: stop dynamic work and put the effort into robustness;
 - 2–5%: test selective waiting;
 - above 5%: build a one-day rollout.
+
+## Stage B result (done, 120 episodes: seeds 7500–7509 × 6 scenarios × 2 arms)
+| Comparison (paired, per 100) | Result |
+|---|---|
+| O4 (look-ahead using the real future) − O12 (best same-day oracle) | −0.0011 ± 0.0040 |
+| O4c (cautious look-ahead) − O12 | +0.0001 ± 0.0027 |
+| O4c − R1 (our candidate) | −0.0006 ± 0.0065 |
+| Introductions: O12 / O4 / O4c | 72.2 / 70.8 / 71.3 per episode |
+
+Raw data: `experiments/results/headroom_B_*.jsonl`. Summary: `results/headroom_B_summary.txt`.
+
+**Reading.**
+- Knowing the real future does not help the kinds of timing move a practical policy could make: holding back or swapping the weakest pairs, or dropping "most pairs first".
+- The bold version held people back more often and lost slightly. The cautious version matched same-day results.
+- On these 60 worlds, every oracle (true chances, free answers, look-ahead) sits within ±0.002 of the candidate R1.
+
+**Limits of this test.** The look-ahead is short (10 days). It considers only 6 alternative matchings per day, and averages 2 sampled futures. So it bounds simple waiting and swapping, not every conceivable plan. The upper end of its 95% interval is about +2% over O12.
+
+**Conclusion for Round 2.**
+- On every lever we can measure, the candidate is at or near the ceiling: scoring, clarification, same-day allocation and simple timing.
+- A +10% target is **not supported** by the evidence. A realistic claim is about +4–5% over the kit, already achieved, pending confirmation.
+- Round 2 effort goes to:
+  1. reliability: time guard, edge-case and JSON tests, Docker, the 1 MiB memory check;
+  2. simplification: drop the degree boost if neutral;
+  3. the one-time confirmation run on seeds 50000–50019.
