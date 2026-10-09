@@ -3,8 +3,8 @@
 | | |
 |---|---|
 | **Team** | solo |
-| **Version date** | 8 October 2026 |
-| **Repository** | https://github.com/Sga-HQ/The-Sequential-Matching-Problem-Hackathon_round1 |
+| **Version date** | 9 October 2026 |
+| **Repository** | https://github.com/Sga-HQ/The-Sequential-Matching-Problem-Hackathon |
 | **Code and results behind every number** | commit `d86ff40ecc561157a6c9b15f6b977acc0e556752` |
 | **Organiser kit** | participant specification 1.0.0, kit commit `a8e26b35118cfa8e886a02f93984923e43ab64f6` |
 
@@ -16,7 +16,36 @@
 - **[motivation]**: a literature result that motivates a choice without proving it applies here.
 - **[plan]**: a Round 2 experiment.
 
-All uncertainties written ± are **one paired standard error across episodes**. 95% intervals are about ±2 SE.
+All uncertainties written ± are **one paired standard error (SE) across episodes**: both policies are run on the same simulated worlds and we measure the spread of their differences. Where marked *cluster-robust*, episodes that share a world are grouped so that their correlation is not mistaken for extra evidence. 95% intervals are about ±2 SE.
+
+**Terms used in this note.**
+
+| Term | Meaning |
+|---|---|
+| Simulator, kit | The organisers' public Python package (`kit.py`). It generates synthetic members, plays out each introduction, and includes baseline policies. |
+| Policy | Our program. Each simulated day it chooses which questions to ask and which pairs to introduce. |
+| Member | One synthetic person in the simulator, about 200 per world. |
+| World, seed, episode | A *seed* is a number that generates one *world* (a population of about 200 synthetic members). An *episode* is one run of a policy in one world: 60 decision days plus 40 follow-up days for late outcomes. The same seed gives the same world, so policies can be compared on identical worlds. |
+| Scenario family | One of the six public world types: development (standard), sparse geography, cold start (fewer answers known at arrival), delayed dates, shift (different preferences matter), drift (response conditions change on day 35). The official score averages all six equally. |
+| Block | A set of consecutive seeds used for one experiment, named by its first seed (block 7400 = seeds 7400–7419). |
+| MSMI | *Mutual Second-Meeting Intention*, the official outcome. An introduction counts when the first date happens within 30 days of the introduction and both people say "yes" to a second meeting within 3 days of the date. Score = 100 × qualifying introductions ÷ members who arrived. *Realised* MSMI is what actually happened in a run. |
+| Expected wins | The sum, over all introductions a policy made, of each one's exact chance of qualifying, computed offline from hidden simulator values. It has the same average as realised MSMI but much less luck in it (§1.4). |
+| Hard fields (dealbreakers) | 11 preferences that must pass in both directions before two people may be introduced: age range, genders, zones, schedule, smoking, children and similar. |
+| Soft fields | 7 preference answers, such as relationship goal and pace, that change how likely a "yes" is but never forbid an introduction. A *blank clue* is a soft field that is unknown for one of the two people. |
+| Asking (clarification), points | Each day the policy may spend 12 points on questions: all of one member's hard fields at once costs 3 points; one named soft field costs 1 point. |
+| Feasible pair | Two available members whose known hard fields pass in both directions and who have never been introduced to each other: a pair the policy may introduce today. (An *allowed pair*, §1.4, is a different, offline count over the whole episode.) |
+| Matching | A set of introductions in which nobody appears twice. |
+| Greedy baseline | The kit's reference policy. It asks hard bundles in the order members are listed, then introduces the highest-scoring allowed pairs one at a time. |
+| Coverage | Share of arrived members who received at least one introduction. It only breaks ties after MSMI and mutual acceptances. |
+| Mutual acceptance | Both people answered "yes" to an introduction. |
+| Scorer | The part of the policy that estimates how likely each person is to say "yes" to a given partner. |
+| Prototype, candidate | The *prototype* is our first complete policy. The *candidate* is the simpler version the experiments support (labelled R1 in §9.6). |
+| Coverage boost, degree boost | Multipliers on a pair's score: the coverage boost favours people never introduced; the degree boost favours people with few allowed partners (§6). |
+| Online learner, Thompson sampling | A prototype scorer that updated its estimates from replies during the episode, and a way of choosing randomly among plausible estimates to explore. Both were tested and dropped (§9.5–9.6). |
+| Oracle | An offline diagnostic that may see hidden simulator values. It measures what is possible; it is never a policy we could submit. |
+| Round 1, Round 2 | Round 1 is this research note. Round 2 (12–18 October) is the build and submission of the policy itself. |
+
+Short labels such as A0–A4, B, C1, S1, S2, R0, R1, F1, F2, V and D0 name policy variants within one results table; each is defined in its table.
 
 ---
 
@@ -29,15 +58,15 @@ We treat the challenge as **sequential constrained allocation** rather than pair
 **What we measured.**
 - **Reciprocal feasibility and information availability dominate.** Removing clarification reduced realised MSMI by about **72%** [dev, 240 episodes].
 - **Reciprocally eligible alternatives are few** (about 3 per person over an episode; definition in §1.4). The kit's greedy baseline already introduces about **75%** of those pairs [oracle].
-- So better ranking has limited opportunity unless clarification first exposes the relevant information. Much of the remaining pair-level variation comes from latent stochastic terms that the policy cannot see [code, oracle].
+- So better ranking has limited opportunity unless clarification first exposes the relevant information. Much of the remaining pair-level variation comes from hidden random factors that the policy cannot see [code, oracle].
 
 **Status: prototype vs evidence-supported candidate.**
 
 | | Tested prototype (first build) | **Evidence-supported Round 2 candidate** |
 |---|---|---|
 | Feasibility | strict two-way filtering, batch validation | same |
-| Hard clarification | dealbreaker bundles, kit order | same |
-| Soft clarification | 1-point questions, broad | **broad** (anyone with ≥ 1 feasible partner); the margin rule was tested and rejected (§9.6) |
+| Hard clarification | dealbreaker bundles, in the order the kit lists members | same |
+| Soft clarification | 1-point questions, broad | **broad** (anyone with ≥ 1 feasible partner); the margin rule (ask only when a person's two best options are close) was tested and rejected (§9.6) |
 | Scorer | online Beta learner, Thompson draws, personal reply and yes terms | **fixed offline scorecard** (posterior means, no online updates, no personal terms) |
 | Matching | most pairs first, then best total, × coverage boost 1.5 × degree boost | most pairs first, then best total; **no coverage boost**; degree boost provisional (no measured effect) |
 | Feedback | updates the learner | kept per stage for bookkeeping and availability; **not used to retrain** (it changed decisions without improving them, §9.6) |
@@ -65,7 +94,7 @@ We treat the challenge as **sequential constrained allocation** rather than pair
 > - That waiting or future-option planning has been solved.
 > - That synthetic outcomes are evidence about real relationship success.
 
-**Contents.** 0 Summary · 1 Problem interpretation · 2 Hypotheses · 3 Reciprocal feasibility · 4 Clarification policy · 5 Probability model · 6 Allocation · 7 Missing and delayed data · 8 Existing work · 9 Baselines, ablations and results · 10 Failure cases · 11 Observations on the problem framing · 12 Reproducibility and provenance · References · Appendices A–D
+**Contents.** Terms (above) · 0 Summary · 1 Problem interpretation · 2 Hypotheses · 3 Reciprocal feasibility · 4 Clarification policy · 5 Probability model · 6 Allocation · 7 Missing and delayed data · 8 Existing work · 9 Baselines, ablations and results · 10 Failure cases · 11 Observations on the problem framing · 12 Reproducibility and provenance · References · Appendices A–D
 
 ---
 
@@ -129,8 +158,8 @@ This is an offline diagnostic [oracle], computed for the development scenario on
 - **In plain words.** Each introduction is like a lottery ticket with its own chance of winning. Realised MSMI records which tickets happened to win. Expected wins adds up each ticket's exact chance, as the simulator defines it. Over hundreds of introductions both give the same average, but expected wins removes the luck of which particular tickets won. The formal argument follows.
 - For each introduced pair, we compute its success probability from the simulator's outcome formula, using hidden per-person values and integrating over the shared pair term with 5-point Gauss–Hermite quadrature. We then sum these probabilities.
 - **Numerical check:** the 5-point integration was compared with a 60-point Gauss–Hermite reference on 3,000 random pairs from development worlds. Maximum absolute difference 4.1 × 10⁻⁷; mean relative difference 0.001% [dev, `checks_v3.py`]. This validates the numerical integration; the completeness of the formula is checked next.
-- **Delayed scenario: 30-day date rule.** The date delay is max(two reply delays U{1..7}) + U{1..14} + U{5..12}, drawn independently of the pair, the day and the policy [code]. So P(date within 30 days) is an exact constant: 5,368 / 5,488 = 0.9781. The diagnostic now multiplies by it (fourth block onwards). Earlier blocks overstate delayed-scenario expected wins, and their differences, by exactly 2.2%. Relative comparisons are unaffected.
-- **Check against outcomes:** over 840 fourth-block episodes, mean expected wins 0.386 vs realised MSMI 0.357 per 100. Per-policy realised minus expected values vary in sign across blocks for every policy, including greedy, so we see no sign of a policy-specific bias in the diagnostic.
+- **Delayed scenario: 30-day date rule.** The date delay is max(two reply delays U{1..7}) + U{1..14} + U{5..12}, drawn independently of the pair, the day and the policy [code]. So P(date within 30 days) is an exact constant: 5,368 / 5,488 = 0.9781. The diagnostic multiplies by it from the fourth block (7400) onwards. Earlier blocks overstate delayed-scenario expected wins, and their differences, by exactly 2.2%. Relative comparisons are unaffected.
+- **Check against outcomes:** over 840 episodes of the fourth block (7400), mean expected wins 0.386 vs realised MSMI 0.357 per 100. Per-policy realised minus expected values vary in sign across blocks for every policy, including greedy, so we see no sign of a policy-specific bias in the diagnostic.
 - **Exactness check against the simulator** [dev, `experiments/pwin_check.py`]. We replayed the kit's own `advance()` and `metrics()` code on 1,200 random pairs (eligibility does not enter the outcome code, so it was bypassed; 200 per scenario family, assignment days 0, 10 and 40), each under 300 independent outcome seeds: 360,000 introductions. Simulated wins 3,756 vs formula 3,743.4 (ratio 1.003). Per family, the ratios were 0.97–1.03 and every |z| < 0.9. **Exactness comes from the derivation; the replay validates it.** Reading the source [code] shows that outcomes are drawn once at assignment from a stream keyed on seed, pair and day, that leaving after an introduction does not affect its outcome, and that every outcome lands before day 100. So the formula is the simulator's exact conditional success probability at the kit commit above. The replays agree with it within sampling error, with no significant family-level discrepancy.
 - **Scope of the replay check.** It validates the probability of qualifying *given that an introduction was assigned*. It does not validate eligibility, clarification, allocation or which pairs a policy selects; those are tested in complete simulator episodes (§3, §9).
 - **Why that makes it an unbiased estimate of MSMI** [code + algebra]. Write realised MSMI as a sum over introductions of win indicators W_i. Each introduction's luck is a fresh random stream that the policy cannot have seen when it chose the pair (no pair can be repeated). So E[W_i | everything up to assignment] = p_i, the formula's value, even though the policy adapts to earlier feedback. By the tower property, E[Σ p_i] = E[Σ W_i] for any policy, adaptive or not. The episode score is 100 · Σ W_i / N, where N (members arrived by day 59) is fixed by arrivals, not by outcome luck, so E[100 · Σ p_i / N] = E[100 · Σ W_i / N]. Averaging episodes within a family and then the six family means is linear, so the equality carries through to the ranking statistic's expectation. Expected wins is therefore not the official metric, but a validated, unbiased, lower-noise estimate of its expectation under the inspected public simulator. It uses hidden values, so it exists only offline. It removes only the outcome-luck variance, which is why its paired standard errors are about 10× smaller. Across all 1,980 development episodes the realised-minus-expected gap is −0.037 ± 0.039 per 100 (cluster-robust over the 50 seeds, z = −1.0), consistent with this.
@@ -170,11 +199,11 @@ Also, no member appears twice in the batch, the ask budget is respected, and out
 ## 4. Clarification policy
 **Measurements.**
 - The kit baseline spends 199 of 720 points per episode [dev]; after about day 17 no askable hard-field gaps remain.
-- An oracle test of dealbreaker-ask *order* (180 episodes per asker) found differences ≤ ~1% in both-said-yes, within noise [dev].
+- An oracle test of dealbreaker-ask *order* (180 episodes per asker) found differences ≤ ~1% in mutual acceptances, within noise [dev].
 - About 62% of soft clues are blank at decision time (82% in cold start) [dev, 15 worlds × 6 scenarios].
 
 **Rules (a decision-relevance heuristic, not a full value-of-information computation):**
-1. **Hard bundle (3 points)**, in kit order, for available askable people. In Round 2 we will prioritise people whom ready members' stated preferences already accept, a cheap exact half-check using always-visible age, gender and zone.
+1. **Hard bundle (3 points)**, in the order the kit lists members, for available askable people. In Round 2 we will prioritise people whom ready members' stated preferences already accept, a cheap exact half-check using always-visible age, gender and zone.
 2. **Soft fields (1 point each) with the remaining budget**, in field order goal → pace → lifestyle → conversations.
 3. **Broad rule (current):** ask soft fields of any available, fully known person with ≥ 1 currently feasible partner.
 4. **Matching-margin rule (tested, rejected in §9.6):** ask only if the person's second-best edge score is ≥ 0.6 × their best. A soft answer moves odds by roughly ×0.7–×1.4, so it could then reverse their top choice.
@@ -225,7 +254,7 @@ By the chain rule, a qualifying outcome needs:
 
 Approximate binomial standard errors are √(p(1−p)/n): about ±0.02 for n ≈ 700, and ±0.04–0.06 for the second-stage rows.
 
-**Information Value per field** (yes vs no; 15 worlds per scenario). Scale (Siddiqi 2006): < 0.02 negligible, 0.02–0.1 weak.
+**Information Value per field** (yes vs no; 15 worlds per scenario). Information Value is a standard credit-scoring measure of how strongly a field separates "yes" from "no" answers. Scale (Siddiqi 2006): < 0.02 negligible, 0.02–0.1 weak.
 
 | Field | development | shift | cold start |
 |---|---|---|---|
@@ -260,7 +289,7 @@ Approximate binomial standard errors are √(p(1−p)/n): about ±0.02 for n ≈
 
 **Censoring.** A reply that has not yet arrived is pending, not "no". An unanswered message updates reply behaviour only.
 
-**Calibration.** Mean predicted P(yes) was 0.465 against an observed 0.466 (tuning round 1, broad asking) [dev]. Reliability curves and the Brier score are planned. (The KS statistic measures separation, not calibration.)
+**Calibration.** Mean predicted P(yes) was 0.465 against an observed 0.466 (first tuning round, block 7200, broad asking) [dev]. Reliability curves and the Brier score are planned. (The KS statistic measures separation, not calibration.)
 
 **AUC definition.** All AUC values in this note are **directional introduction-response AUC**:
 - the target is whether an introduced person answered yes;
@@ -383,7 +412,8 @@ All episodes follow the evaluator's protocol: 60 decision days, then 40 follow-u
 
 All MSMI differences are within about ±0.04 (1 SE). The A2 mutual-acceptance gain **did not replicate** on new seeds (§9.9).
 
-### 9.3 Scorer v2 and tuning round 1 [dev; expected wins per 100 arrived members]
+### 9.3 Second-version scorer ("v2", the prototype's scorer) and first tuning round [dev; expected wins per 100 arrived members]
+"Soft asks (≥ 2 options)" means soft questions only for people with at least two currently allowed partners; "≥ 1" means at least one.
 | Seed block | Comparison | Expected wins (paired, vs reference) | AUC | Blank clues |
 |---|---|---|---|---|
 | 7100–7109 | kit greedy → v2 + soft asks (≥ 2 options) | 0.375 → 0.385 (+0.0103 ± 0.0020, +2.7%) | 0.541 → 0.553 | 70% → 59% |
@@ -473,15 +503,15 @@ R0 = frozen offline scorecard + margin asking + no coverage boost. Errors are **
 ### 9.9 Retrospective: what we got wrong
 - **An unreplicated gain.** The asker's mutual-acceptance gain (+0.29 ± 0.11) did not repeat on new seeds; an oracle asker gained ≤ ~1%. *Lesson:* replicate before believing.
 - **Discounting "for drift"** was unnecessary under the inspected mechanism (§5.5).
-- **Random feasible pairs** matched our full prototype on mutual acceptances. A simple baseline can be as good as a complex model on the outcome that matters, as the guest session stressed.
+- **Random feasible pairs** matched our full prototype on mutual acceptances. A simple baseline can be as good as a complex model on the outcome that matters, as the organiser session "Building robust ML systems from messy data" (7 Oct 2026) stressed.
 - **Better prediction ≠ more wins.** Broader asking raised AUC by +0.024 ± 0.006 but not expected wins. A clue only helps where it can change a decision.
 - **An apparent timing effect.** Introductions made on days 35–49 once appeared to almost never succeed (0 of ~430 in two world sets), although their expected success was normal (≈ 1.0%). On 60 fresh worlds the rate was 1.05% (7 of 669): it was chance. Assignment day shows no reliable effect outside the drift scenario's built-in day-35 change.
 - **Complexity that did not pay.** The online learner, Thompson sampling, personal habit terms, the coverage boost and the margin asker each looked principled. None beat a simpler alternative (§9.4–9.6).
 - **Realised MSMI disagreed with the diagnostic on one block (7400).** Rather than explain it away, we tested the diagnostic itself: it is the exact success probability, and replays agree within sampling error. The disagreement is outcome luck (§1.4).
 - **Corrected early numbers.**
-  - "20–30 pairs per day" was really 9–19.
-  - The day-0 allowed-pair count was 2,996, not 3,215 (an age-check bug).
-  - A "60× faster" claim was ~2× under a fair comparison.
+  - An early estimate of 20–30 introductions per day was wrong: the real maximum is 9–19 per day.
+  - The number of pairs passing the gender, zone and age checks on day 0 was 2,996, not 3,215 (a bug in our age check).
+  - An early claim that our bit-set eligibility filter was 60× faster was measured against the kit's slow reference checker. Against a row-by-row check that stops at the first failing rule, it is about 2× faster at 10,000 people and about equal at 200 (`experiments/bench_filtering.py`).
 
 ---
 
@@ -516,7 +546,7 @@ R0 = frozen offline scorecard + margin asking + no coverage boost. Errors are **
 
 ## 12. Reproducibility and provenance
 - **Measured-code version.** Every number comes from a script in `experiments/`, with raw per-episode JSONL in `experiments/results/`, at commit `d86ff40ecc561157a6c9b15f6b977acc0e556752`.
-- **Research-note version.** This note and its PDF sit in later, document-only commits on the same branch. We checked the diff: between the measured-code commit and the note commits, no experimental code or raw result changed; only `ROUND1_NOTE.md`, `ROUND1_NOTE.pdf` and `.gitignore`. The full note commit and the PDF's full SHA-256 are recorded in `CHECKSUMS.txt` in the repository (a file cannot contain its own checksum).
+- **Research-note version.** This note and its PDF sit in later, document-only commits. We checked the diff: between the measured-code commit and the note commits, no experimental code or raw result used by this note changed; only the note, its PDF, repository housekeeping and separate Round 2 planning files. The full note commit and the PDF's full SHA-256 are recorded in `CHECKSUMS.txt` in the repository (a file cannot contain its own checksum).
 
 | Section | Script |
 |---|---|
@@ -565,7 +595,7 @@ R0 = frozen offline scorecard + margin asking + no coverage boost. Errors are **
 In an incremental architecture, newcomer processing is one important scaling path. A production system would also need updates for changed preferences, removals, availability and index repair. At 100k, exact matching would run within connected components or use a greedy approximation.
 
 ## Appendix B. Scorecard view of the development prior
-600 points at even odds; +20 points doubles the odds. One direction starts at 598 points.
+Each clue adds or removes points from one person's "yes" score for one partner. 600 points means even odds; +20 points doubles the odds. With no clues known, a person starts at 598 points.
 
 | Clue | Same | Different | Unknown |
 |---|---|---|---|
