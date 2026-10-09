@@ -43,3 +43,21 @@ Code: `experiments/headroom.py` and `experiments/headroom_summary.py`. Raw data:
 - **O4c** is the same, but leaves the usual matching only for a look-ahead gain above 2%. With only 2 sampled futures per option, the best-looking option is often just a lucky estimate.
 - Cost: about 130 s per episode, so this stage uses 10 seeds per family (60 episodes per arm).
 - First world: O4 made 90 introductions against O12's 102, and scored lower. One world is noise, but this is the pattern expected if lucky estimates make "wait" win too often.
+
+## Constraint values ("shadow prices", workshop 3: hard rules, soft goals)
+A shadow price is how much the result would improve if one hard limit were loosened by one unit. For us there are two candidates.
+
+**1. The daily question budget (12 units).**
+- The kit leaving 521 of 720 units unused does **not** show the budget is worthless. It only shows that the kit's question rule stops early.
+- What we have measured is the extreme case: a strong asker with an **unlimited** budget, from stage A above.
+  - Every dealbreaker answer free (O2h vs R1): +0.0012 ± 0.0034.
+  - Every answer free, dealbreaker and soft (O2hs vs R1): +0.0023 ± 0.0039.
+  - With perfect scores on both sides (O12 vs O1): +0.0021.
+- So removing the limit entirely is worth well under 1% of the kit's score to the candidate.
+- [plan] A budget sweep for R1 at B ∈ {0, 3, 6, 9, 12, 15, 18}, with values above 12 as counterfactual diagnostics only. It should report expected wins, realised MSMI, hard and soft questions asked, the share of answers that changed the day's matching, the share of answered people later introduced, blank soft fields, and results by scenario. Cost: about 6 s per episode.
+
+**2. Availability (each introduction occupies both people for 8+ days).**
+- Price = (best future value if a person stays free) − (best future value if they are occupied).
+- This is open question 1 in the note. Stage B (look-ahead oracle) measures it. Stage B is paused while Round 1 is finalised; resume with `headroom.py 7500 10 <scenario> O4,O4c`.
+
+**What the measurements decide:** improve the asker if the budget curve is still rising at 12, or the introducer's timing if the availability price is large. If both are small, the remaining work is robustness rather than score.
